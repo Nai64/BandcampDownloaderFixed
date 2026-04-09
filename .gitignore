@@ -3,6 +3,9 @@
 [Oo]bj/
 artifacts/
 
+# Publish Folder
+publish/
+
 # User-specific files
 *.suo
 *.user
