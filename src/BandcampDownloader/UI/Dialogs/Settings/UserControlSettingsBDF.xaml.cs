@@ -29,6 +29,9 @@ internal sealed partial class UserControlSettingsBDF : IUserControlSettings
         CheckBoxSplitVariousArtistsTrackTitles.Unchecked += (s, e) => SaveSettings();
         CheckBoxShowTrackCountText.Checked += (s, e) => SaveSettings();
         CheckBoxShowTrackCountText.Unchecked += (s, e) => SaveSettings();
+        CheckBoxForceBitrate.Checked += (s, e) => SaveSettings();
+        CheckBoxForceBitrate.Unchecked += (s, e) => SaveSettings();
+        ComboBoxBitrate.SelectionChanged += (s, e) => SaveSettings();
         SliderIgnoreTracksLongerThanMinutes.ValueChanged += (s, e) => SaveSettings();
     }
 
@@ -63,6 +66,8 @@ internal sealed partial class UserControlSettingsBDF : IUserControlSettings
         CheckBoxAssignAlbumArtistToAllTracks.GetBindingExpression(ToggleButton.IsCheckedProperty)?.UpdateSource();
         CheckBoxSplitVariousArtistsTrackTitles.GetBindingExpression(ToggleButton.IsCheckedProperty)?.UpdateSource();
         CheckBoxShowTrackCountText.GetBindingExpression(ToggleButton.IsCheckedProperty)?.UpdateSource();
+        CheckBoxForceBitrate.GetBindingExpression(ToggleButton.IsCheckedProperty)?.UpdateSource();
+        ComboBoxBitrate.GetBindingExpression(Selector.SelectedValueProperty)?.UpdateSource();
     }
 
     private void SliderIgnoreTracksLongerThanMinutes_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)

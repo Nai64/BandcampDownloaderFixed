@@ -57,6 +57,7 @@ internal sealed class Container : IContainer
         serviceCollection.AddSingleton<IResilienceService, ResilienceService>();
         serviceCollection.AddSingleton<ISettingsService, SettingsService>();
         serviceCollection.AddSingleton<ITagService, TagService>();
+        serviceCollection.AddSingleton<IAudioConverterService, AudioConverterService>();
         serviceCollection.AddSingleton<IThemeService, ThemeService>();
         serviceCollection.AddSingleton<ITrackFileService, TrackFileService>();
         serviceCollection.AddSingleton<IUpdatesService, UpdatesService>();

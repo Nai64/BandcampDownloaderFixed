@@ -31,6 +31,7 @@ internal sealed class DownloadManager : IDownloadManager
 {
     private readonly IPlaylistCreator _playlistCreator;
     private readonly ITagService _tagService;
+    private readonly IAudioConverterService _audioConverterService;
     private readonly ITrackFileService _trackFileService;
     private readonly IAlbumUrlRetriever _albumUrlRetriever;
     private readonly IAlbumInfoRetriever _albumInfoRetriever;
@@ -44,10 +45,11 @@ internal sealed class DownloadManager : IDownloadManager
 
     public event DownloadProgressChangedEventHandler DownloadProgressChanged;
 
-    public DownloadManager(IPlaylistCreator playlistCreator, ITagService tagService, IResilienceService resilienceService, ITrackFileService trackFileService, IAlbumUrlRetriever albumUrlRetriever, IAlbumInfoRetriever albumInfoRetriever, IImageService imageService, ISettingsService settingsService)
+    public DownloadManager(IPlaylistCreator playlistCreator, ITagService tagService, IAudioConverterService audioConverterService, IResilienceService resilienceService, ITrackFileService trackFileService, IAlbumUrlRetriever albumUrlRetriever, IAlbumInfoRetriever albumInfoRetriever, IImageService imageService, ISettingsService settingsService)
     {
         _playlistCreator = playlistCreator;
         _tagService = tagService;
+        _audioConverterService = audioConverterService;
         _resilienceService = resilienceService;
         _trackFileService = trackFileService;
         _albumUrlRetriever = albumUrlRetriever;
@@ -370,6 +372,22 @@ internal sealed class DownloadManager : IDownloadManager
 
             if (trackDownloaded)
             {
+                // Convert bitrate if enabled
+                if (_userSettings.ForceBitrate && track.Path != null && File.Exists(track.Path))
+                {
+                    try
+                    {
+                        DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Converting track \"{Path.GetFileName(track.Path)}\" to {_userSettings.Bitrate} kbps", DownloadProgressChangedLevel.VerboseInfo));
+                        _audioConverterService.ConvertToSampleRate(track.Path, _userSettings.Bitrate * 1000, cancellationToken);
+                        DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Converted track \"{Path.GetFileName(track.Path)}\" to {_userSettings.Bitrate} kbps", DownloadProgressChangedLevel.VerboseInfo));
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.Error(ex, $"Failed to convert bitrate for track: {track.Path}");
+                        DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Failed to convert bitrate for track \"{Path.GetFileName(track.Path)}\": {ex.Message}", DownloadProgressChangedLevel.Warning));
+                    }
+                }
+
                 if (_userSettings.ModifyTags ||
                     (_userSettings.SaveCoverArtInTags && artwork != null))
                 {

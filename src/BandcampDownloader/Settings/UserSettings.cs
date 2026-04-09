@@ -252,6 +252,12 @@ public interface IUserSettings
     bool ShowTrackCountText { get; set; }
 
     [Option(DefaultValue = false)]
+    bool ForceBitrate { get; set; }
+
+    [Option(DefaultValue = 128)]
+    int Bitrate { get; set; }
+
+    [Option(DefaultValue = false)]
     bool ShowVerboseLog { get; set; }
 
     [Option(DefaultValue = TagEditAction.Modify)]

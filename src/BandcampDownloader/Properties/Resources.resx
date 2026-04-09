@@ -582,4 +582,10 @@ Paste artist pages: http://[artist].bandcamp.com and check "☑ Download artist 
   <data name="checkBoxShowTrackCountText_ToolTip" xml:space="preserve">
     <value>Displays the number of tracks downloaded so far in the action bar.</value>
   </data>
+  <data name="checkBoxForceBitrate" xml:space="preserve">
+    <value>_Force bitrate</value>
+  </data>
+  <data name="checkBoxForceBitrate_ToolTip" xml:space="preserve">
+    <value>Converts downloaded tracks to the specified bitrate. Useful for reducing file size.</value>
+  </data>
 </root>
