@@ -9,6 +9,22 @@
 * Fixed the issue preventing from downloading tracks with no related album release date, or no release date (in that case, rely on the publish date). [#342](https://github.com/Otiel/BandcampDownloader/issues/342) [#347](https://github.com/Otiel/BandcampDownloader/pull/347)
 * Fixed the issue causing the retry mechanism to fail when Bandcamp antispam is triggered. [#344](https://github.com/Otiel/BandcampDownloader/issues/344) [#346](https://github.com/Otiel/BandcampDownloader/pull/346)
 
+# 1.5.3 (Unreleased)
+
+## New features
+
+* Added **BDF** settings section with three reliability options:
+  * **Continue on error**: Downloads continue even when individual albums or tracks fail, preventing complete download stoppage.
+  * **Wait for file ready**: Handles race conditions between download completion and file availability for tagging.
+  * **Split V/A titles**: Automatically detects and splits "Artist - Title" format in Various Artists releases for proper metadata.
+* Various Artists releases now have correct metadata: track artist is extracted from title instead of duplicating album artist.
+
+## Bug fixes
+
+* Fixed `FileNotFoundException` occurring when tagging downloaded tracks due to race condition with file system.
+* Fixed entire downloads stopping when a single album or track encounters an error.
+* Fixed Various Artists releases having duplicate artist names in track metadata.
+
 # 1.5.1 (2025-11-30)
 
 ## Improvements

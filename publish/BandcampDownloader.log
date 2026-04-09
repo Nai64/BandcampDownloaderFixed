@@ -258,3 +258,199 @@ https://cdr1234.bandcamp.com/
 2026-04-10 02:07:07.9737  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/2
 2026-04-10 02:07:09.2905  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/punie-trax-2019-2021
 2026-04-10 02:07:09.2905  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/punie-trax-2019-2021
+2026-04-10 02:07:10.4240  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/digital-detox
+2026-04-10 02:07:10.4240  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/digital-detox
+2026-04-10 02:07:11.6448  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/mod-summer
+2026-04-10 02:07:11.6448  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/mod-summer
+2026-04-10 02:07:12.8839  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/ichigo-mashcore-single
+2026-04-10 02:07:12.8839  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/ichigo-mashcore-single
+2026-04-10 02:07:14.2036  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/new-year-special-22
+2026-04-10 02:07:14.2036  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/new-year-special-22
+2026-04-10 02:07:15.7512  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/acidcore-2016
+2026-04-10 02:07:15.7512  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/acidcore-2016
+2026-04-10 02:07:16.8789  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/ifhwuhuver-deluxe
+2026-04-10 02:07:16.8789  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/ifhwuhuver-deluxe
+2026-04-10 02:07:18.0279  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/radiocasette-ep
+2026-04-10 02:07:18.0279  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/radiocasette-ep
+2026-04-10 02:07:19.1268  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/ua4-live-set
+2026-04-10 02:07:19.1268  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/ua4-live-set
+2026-04-10 02:07:20.5016  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/221
+2026-04-10 02:07:20.5016  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/221
+2026-04-10 02:07:21.5984  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/2112
+2026-04-10 02:07:21.5984  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/2112
+2026-04-10 02:07:22.6005  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/cdr-computer-vision-2-2022123
+2026-04-10 02:07:22.6005  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/cdr-computer-vision-2-2022123
+2026-04-10 02:07:23.9386  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/acid-running
+2026-04-10 02:07:23.9386  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/acid-running
+2026-04-10 02:07:24.9735  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/poly
+2026-04-10 02:07:24.9735  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/poly
+2026-04-10 02:07:26.2952  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/track/38-56
+2026-04-10 02:07:26.2952  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/track/38-56
+2026-04-10 02:07:27.4278  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/bug-bug-bug
+2026-04-10 02:07:27.4278  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/bug-bug-bug
+2026-04-10 02:07:28.6554  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/split-4
+2026-04-10 02:07:28.6554  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/split-4
+2026-04-10 02:07:29.7712  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/main-building
+2026-04-10 02:07:29.7712  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/main-building
+2026-04-10 02:07:30.9554  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/hardcore-easylistening
+2026-04-10 02:07:30.9554  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/hardcore-easylistening
+2026-04-10 02:07:32.1402  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/track/acid-jam-20211116-morning
+2026-04-10 02:07:32.1402  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/track/acid-jam-20211116-morning
+2026-04-10 02:07:33.1472  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/kuso-cassette
+2026-04-10 02:07:33.1472  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/kuso-cassette
+2026-04-10 02:07:34.4874  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/kuso-cassette-2-2
+2026-04-10 02:07:34.4874  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/kuso-cassette-2-2
+2026-04-10 02:07:35.5741  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/touch-me-baby-potato-techno
+2026-04-10 02:07:35.5779  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/touch-me-baby-potato-techno
+2026-04-10 02:07:36.6780  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/tetette
+2026-04-10 02:07:36.6780  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/tetette
+2026-04-10 02:07:37.9659  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/fuckman-ep
+2026-04-10 02:07:37.9659  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/fuckman-ep
+2026-04-10 02:07:39.0401  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/216
+2026-04-10 02:07:39.0401  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/216
+2026-04-10 02:07:40.7345  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/ep
+2026-04-10 02:07:40.7345  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/ep
+2026-04-10 02:07:41.8583  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/medical-certificate
+2026-04-10 02:07:41.8583  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/medical-certificate
+2026-04-10 02:07:42.9946  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/219
+2026-04-10 02:07:42.9946  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/219
+2026-04-10 02:07:44.9851  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/ant-n-bee
+2026-04-10 02:07:44.9851  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/ant-n-bee
+2026-04-10 02:07:46.0983  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/acid6
+2026-04-10 02:07:46.0983  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/acid6
+2026-04-10 02:07:47.2052  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/green
+2026-04-10 02:07:47.2052  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/green
+2026-04-10 02:07:48.4233  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/dadaist-happy-hardcore-uma-umas
+2026-04-10 02:07:48.4233  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/dadaist-happy-hardcore-uma-umas
+2026-04-10 02:07:49.8913  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/2020-pt-2
+2026-04-10 02:07:49.8913  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/2020-pt-2
+2026-04-10 02:07:51.0777  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/ragg-acid-ep
+2026-04-10 02:07:51.0777  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/ragg-acid-ep
+2026-04-10 02:07:52.1107  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/some-unreleased
+2026-04-10 02:07:52.1107  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/some-unreleased
+2026-04-10 02:07:53.1548  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/chaotic-discord-roland
+2026-04-10 02:07:53.1552  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/chaotic-discord-roland
+2026-04-10 02:07:54.4065  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/7-200
+2026-04-10 02:07:54.4065  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/7-200
+2026-04-10 02:07:55.5609  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/my-braindance-5-rdc-acid
+2026-04-10 02:07:55.5611  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/my-braindance-5-rdc-acid
+2026-04-10 02:07:56.6104  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/bug-200
+2026-04-10 02:07:56.6104  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/bug-200
+2026-04-10 02:07:57.6848  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/cosmic-distortion-roland
+2026-04-10 02:07:57.6848  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/cosmic-distortion-roland
+2026-04-10 02:07:59.0004  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/amen-graffux
+2026-04-10 02:07:59.0004  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/amen-graffux
+2026-04-10 02:08:00.1345  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/498
+2026-04-10 02:08:00.1345  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/498
+2026-04-10 02:08:01.5158  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/split-3
+2026-04-10 02:08:01.5158  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/split-3
+2026-04-10 02:08:02.6865  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/june-20
+2026-04-10 02:08:02.6865  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/june-20
+2026-04-10 02:08:03.8560  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/imichigacchatteru
+2026-04-10 02:08:03.8560  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/imichigacchatteru
+2026-04-10 02:08:05.0889  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/sep-20
+2026-04-10 02:08:05.0889  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/sep-20
+2026-04-10 02:08:06.2709  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/amashit-vs-cdr
+2026-04-10 02:08:06.2709  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/amashit-vs-cdr
+2026-04-10 02:08:07.4030  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/watashi-wa-amen-suki-2
+2026-04-10 02:08:07.4030  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/watashi-wa-amen-suki-2
+2026-04-10 02:08:08.5079  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/watashi-wa-amen-suki
+2026-04-10 02:08:08.5079  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/watashi-wa-amen-suki
+2026-04-10 02:08:09.6148  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/oct-20
+2026-04-10 02:08:09.6148  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/oct-20
+2026-04-10 02:08:10.9473  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/suzumebachi-trax
+2026-04-10 02:08:10.9473  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/suzumebachi-trax
+2026-04-10 02:08:12.6842  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/nine
+2026-04-10 02:08:12.6842  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/nine
+2026-04-10 02:08:13.6954  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/i-like-these-tracks
+2026-04-10 02:08:13.6954  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/i-like-these-tracks
+2026-04-10 02:08:14.9284  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/inna-de-bedroom
+2026-04-10 02:08:14.9284  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/inna-de-bedroom
+2026-04-10 02:08:16.2797  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/2020514-202065
+2026-04-10 02:08:16.2804  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/2020514-202065
+2026-04-10 02:08:17.3339  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/live-recordings-2019
+2026-04-10 02:08:17.3339  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/live-recordings-2019
+2026-04-10 02:08:18.4015  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/nov-20
+2026-04-10 02:08:18.4015  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/nov-20
+2026-04-10 02:08:19.5454  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/live-tracks-2001
+2026-04-10 02:08:19.5454  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/live-tracks-2001
+2026-04-10 02:08:20.8614  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/--3
+2026-04-10 02:08:20.8614  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/--3
+2026-04-10 02:08:22.1241  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/milky-ep-2002
+2026-04-10 02:08:22.1241  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/milky-ep-2002
+2026-04-10 02:08:23.2201  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/psychedelic-ward
+2026-04-10 02:08:23.2201  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/psychedelic-ward
+2026-04-10 02:08:24.6574  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/rec-2017-2018-2019-2020
+2026-04-10 02:08:24.6574  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/rec-2017-2018-2019-2020
+2026-04-10 02:08:25.7774  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/5-tracks
+2026-04-10 02:08:25.7774  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/5-tracks
+2026-04-10 02:08:27.0042  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/some-files-from-2002-april-august
+2026-04-10 02:08:27.0042  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/some-files-from-2002-april-august
+2026-04-10 02:08:28.2492  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/apr-20
+2026-04-10 02:08:28.2492  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/apr-20
+2026-04-10 02:08:29.4349  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/cdr-live-set-for-love-loli-2-20191215
+2026-04-10 02:08:29.4349  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/cdr-live-set-for-love-loli-2-20191215
+2026-04-10 02:08:30.5864  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/live-set-for-halloween-shibuya-2019
+2026-04-10 02:08:30.5864  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/live-set-for-halloween-shibuya-2019
+2026-04-10 02:08:32.2324  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/kusoikore-2019
+2026-04-10 02:08:32.2324  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/kusoikore-2019
+2026-04-10 02:08:33.4236  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/shin-kusoikore
+2026-04-10 02:08:33.4236  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/shin-kusoikore
+2026-04-10 02:08:34.6400  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/kusoikore4
+2026-04-10 02:08:34.6400  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/kusoikore4
+2026-04-10 02:08:35.9209  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/kusoikore3
+2026-04-10 02:08:35.9217  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/kusoikore3
+2026-04-10 02:08:37.1653  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/kusoikore2
+2026-04-10 02:08:37.1653  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/kusoikore2
+2026-04-10 02:08:38.4949  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/kusoikore
+2026-04-10 02:08:38.4949  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/kusoikore
+2026-04-10 02:08:39.9259  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/2020
+2026-04-10 02:08:39.9259  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/2020
+2026-04-10 02:08:41.1353  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/dec-19
+2026-04-10 02:08:41.1353  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/dec-19
+2026-04-10 02:08:42.4265  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/abumi-collection-2
+2026-04-10 02:08:42.4265  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/abumi-collection-2
+2026-04-10 02:08:43.6000  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/abumi-collection
+2026-04-10 02:08:43.6000  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/abumi-collection
+2026-04-10 02:08:45.1833  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/the-new-kusoikore-album
+2026-04-10 02:08:45.1833  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/the-new-kusoikore-album
+2026-04-10 02:08:46.2776  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/ssr-album
+2026-04-10 02:08:46.2776  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/ssr-album
+2026-04-10 02:08:47.3411  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/nov-19
+2026-04-10 02:08:47.3411  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/nov-19
+2026-04-10 02:08:48.4136  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/oct-19
+2026-04-10 02:08:48.4136  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/oct-19
+2026-04-10 02:08:49.3967  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/sep-19-2
+2026-04-10 02:08:49.3967  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/sep-19-2
+2026-04-10 02:08:50.4699  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/july-19
+2026-04-10 02:08:50.4699  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/july-19
+2026-04-10 02:08:51.7905  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/title
+2026-04-10 02:08:51.7905  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/title
+2026-04-10 02:08:52.8122  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/dynamite-kangaroo-works
+2026-04-10 02:08:52.8122  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/dynamite-kangaroo-works
+2026-04-10 02:08:54.0375  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/--5
+2026-04-10 02:08:54.0375  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/--5
+2026-04-10 02:08:54.9638  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/hi
+2026-04-10 02:08:54.9638  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/hi
+2026-04-10 02:08:56.3030  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/cdr-pawc-split
+2026-04-10 02:08:56.3030  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/cdr-pawc-split
+2026-04-10 02:08:57.2022  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/electronix
+2026-04-10 02:08:57.2022  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/electronix
+2026-04-10 02:08:58.1467  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/breakcore-is-dead
+2026-04-10 02:08:58.1467  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/breakcore-is-dead
+2026-04-10 02:08:59.0551  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/breakcore-of-the-dead
+2026-04-10 02:08:59.0551  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/breakcore-of-the-dead
+2026-04-10 02:09:00.0828  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/toshikosh
+2026-04-10 02:09:00.0828  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/toshikosh
+2026-04-10 02:09:01.2206  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/sssssssssssssssssssssssssssssssssssssssssss-grindermen-complex
+2026-04-10 02:09:01.2206  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/sssssssssssssssssssssssssssssssssssssssssss-grindermen-complex
+2026-04-10 02:09:02.3848  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/mix
+2026-04-10 02:09:02.3848  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/mix
+2026-04-10 02:09:03.4373  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/00s-anison-hit-parade-final
+2026-04-10 02:09:03.4373  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/00s-anison-hit-parade-final
+2026-04-10 02:09:04.5088  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/some-disc-03-04
+2026-04-10 02:09:04.5088  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/some-disc-03-04
+2026-04-10 02:09:05.7199  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/live-set-feb-2018
+2026-04-10 02:09:05.7199  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/live-set-feb-2018
+2026-04-10 02:09:06.8613  INFO   BandcampDownloader.UI.Dialogs.WindowMain  Retrieving album data for https://cdr1234.bandcamp.com/album/m-n-d
+2026-04-10 02:09:06.8613  DEBUG  BandcampDownloader.UI.Dialogs.WindowMain  Downloading album info from url: https://cdr1234.bandcamp.com/album/m-n-d

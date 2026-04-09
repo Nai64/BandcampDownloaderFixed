@@ -19,7 +19,17 @@ BandcampDownloader is a Windows application that helps downloading albums from [
 * Add ID3 tags to tracks: Album, Artist, Album Artist, Title, Track number, Year and Lyrics (if available).
 * Download cover art to tags and in folder.
 * Create playlist file (supported formats are: m3u, pls, wpl, zpl).
-* Personalization through settings.
+* **Various Artists support**: Automatically splits track titles in "Artist - Title" format for proper metadata.
+* **Resilient downloads**: Continues downloading remaining albums/tracks even if errors occur.
+* **Personalization** through settings, including a dedicated **BDF** section for reliability features.
+
+### BDF Settings
+
+The **BDF** section provides reliability options to ensure your downloads complete successfully:
+
+* **Continue on error**: Keeps downloading remaining albums/tracks when errors occur instead of stopping everything.
+* **Wait for file ready**: Handles race conditions by waiting for downloaded files to be fully written before tagging.
+* **Split V/A titles**: Properly handles Various Artists releases by extracting artist names from track titles.
 
 <p align="center">
     <img alt="Screenshot" src="docs/images/Screenshot.png">
