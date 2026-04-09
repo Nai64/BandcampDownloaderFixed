@@ -314,13 +314,45 @@ internal sealed class DownloadManager : IDownloadManager
                 if (_userSettings.ModifyTags ||
                     (_userSettings.SaveCoverArtInTags && artwork != null))
                 {
-                    _tagService.SaveTagsInTrack(track, album, artwork, cancellationToken);
-                    DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Tags saved for track \"{Path.GetFileName(track.Path)}\" from album \"{album.Title}\"", DownloadProgressChangedLevel.VerboseInfo));
+                    // Verify file exists before tagging (handles race condition with Downloader library)
+                    if (track.Path != null && File.Exists(track.Path))
+                    {
+                        _tagService.SaveTagsInTrack(track, album, artwork, cancellationToken);
+                        DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Tags saved for track \"{Path.GetFileName(track.Path)}\" from album \"{album.Title}\"", DownloadProgressChangedLevel.VerboseInfo));
+                    }
+                    else
+                    {
+                        // File not found - likely race condition, wait and retry
+                        DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"File not immediately found after download, waiting briefly: \"{Path.GetFileName(track.Path ?? "unknown")}\"", DownloadProgressChangedLevel.Warning));
+                        
+                        var fileFound = false;
+                        for (var retryAttempt = 0; retryAttempt < 3; retryAttempt++)
+                        {
+                            await Task.Delay(500 * (retryAttempt + 1), cancellationToken).ConfigureAwait(false);
+                            
+                            if (track.Path != null && File.Exists(track.Path))
+                            {
+                                fileFound = true;
+                                _tagService.SaveTagsInTrack(track, album, artwork, cancellationToken);
+                                DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Tags saved for track \"{Path.GetFileName(track.Path)}\" from album \"{album.Title}\" after {retryAttempt + 1} retries", DownloadProgressChangedLevel.VerboseInfo));
+                                break;
+                            }
+                        }
+                        
+                        if (!fileFound)
+                        {
+                            _logger.Error($"File still not found after retries: {track.Path}");
+                            trackDownloaded = false; // Mark as failed so it can be retried
+                        }
+                    }
                 }
 
-                // Note the file as downloaded
-                currentFile.Downloaded = true;
-                DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Downloaded track \"{Path.GetFileName(track.Path)}\" from album \"{album.Title}\"", DownloadProgressChangedLevel.IntermediateSuccess));
+                // Note the file as downloaded (only if still marked as downloaded)
+                if (trackDownloaded)
+                {
+                    currentFile.Downloaded = true;
+                    DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Downloaded track \"{Path.GetFileName(track.Path)}\" from album \"{album.Title}\"", DownloadProgressChangedLevel.IntermediateSuccess));
+                }
             }
 
             tries++;

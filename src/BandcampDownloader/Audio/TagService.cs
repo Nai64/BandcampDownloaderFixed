@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Threading;
 using BandcampDownloader.Model;
 using BandcampDownloader.Settings;
@@ -23,6 +24,16 @@ internal sealed class TagService : ITagService
 
     public void SaveTagsInTrack(Track track, Album album, byte[] artwork, CancellationToken cancellationToken)
     {
+        if (track.Path == null)
+        {
+            throw new InvalidOperationException("Track path is null");
+        }
+
+        if (!System.IO.File.Exists(track.Path))
+        {
+            throw new FileNotFoundException($"Track file does not exist: {track.Path}", track.Path);
+        }
+
         var tagFile = File.Create(track.Path);
 
         if (_userSettings.ModifyTags)
