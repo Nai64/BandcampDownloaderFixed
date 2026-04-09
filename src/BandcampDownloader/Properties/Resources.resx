@@ -576,4 +576,10 @@ Paste artist pages: http://[artist].bandcamp.com and check "☑ Download artist 
   <data name="checkBoxAssignAlbumArtistToAllTracks_ToolTip" xml:space="preserve">
     <value>Sets the album artist as the track artist for all tracks, useful for compilations or V/A releases.</value>
   </data>
+  <data name="checkBoxShowTrackCountText" xml:space="preserve">
+    <value>Show _track count during download</value>
+  </data>
+  <data name="checkBoxShowTrackCountText_ToolTip" xml:space="preserve">
+    <value>Displays the number of tracks downloaded so far in the action bar.</value>
+  </data>
 </root>

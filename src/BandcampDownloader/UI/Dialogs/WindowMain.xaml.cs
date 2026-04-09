@@ -460,6 +460,19 @@ internal sealed partial class WindowMain
                 LabelProgress.Content = labelProgressContent;
                 ProgressBar.Value = progressBarValue;
                 TaskbarItemInfo.ProgressValue = taskbarProgressBarValue;
+
+                // Update track count text
+                var downloadedTracks = _downloadManager.GetTotalFilesCountReceived();
+                var totalTracks = _downloadManager.GetTotalFilesCountToDownload();
+                if (_userSettings.ShowTrackCountText && totalTracks > 0)
+                {
+                    TextBlockTrackCount.Text = $"{downloadedTracks}/{totalTracks} tracks";
+                    TextBlockTrackCount.Visibility = System.Windows.Visibility.Visible;
+                }
+                else
+                {
+                    TextBlockTrackCount.Visibility = System.Windows.Visibility.Collapsed;
+                }
             }).ConfigureAwait(false);
     }
 

@@ -118,7 +118,7 @@
                         Width="16"
                         Height="16"
                         RenderOptions.BitmapScalingMode="NearestNeighbor"
-                        Source="/BandcampDownloader;component/Resources/Check.png" />
+                        Source="/BandcampDownloader;component/Resources/BDFIcon.png" />
                     <Label x:Name="LabelListBoxItemBDF" Content="{lex:Loc}" />
                 </StackPanel>
             </ListBoxItem>

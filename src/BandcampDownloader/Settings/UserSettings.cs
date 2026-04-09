@@ -248,6 +248,9 @@ public interface IUserSettings
     [Option(DefaultValue = false)]
     bool AssignAlbumArtistToAllTracks { get; set; }
 
+    [Option(DefaultValue = true)]
+    bool ShowTrackCountText { get; set; }
+
     [Option(DefaultValue = false)]
     bool ShowVerboseLog { get; set; }
 
