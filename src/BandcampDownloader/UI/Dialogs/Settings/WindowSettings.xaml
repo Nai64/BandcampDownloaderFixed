@@ -111,6 +111,17 @@
                     <Label x:Name="LabelListBoxItemDownloads" Content="{lex:Loc}" />
                 </StackPanel>
             </ListBoxItem>
+            <ListBoxItem x:Name="ListBoxItemBDF">
+                <StackPanel Orientation="Horizontal">
+                    <Image
+                        x:Name="ImagelistBoxItemBDF"
+                        Width="16"
+                        Height="16"
+                        RenderOptions.BitmapScalingMode="NearestNeighbor"
+                        Source="/BandcampDownloader;component/Resources/Check.png" />
+                    <Label x:Name="LabelListBoxItemBDF" Content="{lex:Loc}" />
+                </StackPanel>
+            </ListBoxItem>
             <ListBoxItem x:Name="ListBoxItemNetwork">
                 <StackPanel Orientation="Horizontal">
                     <Image
@@ -184,6 +195,14 @@
             IsEnabled="{Binding ActiveDownloads, ElementName=windowSettings, Converter={StaticResource InverseBooleanConverter}}"
             TabIndex="1"
             Visibility="{Binding IsSelected, ElementName=ListBoxItemDownloads, Converter={StaticResource BooleanToVisibilityConverter}}" />
+        <settings:UserControlSettingsBDF
+            x:Name="UserControlSettingsBDF"
+            Margin="175,31,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            IsEnabled="{Binding ActiveDownloads, ElementName=windowSettings, Converter={StaticResource InverseBooleanConverter}}"
+            TabIndex="1"
+            Visibility="{Binding IsSelected, ElementName=ListBoxItemBDF, Converter={StaticResource BooleanToVisibilityConverter}}" />
         <settings:UserControlSettingsNetwork
             x:Name="UserControlSettingsNetwork"
             Margin="175,31,0,0"

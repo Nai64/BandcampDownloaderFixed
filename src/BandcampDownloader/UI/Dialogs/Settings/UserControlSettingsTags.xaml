@@ -9,7 +9,7 @@
     xmlns:validation="clr-namespace:BandcampDownloader.UI.Validation"
     xmlns:settings="clr-namespace:BandcampDownloader.Settings"
     Width="410"
-    Height="306"
+    Height="280"
     lex:LocalizeDictionary.DesignCulture="en"
     lex:ResxLocalizationProvider.DefaultAssembly="BandcampDownloader"
     lex:ResxLocalizationProvider.DefaultDictionary="Resources"
@@ -59,21 +59,9 @@
             TabIndex="1"
             ToolTip="{lex:Loc}"
             ToolTipService.ShowDuration="60000" />
-        <CheckBox
-            x:Name="CheckBoxSplitVariousArtistsTrackTitles"
-            Grid.Row="2"
-            Margin="18,0,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            Content="{lex:Loc}"
-            IsChecked="{Binding SplitVariousArtistsTrackTitles, UpdateSourceTrigger=Explicit}"
-            IsEnabled="{Binding ElementName=CheckBoxModifyTags, Path=IsChecked}"
-            TabIndex="2"
-            ToolTip="{lex:Loc}"
-            ToolTipService.ShowDuration="60000" />
         <Grid
             x:Name="GridTags"
-            Grid.Row="3"
+            Grid.Row="2"
             Margin="18,0,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />

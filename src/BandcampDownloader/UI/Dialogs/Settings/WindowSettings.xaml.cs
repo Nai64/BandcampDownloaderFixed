@@ -65,6 +65,7 @@ internal sealed partial class WindowSettings
     private void CancelChanges()
     {
         UserControlSettingsAdvanced.CancelChanges();
+        UserControlSettingsBDF.CancelChanges();
         UserControlSettingsCoverArt.CancelChanges();
         UserControlSettingsDownloads.CancelChanges();
         UserControlSettingsGeneral.CancelChanges();
@@ -93,6 +94,7 @@ internal sealed partial class WindowSettings
 
         // Re-load settings on UI
         UserControlSettingsAdvanced.LoadSettings(userSettings);
+        UserControlSettingsBDF.LoadSettings(userSettings);
         UserControlSettingsCoverArt.LoadSettings(userSettings);
         UserControlSettingsDownloads.LoadSettings(userSettings);
         UserControlSettingsGeneral.LoadSettings(userSettings);
@@ -107,6 +109,7 @@ internal sealed partial class WindowSettings
     private void SaveSettings()
     {
         UserControlSettingsAdvanced.SaveSettings();
+        UserControlSettingsBDF.SaveSettings();
         UserControlSettingsCoverArt.SaveSettings();
         UserControlSettingsDownloads.SaveSettings();
         UserControlSettingsGeneral.SaveSettings();

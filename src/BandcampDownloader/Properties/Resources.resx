@@ -561,4 +561,7 @@ Paste artist pages: http://[artist].bandcamp.com and check "☑ Download artist 
   <data name="checkBoxSplitVariousArtistsTrackTitles_ToolTip" xml:space="preserve">
     <value>For Various Artists releases, automatically splits track titles in the format "Artist Name - Track Name" into separate Artist and Title tags.</value>
   </data>
+  <data name="labelListBoxItemBDF" xml:space="preserve">
+    <value>BDF</value>
+  </data>
 </root>

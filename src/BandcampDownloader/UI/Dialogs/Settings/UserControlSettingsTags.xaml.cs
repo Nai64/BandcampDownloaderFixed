@@ -41,7 +41,6 @@ internal sealed partial class UserControlSettingsTags : IUserControlSettings
     {
         TextBoxFileNameFormat.GetBindingExpression(TextBox.TextProperty)?.UpdateSource();
         CheckBoxModifyTags.GetBindingExpression(ToggleButton.IsCheckedProperty)?.UpdateSource();
-        CheckBoxSplitVariousArtistsTrackTitles.GetBindingExpression(ToggleButton.IsCheckedProperty)?.UpdateSource();
         ComboBoxAlbumArtist.GetBindingExpression(Selector.SelectedItemProperty)?.UpdateSource();
         ComboBoxAlbumTitle.GetBindingExpression(Selector.SelectedItemProperty)?.UpdateSource();
         ComboBoxArtist.GetBindingExpression(Selector.SelectedItemProperty)?.UpdateSource();
