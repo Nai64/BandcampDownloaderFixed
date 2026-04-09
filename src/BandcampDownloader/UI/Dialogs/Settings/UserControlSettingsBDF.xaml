@@ -8,7 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:settings="clr-namespace:BandcampDownloader.Settings"
     Width="410"
-    Height="90"
+    Height="142"
     lex:LocalizeDictionary.DesignCulture="en"
     lex:ResxLocalizationProvider.DefaultAssembly="BandcampDownloader"
     lex:ResxLocalizationProvider.DefaultDictionary="Resources"
@@ -21,6 +21,8 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="26" />
+            <RowDefinition Height="26" />
             <RowDefinition Height="26" />
             <RowDefinition Height="26" />
             <RowDefinition Height="26" />
@@ -52,8 +54,55 @@
             ToolTip="{lex:Loc}"
             ToolTipService.ShowDuration="60000" />
         <CheckBox
-            x:Name="CheckBoxSplitVariousArtistsTrackTitles"
+            x:Name="CheckBoxIgnoreTracksLongerThan"
             Grid.Row="2"
+            Grid.Column="0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Content="{lex:Loc}"
+            IsChecked="{Binding IgnoreTracksLongerThan, UpdateSourceTrigger=Explicit}"
+            IsEnabled="True"
+            TabIndex="2"
+            ToolTip="{lex:Loc}"
+            ToolTipService.ShowDuration="60000" />
+        <Slider
+            x:Name="SliderIgnoreTracksLongerThanMinutes"
+            Grid.Row="2"
+            Grid.Column="1"
+            Margin="10,0,10,0"
+            VerticalAlignment="Center"
+            IsEnabled="{Binding ElementName=CheckBoxIgnoreTracksLongerThan, Path=IsChecked}"
+            Maximum="60"
+            Minimum="1"
+            TabIndex="3"
+            ToolTip="{lex:Loc}"
+            ToolTipService.ShowDuration="60000"
+            Value="{Binding IgnoreTracksLongerThanMinutes, UpdateSourceTrigger=Explicit}" />
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="1"
+            Width="30"
+            Margin="0,0,10,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            IsEnabled="{Binding ElementName=CheckBoxIgnoreTracksLongerThan, Path=IsChecked}"
+            Text="{Binding Value, ElementName=SliderIgnoreTracksLongerThanMinutes, StringFormat={}{0} min}" />
+        <CheckBox
+            x:Name="CheckBoxAssignAlbumArtistToAllTracks"
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Content="{lex:Loc}"
+            IsChecked="{Binding AssignAlbumArtistToAllTracks, UpdateSourceTrigger=Explicit}"
+            IsEnabled="True"
+            TabIndex="4"
+            ToolTip="{lex:Loc}"
+            ToolTipService.ShowDuration="60000" />
+        <CheckBox
+            x:Name="CheckBoxSplitVariousArtistsTrackTitles"
+            Grid.Row="4"
             Grid.Column="0"
             Grid.ColumnSpan="2"
             HorizontalAlignment="Left"
@@ -61,7 +110,7 @@
             Content="{lex:Loc}"
             IsChecked="{Binding SplitVariousArtistsTrackTitles, UpdateSourceTrigger=Explicit}"
             IsEnabled="True"
-            TabIndex="2"
+            TabIndex="5"
             ToolTip="{lex:Loc}"
             ToolTipService.ShowDuration="60000" />
     </Grid>

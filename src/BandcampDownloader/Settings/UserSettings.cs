@@ -240,6 +240,15 @@ public interface IUserSettings
     bool WaitForFileAfterDownload { get; set; }
 
     [Option(DefaultValue = false)]
+    bool IgnoreTracksLongerThan { get; set; }
+
+    [Option(DefaultValue = 60)]
+    int IgnoreTracksLongerThanMinutes { get; set; }
+
+    [Option(DefaultValue = false)]
+    bool AssignAlbumArtistToAllTracks { get; set; }
+
+    [Option(DefaultValue = false)]
     bool ShowVerboseLog { get; set; }
 
     [Option(DefaultValue = TagEditAction.Modify)]

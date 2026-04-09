@@ -564,4 +564,16 @@ Paste artist pages: http://[artist].bandcamp.com and check "☑ Download artist 
   <data name="labelListBoxItemBDF" xml:space="preserve">
     <value>BDF</value>
   </data>
+  <data name="checkBoxIgnoreTracksLongerThan" xml:space="preserve">
+    <value>_Ignore tracks longer than</value>
+  </data>
+  <data name="checkBoxIgnoreTracksLongerThan_ToolTip" xml:space="preserve">
+    <value>Skips downloading tracks that exceed the specified duration in minutes.</value>
+  </data>
+  <data name="checkBoxAssignAlbumArtistToAllTracks" xml:space="preserve">
+    <value>Assign _album artist to all tracks</value>
+  </data>
+  <data name="checkBoxAssignAlbumArtistToAllTracks_ToolTip" xml:space="preserve">
+    <value>Sets the album artist as the track artist for all tracks, useful for compilations or V/A releases.</value>
+  </data>
 </root>

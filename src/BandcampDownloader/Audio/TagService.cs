@@ -85,6 +85,12 @@ internal sealed class TagService : ITagService
             trackTitle = track.Title;
         }
 
+        // If AssignAlbumArtistToAllTracks is enabled, override track artist with album artist
+        if (_userSettings.AssignAlbumArtistToAllTracks)
+        {
+            trackArtist = album.Artist;
+        }
+
         tagFile = UpdateArtist(tagFile, trackArtist, _userSettings.TagArtist);
         tagFile = UpdateAlbumArtist(tagFile, album.Artist, _userSettings.TagAlbumArtist);
         tagFile = UpdateAlbumTitle(tagFile, album.Title, _userSettings.TagAlbumTitle);

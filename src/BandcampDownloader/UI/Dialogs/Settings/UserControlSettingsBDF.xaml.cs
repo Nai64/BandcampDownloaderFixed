@@ -41,6 +41,9 @@ internal sealed partial class UserControlSettingsBDF : IUserControlSettings
     {
         CheckBoxContinueOnError.GetBindingExpression(ToggleButton.IsCheckedProperty)?.UpdateSource();
         CheckBoxWaitForFileAfterDownload.GetBindingExpression(ToggleButton.IsCheckedProperty)?.UpdateSource();
+        CheckBoxIgnoreTracksLongerThan.GetBindingExpression(ToggleButton.IsCheckedProperty)?.UpdateSource();
+        SliderIgnoreTracksLongerThanMinutes.GetBindingExpression(Slider.ValueProperty)?.UpdateSource();
+        CheckBoxAssignAlbumArtistToAllTracks.GetBindingExpression(ToggleButton.IsCheckedProperty)?.UpdateSource();
         CheckBoxSplitVariousArtistsTrackTitles.GetBindingExpression(ToggleButton.IsCheckedProperty)?.UpdateSource();
     }
 }

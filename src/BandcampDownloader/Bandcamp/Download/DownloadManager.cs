@@ -204,6 +204,17 @@ internal sealed class DownloadManager : IDownloadManager
             {
                 try
                 {
+                    // Check if track should be ignored based on duration
+                    if (_userSettings.IgnoreTracksLongerThan)
+                    {
+                        var trackDurationMinutes = track.Duration / 60.0;
+                        if (trackDurationMinutes > _userSettings.IgnoreTracksLongerThanMinutes)
+                        {
+                            DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Skipping track \"{track.Title}\" ({trackDurationMinutes:F1} min) - exceeds limit of {_userSettings.IgnoreTracksLongerThanMinutes} min", DownloadProgressChangedLevel.Warning));
+                            return;
+                        }
+                    }
+
                     var trackDownloaded = await DownloadAndTagTrackAsync(album, track, inTagsArtwork, ct).ConfigureAwait(false);
                     if (trackDownloaded)
                     {
