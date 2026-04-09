@@ -102,9 +102,19 @@ internal sealed class DownloadManager : IDownloadManager
                     }
                     catch (Exception ex)
                     {
-                        // Log error but continue with next album
-                        _logger.Error(ex, $"Unexpected error while downloading album \"{album.Title}\" - continuing with next album");
-                        DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Error downloading album \"{album.Title}\": {ex.Message} - Continuing with next album", DownloadProgressChangedLevel.Error));
+                        if (_userSettings.ContinueOnError)
+                        {
+                            // Log error but continue with next album
+                            _logger.Error(ex, $"Unexpected error while downloading album \"{album.Title}\" - continuing with next album");
+                            DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Error downloading album \"{album.Title}\": {ex.Message} - Continuing with next album", DownloadProgressChangedLevel.Error));
+                        }
+                        else
+                        {
+                            // Re-throw to stop all downloads
+                            _logger.Error(ex, $"Unexpected error while downloading album \"{album.Title}\" - stopping downloads");
+                            DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Error downloading album \"{album.Title}\": {ex.Message}", DownloadProgressChangedLevel.Error));
+                            throw;
+                        }
                     }
                 }).ConfigureAwait(false);
         }
@@ -207,9 +217,19 @@ internal sealed class DownloadManager : IDownloadManager
                 }
                 catch (Exception ex)
                 {
-                    // Log error but continue with next track
-                    _logger.Error(ex, $"Unexpected error while downloading track \"{track.Title}\" from album \"{album.Title}\" - continuing with next track");
-                    DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Error downloading track \"{track.Title}\": {ex.Message} - Continuing with next track", DownloadProgressChangedLevel.Error));
+                    if (_userSettings.ContinueOnError)
+                    {
+                        // Log error but continue with next track
+                        _logger.Error(ex, $"Unexpected error while downloading track \"{track.Title}\" from album \"{album.Title}\" - continuing with next track");
+                        DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Error downloading track \"{track.Title}\": {ex.Message} - Continuing with next track", DownloadProgressChangedLevel.Error));
+                    }
+                    else
+                    {
+                        // Re-throw to stop all downloads
+                        _logger.Error(ex, $"Unexpected error while downloading track \"{track.Title}\" from album \"{album.Title}\" - stopping downloads");
+                        DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Error downloading track \"{track.Title}\": {ex.Message}", DownloadProgressChangedLevel.Error));
+                        throw;
+                    }
                 }
             }).ConfigureAwait(false);
 
@@ -348,7 +368,7 @@ internal sealed class DownloadManager : IDownloadManager
                         _tagService.SaveTagsInTrack(track, album, artwork, cancellationToken);
                         DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Tags saved for track \"{Path.GetFileName(track.Path)}\" from album \"{album.Title}\"", DownloadProgressChangedLevel.VerboseInfo));
                     }
-                    else
+                    else if (_userSettings.WaitForFileAfterDownload)
                     {
                         // File not found - likely race condition, wait and retry
                         DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"File not immediately found after download, waiting briefly: \"{Path.GetFileName(track.Path ?? "unknown")}\"", DownloadProgressChangedLevel.Warning));
@@ -371,6 +391,23 @@ internal sealed class DownloadManager : IDownloadManager
                         {
                             _logger.Error($"File still not found after retries: {track.Path}");
                             trackDownloaded = false; // Mark as failed so it can be retried
+                        }
+                    }
+                    else
+                    {
+                        // WaitForFileAfterDownload is disabled - try to tag anyway
+                        try
+                        {
+                            if (track.Path != null)
+                            {
+                                _tagService.SaveTagsInTrack(track, album, artwork, cancellationToken);
+                                DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Tags saved for track \"{Path.GetFileName(track.Path)}\" from album \"{album.Title}\"", DownloadProgressChangedLevel.VerboseInfo));
+                            }
+                        }
+                        catch (FileNotFoundException ex)
+                        {
+                            _logger.Error(ex, $"File not found when tagging: {track.Path}");
+                            trackDownloaded = false;
                         }
                     }
                 }

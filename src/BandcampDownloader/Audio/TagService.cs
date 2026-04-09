@@ -56,22 +56,31 @@ internal sealed class TagService : ITagService
 
     private File UpdateStringTags(File tagFile, Track track, Album album)
     {
-        // Check if this is a V/A track (title format: "Artist - Title")
-        var isVaTrack = VaTrackTitlePattern.Match(track.Title);
-
         // Determine the actual track artist and title
         string trackArtist;
         string trackTitle;
 
-        if (isVaTrack.Success)
+        // Check if V/A splitting is enabled and this is a V/A track (title format: "Artist - Title")
+        if (_userSettings.SplitVariousArtistsTrackTitles)
         {
-            // V/A release: extract artist from title
-            trackArtist = isVaTrack.Groups["artist"].Value.Trim();
-            trackTitle = isVaTrack.Groups["title"].Value.Trim();
+            var isVaTrack = VaTrackTitlePattern.Match(track.Title);
+
+            if (isVaTrack.Success)
+            {
+                // V/A release: extract artist from title
+                trackArtist = isVaTrack.Groups["artist"].Value.Trim();
+                trackTitle = isVaTrack.Groups["title"].Value.Trim();
+            }
+            else
+            {
+                // Regular release: use album artist and track title as-is
+                trackArtist = album.Artist;
+                trackTitle = track.Title;
+            }
         }
         else
         {
-            // Regular release: use album artist and track title as-is
+            // V/A splitting disabled: use album artist and track title as-is
             trackArtist = album.Artist;
             trackTitle = track.Title;
         }

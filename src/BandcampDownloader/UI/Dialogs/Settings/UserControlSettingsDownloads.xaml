@@ -8,7 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:settings="clr-namespace:BandcampDownloader.Settings"
     Width="410 "
-    Height="90"
+    Height="142"
     lex:LocalizeDictionary.DesignCulture="en"
     lex:ResxLocalizationProvider.DefaultAssembly="BandcampDownloader"
     lex:ResxLocalizationProvider.DefaultDictionary="Resources"
@@ -21,6 +21,8 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="26" />
+            <RowDefinition Height="26" />
             <RowDefinition Height="26" />
             <RowDefinition Height="26" />
             <RowDefinition Height="26" />
@@ -73,7 +75,33 @@
             Content="{lex:Loc}"
             IsChecked="{Binding RetrieveFilesSize, UpdateSourceTrigger=Explicit}"
             IsEnabled="True"
-            TabIndex="1"
+            TabIndex="2"
+            ToolTip="{lex:Loc}"
+            ToolTipService.ShowDuration="60000" />
+        <CheckBox
+            x:Name="CheckBoxContinueOnError"
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Content="{lex:Loc}"
+            IsChecked="{Binding ContinueOnError, UpdateSourceTrigger=Explicit}"
+            IsEnabled="True"
+            TabIndex="3"
+            ToolTip="{lex:Loc}"
+            ToolTipService.ShowDuration="60000" />
+        <CheckBox
+            x:Name="CheckBoxWaitForFileAfterDownload"
+            Grid.Row="4"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Content="{lex:Loc}"
+            IsChecked="{Binding WaitForFileAfterDownload, UpdateSourceTrigger=Explicit}"
+            IsEnabled="True"
+            TabIndex="4"
             ToolTip="{lex:Loc}"
             ToolTipService.ShowDuration="60000" />
     </Grid>

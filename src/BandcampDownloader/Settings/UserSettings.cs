@@ -230,6 +230,15 @@ public interface IUserSettings
     [Option(DefaultValue = true)]
     bool SaveCoverArtInTags { get; set; }
 
+    [Option(DefaultValue = true)]
+    bool SplitVariousArtistsTrackTitles { get; set; }
+
+    [Option(DefaultValue = true)]
+    bool ContinueOnError { get; set; }
+
+    [Option(DefaultValue = true)]
+    bool WaitForFileAfterDownload { get; set; }
+
     [Option(DefaultValue = false)]
     bool ShowVerboseLog { get; set; }
 

@@ -543,4 +543,22 @@ Paste artist pages: http://[artist].bandcamp.com and check "☑ Download artist 
   <data name="textBoxMaxConcurrentTracksDownloads_ToolTip" xml:space="preserve">
       <value>The maximum number of tracks (within the same album) that can be downloaded simultaneously</value>
   </data>
+  <data name="checkBoxContinueOnError" xml:space="preserve">
+    <value>_Continue downloading if an error occurs</value>
+  </data>
+  <data name="checkBoxContinueOnError_ToolTip" xml:space="preserve">
+    <value>If enabled, the downloader will continue with the next album or track when an error occurs instead of stopping the entire download.</value>
+  </data>
+  <data name="checkBoxWaitForFileAfterDownload" xml:space="preserve">
+    <value>_Wait for file to be ready before tagging</value>
+  </data>
+  <data name="checkBoxWaitForFileAfterDownload_ToolTip" xml:space="preserve">
+    <value>If enabled, waits for the downloaded file to be fully written to disk before attempting to add tags. Helps prevent file-not-found errors.</value>
+  </data>
+  <data name="checkBoxSplitVariousArtistsTrackTitles" xml:space="preserve">
+    <value>_Split V/A track titles (Artist - Title)</value>
+  </data>
+  <data name="checkBoxSplitVariousArtistsTrackTitles_ToolTip" xml:space="preserve">
+    <value>For Various Artists releases, automatically splits track titles in the format "Artist Name - Track Name" into separate Artist and Title tags.</value>
+  </data>
 </root>
