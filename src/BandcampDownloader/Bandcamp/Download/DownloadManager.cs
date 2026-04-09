@@ -91,7 +91,21 @@ internal sealed class DownloadManager : IDownloadManager
                 parallelOptions,
                 async (album, ct) =>
                 {
-                    await DownloadAlbumAsync(album, ct).ConfigureAwait(false);
+                    try
+                    {
+                        await DownloadAlbumAsync(album, ct).ConfigureAwait(false);
+                    }
+                    catch (OperationCanceledException)
+                    {
+                        // User canceled - this is expected
+                        throw;
+                    }
+                    catch (Exception ex)
+                    {
+                        // Log error but continue with next album
+                        _logger.Error(ex, $"Unexpected error while downloading album \"{album.Title}\" - continuing with next album");
+                        DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Error downloading album \"{album.Title}\": {ex.Message} - Continuing with next album", DownloadProgressChangedLevel.Error));
+                    }
                 }).ConfigureAwait(false);
         }
         finally
@@ -178,10 +192,24 @@ internal sealed class DownloadManager : IDownloadManager
             parallelOptions,
             async (track, ct) =>
             {
-                var trackDownloaded = await DownloadAndTagTrackAsync(album, track, inTagsArtwork, ct).ConfigureAwait(false);
-                if (trackDownloaded)
+                try
                 {
-                    Interlocked.Increment(ref downloadedTracksCount);
+                    var trackDownloaded = await DownloadAndTagTrackAsync(album, track, inTagsArtwork, ct).ConfigureAwait(false);
+                    if (trackDownloaded)
+                    {
+                        Interlocked.Increment(ref downloadedTracksCount);
+                    }
+                }
+                catch (OperationCanceledException)
+                {
+                    // User canceled - this is expected
+                    throw;
+                }
+                catch (Exception ex)
+                {
+                    // Log error but continue with next track
+                    _logger.Error(ex, $"Unexpected error while downloading track \"{track.Title}\" from album \"{album.Title}\" - continuing with next track");
+                    DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Error downloading track \"{track.Title}\": {ex.Message} - Continuing with next track", DownloadProgressChangedLevel.Error));
                 }
             }).ConfigureAwait(false);
 
