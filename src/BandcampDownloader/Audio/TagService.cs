@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Threading;
 using BandcampDownloader.Model;
 using BandcampDownloader.Settings;
@@ -16,6 +17,10 @@ internal interface ITagService
 internal sealed class TagService : ITagService
 {
     private readonly IUserSettings _userSettings;
+
+    // Pattern to detect V/A format: "Artist Name - Track Name"
+    // Matches: anything, followed by " - ", followed by the actual title
+    private static readonly Regex VaTrackTitlePattern = new Regex(@"^(?<artist>.+?)\s+-\s+(?<title>.+)$", RegexOptions.Compiled);
 
     public TagService(ISettingsService settingsService)
     {
@@ -51,12 +56,32 @@ internal sealed class TagService : ITagService
 
     private File UpdateStringTags(File tagFile, Track track, Album album)
     {
-        tagFile = UpdateArtist(tagFile, album.Artist, _userSettings.TagArtist);
+        // Check if this is a V/A track (title format: "Artist - Title")
+        var isVaTrack = VaTrackTitlePattern.Match(track.Title);
+
+        // Determine the actual track artist and title
+        string trackArtist;
+        string trackTitle;
+
+        if (isVaTrack.Success)
+        {
+            // V/A release: extract artist from title
+            trackArtist = isVaTrack.Groups["artist"].Value.Trim();
+            trackTitle = isVaTrack.Groups["title"].Value.Trim();
+        }
+        else
+        {
+            // Regular release: use album artist and track title as-is
+            trackArtist = album.Artist;
+            trackTitle = track.Title;
+        }
+
+        tagFile = UpdateArtist(tagFile, trackArtist, _userSettings.TagArtist);
         tagFile = UpdateAlbumArtist(tagFile, album.Artist, _userSettings.TagAlbumArtist);
         tagFile = UpdateAlbumTitle(tagFile, album.Title, _userSettings.TagAlbumTitle);
         tagFile = UpdateAlbumYear(tagFile, (uint)album.ReleaseDate.Year, _userSettings.TagYear);
         tagFile = UpdateTrackNumber(tagFile, (uint)track.Number, _userSettings.TagTrackNumber);
-        tagFile = UpdateTrackTitle(tagFile, track.Title, _userSettings.TagTrackTitle);
+        tagFile = UpdateTrackTitle(tagFile, trackTitle, _userSettings.TagTrackTitle);
         tagFile = UpdateTrackLyrics(tagFile, track.Lyrics, _userSettings.TagLyrics);
         tagFile = UpdateComments(tagFile, _userSettings.TagComments);
         return tagFile;
