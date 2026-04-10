@@ -258,6 +258,27 @@ public interface IUserSettings
     int Bitrate { get; set; }
 
     [Option(DefaultValue = false)]
+    bool SuppressForceBitrateWarning { get; set; }
+
+    [Option(DefaultValue = false)]
+    bool ShowOriginalDownloadSize { get; set; }
+
+    [Option(DefaultValue = false)]
+    bool EnableToastNotifications { get; set; }
+
+    [Option(DefaultValue = true)]
+    bool ToastOnDownloadComplete { get; set; }
+
+    [Option(DefaultValue = true)]
+    bool ToastOnDownloadError { get; set; }
+
+    [Option(DefaultValue = false)]
+    bool ToastOnAlbumComplete { get; set; }
+
+    [Option(DefaultValue = false)]
+    bool ToastOnTrackSkipped { get; set; }
+
+    [Option(DefaultValue = false)]
     bool ShowVerboseLog { get; set; }
 
     [Option(DefaultValue = TagEditAction.Modify)]

@@ -11,6 +11,7 @@ using BandcampDownloader.Helpers;
 using BandcampDownloader.IO;
 using BandcampDownloader.Model;
 using BandcampDownloader.Settings;
+using BandcampDownloader.UI;
 using Downloader;
 using NLog;
 
@@ -22,6 +23,7 @@ internal interface IDownloadManager
     Task StartDownloadsAsync(CancellationToken cancellationToken);
     long GetTotalBytesReceived();
     long GetTotalBytesToDownload();
+    long GetTotalAdjustedBytesToDownload();
     int GetTotalFilesCountReceived();
     int GetTotalFilesCountToDownload();
     event DownloadProgressChangedEventHandler DownloadProgressChanged;
@@ -42,6 +44,8 @@ internal sealed class DownloadManager : IDownloadManager
     private bool _isInitialized;
     private IReadOnlyCollection<TrackFile> _downloadingFiles;
     private IReadOnlyCollection<Album> _albums;
+    private int _completedAlbumsCount;
+    private int _completedTracksCount;
 
     public event DownloadProgressChangedEventHandler DownloadProgressChanged;
 
@@ -74,6 +78,8 @@ internal sealed class DownloadManager : IDownloadManager
         _downloadingFiles = await _trackFileService.GetFilesToDownloadAsync(_albums, cancellationToken).ConfigureAwait(false);
 
         _isInitialized = true;
+        _completedAlbumsCount = 0;
+        _completedTracksCount = 0;
     }
 
     public async Task StartDownloadsAsync(CancellationToken cancellationToken)
@@ -109,16 +115,35 @@ internal sealed class DownloadManager : IDownloadManager
                             // Log error but continue with next album
                             _logger.Error(ex, $"Unexpected error while downloading album \"{album.Title}\" - continuing with next album");
                             DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Error downloading album \"{album.Title}\": {ex.Message} - Continuing with next album", DownloadProgressChangedLevel.Error));
+                            
+                            // Show toast notification for error
+                            if (_userSettings.EnableToastNotifications && _userSettings.ToastOnDownloadError)
+                            {
+                                ToastNotifier.ShowDownloadError($"Error downloading album \"{album.Title}\": {ex.Message}");
+                            }
                         }
                         else
                         {
                             // Re-throw to stop all downloads
                             _logger.Error(ex, $"Unexpected error while downloading album \"{album.Title}\" - stopping downloads");
                             DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Error downloading album \"{album.Title}\": {ex.Message}", DownloadProgressChangedLevel.Error));
+                            
+                            // Show toast notification for error
+                            if (_userSettings.EnableToastNotifications && _userSettings.ToastOnDownloadError)
+                            {
+                                ToastNotifier.ShowDownloadError($"Error downloading album \"{album.Title}\": {ex.Message}");
+                            }
+                            
                             throw;
                         }
                     }
                 }).ConfigureAwait(false);
+            
+            // All albums processed - show completion toast
+            if (_userSettings.EnableToastNotifications && _userSettings.ToastOnDownloadComplete && !cancellationToken.IsCancellationRequested)
+            {
+                ToastNotifier.ShowDownloadComplete(_completedAlbumsCount, _completedTracksCount);
+            }
         }
         finally
         {
@@ -134,6 +159,11 @@ internal sealed class DownloadManager : IDownloadManager
     public long GetTotalBytesToDownload()
     {
         return _downloadingFiles.Sum(f => f.Size);
+    }
+
+    public long GetTotalAdjustedBytesToDownload()
+    {
+        return _downloadingFiles.Sum(f => f.AdjustedSize);
     }
 
     public int GetTotalFilesCountToDownload()
@@ -213,6 +243,13 @@ internal sealed class DownloadManager : IDownloadManager
                         if (trackDurationMinutes > _userSettings.IgnoreTracksLongerThanMinutes)
                         {
                             DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Skipping track \"{track.Title}\" ({trackDurationMinutes:F1} min) - exceeds limit of {_userSettings.IgnoreTracksLongerThanMinutes} min", DownloadProgressChangedLevel.Warning));
+                            
+                            // Show track skipped toast
+                            if (_userSettings.EnableToastNotifications && _userSettings.ToastOnTrackSkipped)
+                            {
+                                ToastNotifier.ShowTrackSkipped(track.Title, $"Too long ({trackDurationMinutes:F1} min > {_userSettings.IgnoreTracksLongerThanMinutes} min)");
+                            }
+                            
                             return;
                         }
                     }
@@ -260,6 +297,16 @@ internal sealed class DownloadManager : IDownloadManager
         else
         {
             DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Finished downloading album \"{album.Title}\". Some tracks were not downloaded", DownloadProgressChangedLevel.Success));
+        }
+        
+        // Increment completed counters
+        Interlocked.Increment(ref _completedAlbumsCount);
+        Interlocked.Add(ref _completedTracksCount, downloadedTracksCount);
+        
+        // Show album complete toast
+        if (_userSettings.EnableToastNotifications && _userSettings.ToastOnAlbumComplete)
+        {
+            ToastNotifier.ShowAlbumComplete(album.Title, downloadedTracksCount);
         }
     }
 
@@ -377,9 +424,25 @@ internal sealed class DownloadManager : IDownloadManager
                 {
                     try
                     {
-                        DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Converting track \"{Path.GetFileName(track.Path)}\" to {_userSettings.Bitrate} kbps", DownloadProgressChangedLevel.VerboseInfo));
-                        _audioConverterService.ConvertToSampleRate(track.Path, _userSettings.Bitrate * 1000, cancellationToken);
-                        DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Converted track \"{Path.GetFileName(track.Path)}\" to {_userSettings.Bitrate} kbps", DownloadProgressChangedLevel.VerboseInfo));
+                        var originalFileSize = new FileInfo(track.Path).Length;
+                        DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Converting track \"{Path.GetFileName(track.Path)}\" to {_userSettings.Bitrate} kbps (original: {originalFileSize / (1024 * 1024.0):F1} MB)", DownloadProgressChangedLevel.VerboseInfo));
+                        _audioConverterService.ConvertToBitrate(track.Path, _userSettings.Bitrate, cancellationToken);
+                        var convertedFileSize = new FileInfo(track.Path).Length;
+                        var sizeReduction = (1.0 - (double)convertedFileSize / originalFileSize) * 100;
+                        
+                        // Calculate what bitrate was actually achieved
+                        var actualBitrateAchieved = (int)((convertedFileSize * 8.0) / (originalFileSize / (128.0 * 1000 / 8.0)) * _userSettings.Bitrate);
+                        // Better calculation: actual bitrate = (convertedSize / originalSize) * 128
+                        var betterActualBitrate = (int)((double)convertedFileSize / originalFileSize * 128);
+                        
+                        DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Converted track \"{Path.GetFileName(track.Path)}\" (now: {convertedFileSize / (1024 * 1024.0):F1} MB, reduced: {sizeReduction:F0}%, actual: ~{betterActualBitrate} kbps)", DownloadProgressChangedLevel.VerboseInfo));
+                        
+                        // Warn if conversion didn't achieve expected reduction
+                        var expectedReduction = (1.0 - (double)_userSettings.Bitrate / 128.0) * 100;
+                        if (Math.Abs(sizeReduction - expectedReduction) > 20)
+                        {
+                            DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"WARNING: Encoder achieved {sizeReduction:F0}% reduction instead of expected {expectedReduction:F0}%. Media Foundation may not support {_userSettings.Bitrate} kbps on your system.", DownloadProgressChangedLevel.Warning));
+                        }
                     }
                     catch (Exception ex)
                     {

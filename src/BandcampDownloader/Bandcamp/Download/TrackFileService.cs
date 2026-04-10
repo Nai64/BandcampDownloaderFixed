@@ -36,6 +36,17 @@ internal sealed class TrackFileService : ITrackFileService
         var files = new List<TrackFile>();
         var filesLock = new Lock();
 
+        // Calculate bitrate adjustment factor if force bitrate is enabled
+        double bitrateAdjustmentFactor = 1.0;
+        _logger.Info($"ForceBitrate setting: {_userSettings.ForceBitrate}, Bitrate setting: {_userSettings.Bitrate}");
+        if (_userSettings.ForceBitrate && _userSettings.Bitrate > 0)
+        {
+            // Bandcamp streams are 128 kbps
+            bitrateAdjustmentFactor = (double)_userSettings.Bitrate / 128.0;
+            _logger.Info($"Bitrate adjustment factor: {bitrateAdjustmentFactor} (converting to {_userSettings.Bitrate} kbps)");
+            DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Bitrate conversion enabled: adjusting file sizes to {_userSettings.Bitrate} kbps (factor: {bitrateAdjustmentFactor:F2})", DownloadProgressChangedLevel.Info));
+        }
+
         foreach (var album in albums)
         {
             cancellationToken.ThrowIfCancellationRequested();
@@ -73,7 +84,16 @@ internal sealed class TrackFileService : ITrackFileService
                     async (track, ct) =>
                     {
                         var size = await GetFileSizeAsync(track.Mp3Url, track.Title, FileType.Track, ct).ConfigureAwait(false);
-                        var trackFile = new TrackFile(track.Mp3Url, 0, size);
+                        
+                        // Calculate adjusted size based on bitrate conversion
+                        long adjustedSize = size;
+                        if (bitrateAdjustmentFactor != 1.0)
+                        {
+                            adjustedSize = (long)(size * bitrateAdjustmentFactor);
+                            _logger.Debug($"Track \"{track.Title}\" size adjusted from {size} to {adjustedSize} (factor: {bitrateAdjustmentFactor})");
+                        }
+                        
+                        var trackFile = new TrackFile(track.Mp3Url, 0, size, adjustedSize);
 
                         lock (filesLock)
                         {

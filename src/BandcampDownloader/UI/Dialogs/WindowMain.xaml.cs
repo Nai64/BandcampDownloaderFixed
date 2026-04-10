@@ -430,28 +430,47 @@ internal sealed partial class WindowMain
         // Compute new progress values
         var totalReceivedBytes = _downloadManager.GetTotalBytesReceived();
         var bytesToDownload = _downloadManager.GetTotalBytesToDownload();
+        var adjustedBytesToDownload = _downloadManager.GetTotalAdjustedBytesToDownload();
 
         // Compute progress
-        var labelProgressContent = (totalReceivedBytes / (1024 * 1024)).ToString("0.00") + " MB" +
-                                   (_userSettings.RetrieveFilesSize ? " / " + (bytesToDownload / (1024 * 1024)).ToString("0.00") + " MB" : "");
-
-        var progressBarMaximum = await ThreadUtils.ExecuteOnUiAsync(() => ProgressBar.Maximum).ConfigureAwait(false);
+        string labelProgressContent;
+        long displayReceivedBytes;
+        long displayTotalBytes;
         double progressBarValue;
         double taskbarProgressBarValue;
-        if (_userSettings.RetrieveFilesSize)
+
+        if (_userSettings.ForceBitrate && adjustedBytesToDownload != bytesToDownload)
         {
-            // Update progress bar based on bytes received
-            progressBarValue = totalReceivedBytes;
-            // Taskbar progress is between 0 and 1
-            taskbarProgressBarValue = totalReceivedBytes / progressBarMaximum;
+            // Scale received bytes proportionally to show final converted size
+            var conversionFactor = (double)adjustedBytesToDownload / bytesToDownload;
+            displayReceivedBytes = (long)(totalReceivedBytes * conversionFactor);
+            displayTotalBytes = adjustedBytesToDownload;
+
+            labelProgressContent = (displayReceivedBytes / (1024 * 1024)).ToString("0.00") + " MB / " + (displayTotalBytes / (1024 * 1024)).ToString("0.00") + " MB";
+
+            var progressBarMaximum = await ThreadUtils.ExecuteOnUiAsync(() => ProgressBar.Maximum).ConfigureAwait(false);
+            progressBarValue = displayReceivedBytes;
+            taskbarProgressBarValue = (double)displayReceivedBytes / progressBarMaximum;
         }
         else
         {
-            var downloadedFilesCount = _downloadManager.GetTotalFilesCountReceived();
-            // Update progress bar based on downloaded files
-            progressBarValue = downloadedFilesCount;
-            // Taskbar progress is between 0 and count of files to download
-            taskbarProgressBarValue = downloadedFilesCount / progressBarMaximum;
+            labelProgressContent = (totalReceivedBytes / (1024 * 1024)).ToString("0.00") + " MB" +
+                                   (_userSettings.RetrieveFilesSize ? " / " + (bytesToDownload / (1024 * 1024)).ToString("0.00") + " MB" : "");
+
+            var progressBarMaximum = await ThreadUtils.ExecuteOnUiAsync(() => ProgressBar.Maximum).ConfigureAwait(false);
+            double taskbarProgressBarValueTemp;
+            if (_userSettings.RetrieveFilesSize)
+            {
+                progressBarValue = totalReceivedBytes;
+                taskbarProgressBarValueTemp = totalReceivedBytes / progressBarMaximum;
+            }
+            else
+            {
+                var downloadedFilesCount = _downloadManager.GetTotalFilesCountReceived();
+                progressBarValue = downloadedFilesCount;
+                taskbarProgressBarValueTemp = downloadedFilesCount / progressBarMaximum;
+            }
+            taskbarProgressBarValue = taskbarProgressBarValueTemp;
         }
 
         await ThreadUtils.ExecuteOnUiAsync(

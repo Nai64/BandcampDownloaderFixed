@@ -583,9 +583,62 @@ Paste artist pages: http://[artist].bandcamp.com and check "☑ Download artist 
     <value>Displays the number of tracks downloaded so far in the action bar.</value>
   </data>
   <data name="checkBoxForceBitrate" xml:space="preserve">
-    <value>_Force bitrate</value>
+    <value>_Force bitrate (Experimental)</value>
+  </data>
+  <data name="forceBitrateDialogTitle" xml:space="preserve">
+    <value>Experimental Feature Warning</value>
+  </data>
+  <data name="forceBitrateDialogText" xml:space="preserve">
+    <value>This feature is experimental. Bitrate conversion may not work correctly on all systems and could produce unexpected results.
+
+Are you sure you want to enable this feature?</value>
+  </data>
+  <data name="forceBitrateDialogDontShowAgain" xml:space="preserve">
+    <value>Don't show this warning again</value>
+  </data>
+  <data name="dialogButtonYes" xml:space="preserve">
+    <value>_Yes</value>
+  </data>
+  <data name="dialogButtonNo" xml:space="preserve">
+    <value>_No</value>
   </data>
   <data name="checkBoxForceBitrate_ToolTip" xml:space="preserve">
     <value>Converts downloaded tracks to the specified bitrate. Useful for reducing file size.</value>
+  </data>
+  <data name="checkBoxShowOriginalDownloadSize" xml:space="preserve">
+    <value>Show original download size</value>
+  </data>
+  <data name="checkBoxShowOriginalDownloadSize_ToolTip" xml:space="preserve">
+    <value>Displays the original download size in brackets alongside the converted size.</value>
+  </data>
+  <data name="checkBoxEnableToastNotifications" xml:space="preserve">
+    <value>Enable _toast notifications</value>
+  </data>
+  <data name="checkBoxEnableToastNotifications_ToolTip" xml:space="preserve">
+    <value>Shows Windows toast notifications for download events.</value>
+  </data>
+  <data name="checkBoxToastOnDownloadComplete" xml:space="preserve">
+    <value>On download _complete</value>
+  </data>
+  <data name="checkBoxToastOnDownloadComplete_ToolTip" xml:space="preserve">
+    <value>Shows a notification when all downloads are finished.</value>
+  </data>
+  <data name="checkBoxToastOnDownloadError" xml:space="preserve">
+    <value>On download _error</value>
+  </data>
+  <data name="checkBoxToastOnDownloadError_ToolTip" xml:space="preserve">
+    <value>Shows a notification when a download fails.</value>
+  </data>
+  <data name="checkBoxToastOnAlbumComplete" xml:space="preserve">
+    <value>When _album downloaded</value>
+  </data>
+  <data name="checkBoxToastOnAlbumComplete_ToolTip" xml:space="preserve">
+    <value>Shows a notification when each individual album finishes downloading.</value>
+  </data>
+  <data name="checkBoxToastOnTrackSkipped" xml:space="preserve">
+    <value>When track _skipped</value>
+  </data>
+  <data name="checkBoxToastOnTrackSkipped_ToolTip" xml:space="preserve">
+    <value>Shows a notification when a track is skipped (e.g., due to duration limit).</value>
   </data>
 </root>

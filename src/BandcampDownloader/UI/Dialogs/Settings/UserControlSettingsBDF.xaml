@@ -8,13 +8,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:settings="clr-namespace:BandcampDownloader.Settings"
     Width="410"
-    Height="194"
+    Height="280"
     lex:LocalizeDictionary.DesignCulture="en"
     lex:ResxLocalizationProvider.DefaultAssembly="BandcampDownloader"
     lex:ResxLocalizationProvider.DefaultDictionary="Resources"
     d:DataContext="{d:DesignInstance settings:IUserSettings}"
     KeyboardNavigation.TabNavigation="Local"
     mc:Ignorable="d">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
     <Grid x:Name="GridMain" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -22,6 +23,12 @@
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="26" />
+            <RowDefinition Height="26" />
+            <RowDefinition Height="26" />
+            <RowDefinition Height="26" />
+            <RowDefinition Height="26" />
+            <RowDefinition Height="26" />
             <RowDefinition Height="26" />
             <RowDefinition Height="26" />
             <RowDefinition Height="26" />
@@ -147,25 +154,114 @@
             x:Name="ComboBoxBitrate"
             Grid.Row="6"
             Grid.Column="1"
-            Grid.ColumnSpan="2"
             Width="100"
             Height="22"
-            Margin="10,0,0,0"
+            Margin="5,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             IsEnabled="{Binding ElementName=CheckBoxForceBitrate, Path=IsChecked}"
             SelectedValue="{Binding Bitrate, UpdateSourceTrigger=Explicit}"
             SelectedValuePath="Content"
+            SelectionChanged="ComboBoxBitrate_SelectionChanged"
             TabIndex="8"
             ToolTip="{lex:Loc}"
             ToolTipService.ShowDuration="60000">
             <ComboBoxItem Content="32" />
+            <ComboBoxItem Content="40" />
             <ComboBoxItem Content="48" />
+            <ComboBoxItem Content="56" />
             <ComboBoxItem Content="64" />
             <ComboBoxItem Content="80" />
             <ComboBoxItem Content="96" />
             <ComboBoxItem Content="112" />
             <ComboBoxItem Content="128" />
+            <ComboBoxItem Content="192" />
+            <ComboBoxItem Content="256" />
+            <ComboBoxItem Content="320" />
         </ComboBox>
+        <CheckBox
+            x:Name="CheckBoxShowOriginalDownloadSize"
+            Grid.Row="7"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            Margin="18,0,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Content="{lex:Loc}"
+            IsChecked="{Binding ShowOriginalDownloadSize, UpdateSourceTrigger=Explicit}"
+            IsEnabled="{Binding ElementName=CheckBoxForceBitrate, Path=IsChecked}"
+            TabIndex="9"
+            ToolTip="{lex:Loc}"
+            ToolTipService.ShowDuration="60000" />
+        <CheckBox
+            x:Name="CheckBoxEnableToastNotifications"
+            Grid.Row="8"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Content="{lex:Loc}"
+            IsChecked="{Binding EnableToastNotifications, UpdateSourceTrigger=Explicit}"
+            IsEnabled="True"
+            TabIndex="10"
+            ToolTip="{lex:Loc}"
+            ToolTipService.ShowDuration="60000" />
+        <CheckBox
+            x:Name="CheckBoxToastOnDownloadComplete"
+            Grid.Row="9"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            Margin="18,0,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Content="{lex:Loc}"
+            IsChecked="{Binding ToastOnDownloadComplete, UpdateSourceTrigger=Explicit}"
+            IsEnabled="{Binding ElementName=CheckBoxEnableToastNotifications, Path=IsChecked}"
+            TabIndex="11"
+            ToolTip="{lex:Loc}"
+            ToolTipService.ShowDuration="60000" />
+        <CheckBox
+            x:Name="CheckBoxToastOnDownloadError"
+            Grid.Row="10"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            Margin="18,0,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Content="{lex:Loc}"
+            IsChecked="{Binding ToastOnDownloadError, UpdateSourceTrigger=Explicit}"
+            IsEnabled="{Binding ElementName=CheckBoxEnableToastNotifications, Path=IsChecked}"
+            TabIndex="12"
+            ToolTip="{lex:Loc}"
+            ToolTipService.ShowDuration="60000" />
+        <CheckBox
+            x:Name="CheckBoxToastOnAlbumComplete"
+            Grid.Row="11"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            Margin="18,0,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Content="{lex:Loc}"
+            IsChecked="{Binding ToastOnAlbumComplete, UpdateSourceTrigger=Explicit}"
+            IsEnabled="{Binding ElementName=CheckBoxEnableToastNotifications, Path=IsChecked}"
+            TabIndex="13"
+            ToolTip="{lex:Loc}"
+            ToolTipService.ShowDuration="60000" />
+        <CheckBox
+            x:Name="CheckBoxToastOnTrackSkipped"
+            Grid.Row="12"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            Margin="18,0,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Content="{lex:Loc}"
+            IsChecked="{Binding ToastOnTrackSkipped, UpdateSourceTrigger=Explicit}"
+            IsEnabled="{Binding ElementName=CheckBoxEnableToastNotifications, Path=IsChecked}"
+            TabIndex="14"
+            ToolTip="{lex:Loc}"
+            ToolTipService.ShowDuration="60000" />
     </Grid>
+    </ScrollViewer>
 </UserControl>
