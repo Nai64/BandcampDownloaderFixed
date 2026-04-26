@@ -10,7 +10,7 @@
     <AssemblyTitle>BandcampDownloader</AssemblyTitle>
     <Description>Application used to download albums from Bandcamp</Description>
     <Product>BandcampDownloader</Product>
-    <Copyright>ⓒ Otiel 2018-2025, Nai64 2025</Copyright>
+    <Copyright>ⓒ Otiel 2018-2025</Copyright>
   </PropertyGroup>
 
   <PropertyGroup>
