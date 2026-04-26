@@ -5,7 +5,7 @@ using Config.Net;
 
 namespace BandcampDownloader.Settings;
 
-internal interface ISettingsService
+public interface ISettingsService
 {
     IUserSettings InitializeSettings();
     IUserSettings ResetSettings();

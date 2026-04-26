@@ -291,6 +291,9 @@ public interface IUserSettings
     [Option(DefaultValue = false)]
     bool ShowVerboseLog { get; set; }
 
+    [Option(DefaultValue = false)]
+    bool ShowDetailedErrorDialog { get; set; }
+
     [Option(DefaultValue = TagEditAction.Modify)]
     TagEditAction TagAlbumArtist { get; set; }
 

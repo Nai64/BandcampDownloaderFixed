@@ -37,6 +37,7 @@
             <RowDefinition Height="26" />
             <RowDefinition Height="26" />
             <RowDefinition Height="26" />
+            <RowDefinition Height="26" />
         </Grid.RowDefinitions>
         <CheckBox
             x:Name="CheckBoxContinueOnError"
@@ -260,6 +261,19 @@
             IsChecked="{Binding ToastOnTrackSkipped, UpdateSourceTrigger=Explicit}"
             IsEnabled="{Binding ElementName=CheckBoxEnableToastNotifications, Path=IsChecked}"
             TabIndex="14"
+            ToolTip="{lex:Loc}"
+            ToolTipService.ShowDuration="60000" />
+        <CheckBox
+            x:Name="CheckBoxShowDetailedErrorDialog"
+            Grid.Row="13"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Content="{lex:Loc}"
+            IsChecked="{Binding ShowDetailedErrorDialog, UpdateSourceTrigger=Explicit}"
+            IsEnabled="True"
+            TabIndex="15"
             ToolTip="{lex:Loc}"
             ToolTipService.ShowDuration="60000" />
     </Grid>

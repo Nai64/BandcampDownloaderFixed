@@ -582,4 +582,10 @@ U sure u want enable this feature?</value>
   <data name="checkBoxToastOnTrackSkipped_ToolTip" xml:space="preserve">
     <value>Shows notification when track skipped (e.g., due 2 duration limit).</value>
   </data>
+  <data name="checkBoxShowDetailedErrorDialog" xml:space="preserve">
+    <value>Show detailed error information</value>
+  </data>
+  <data name="checkBoxShowDetailedErrorDialog_ToolTip" xml:space="preserve">
+    <value>Shows detailed error information in error dialogs instead of generic messages.</value>
+  </data>
 </root>
