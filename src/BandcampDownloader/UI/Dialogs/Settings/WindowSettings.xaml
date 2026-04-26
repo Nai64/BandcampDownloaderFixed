@@ -232,9 +232,9 @@
             x:Name="ButtonResetSettings"
             Width="170"
             Height="24"
-            Margin="0,300,0,0"
+            Margin="0,0,0,10"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
+            VerticalAlignment="Bottom"
             Click="ButtonResetSettings_Click"
             IsEnabled="{Binding ActiveDownloads, ElementName=windowSettings, Converter={StaticResource InverseBooleanConverter}}"
             TabIndex="2"
@@ -257,7 +257,8 @@
         <Grid
             x:Name="GridButtons"
             HorizontalAlignment="Right"
-            VerticalAlignment="Bottom">
+            VerticalAlignment="Bottom"
+            Margin="0,0,10,10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />
