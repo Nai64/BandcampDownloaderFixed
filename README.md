@@ -1,82 +1,142 @@
-<h1 align="center"><img alt="Icon" src="docs/images/Cloud.png"> Bandcamp Downloader</h1>
+<div align="center">
 
-<p align="center">
-    <a href="https://github.com/Nai64/BandcampDownloaderFixed/releases/latest"><img alt="Download" src="docs/images/DownloadButton.png"></a>
-</p>
+![Icon](docs/images/Cloud.png)
 
-[![Workflow status](https://github.com/Nai64/BandcampDownloaderFixed/actions/workflows/dotnet.yml/badge.svg?branch=master)](https://github.com/Nai64/BandcampDownloaderFixed/actions/workflows/dotnet.yml) [![Translation status](https://hosted.weblate.org/widgets/bandcampdownloader/-/bandcampdownloader/svg-badge.svg)](https://hosted.weblate.org/engage/bandcampdownloader/)
+# 🎵 Bandcamp Downloader
 
-## Description
+**A Windows application to download albums from Bandcamp**
+
+[![Download](https://img.shields.io/badge/Download-Latest-blue?style=for-the-badge&logo=github)](https://github.com/Nai64/BandcampDownloaderFixed/releases/latest)
+[![Workflow status](https://github.com/Nai64/BandcampDownloaderFixed/actions/workflows/dotnet.yml/badge.svg?branch=master)](https://github.com/Nai64/BandcampDownloaderFixed/actions/workflows/dotnet.yml)
+[![Translation status](https://hosted.weblate.org/widgets/bandcampdownloader/-/bandcampdownloader/svg-badge.svg)](https://hosted.weblate.org/engage/bandcampdownloader/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+---
+
+**This project is based on [Otiel/BandcampDownloader](https://github.com/Otiel/BandcampDownloader) by [Otiel](https://github.com/Otiel)** ✨
+
+</div>
+
+## 📖 Description
 
 BandcampDownloader is a Windows application that helps downloading albums from [bandcamp.com](https://bandcamp.com) by retrieving the 128 kbps MP3 files streamed on the website. It aims to ease the life of those who prefer to listen to music on their favorite player rather than on their web browser, but offers only what is already freely available on Bandcamp.
 
-**This project is based on [Otiel/BandcampDownloader](https://github.com/Otiel/BandcampDownloader) by [Otiel](https://github.com/Otiel).**
+---
 
-## Features
+## ✨ Features
 
-* Download MP3 files from Bandcamp:
-  * From album pages: `https://[artist].bandcamp.com/album/[album]`,
-  * From track pages: `https://[artist].bandcamp.com/track/[track]`,
-  * From artist pages: `https://[artist].bandcamp.com`.
-* Add ID3 tags to tracks: Album, Artist, Album Artist, Title, Track number, Year and Lyrics (if available).
-* Download cover art to tags and in folder.
-* Create playlist file (supported formats are: m3u, pls, wpl, zpl).
-* **Various Artists support**: Automatically splits track titles in "Artist - Title" format for proper metadata.
-* **Resilient downloads**: Continues downloading remaining albums/tracks even if errors occur.
-* **Personalization** through settings, including a dedicated **BDF** section for reliability features.
+### 🎯 Core Functionality
 
-### BDF Settings
+| Feature | Description |
+|---------|-------------|
+| **📥 Download MP3s** | From album, track, or artist pages |
+| **🏷️ ID3 Tags** | Album, Artist, Album Artist, Title, Track #, Year, Lyrics |
+| **🖼️ Cover Art** | Save to tags and/or folder |
+| **📋 Playlists** | M3U, PLS, WPL, ZPL formats |
+| **🎭 Various Artists** | Auto-split "Artist - Title" format |
+| **🔄 Resilient** | Continues on errors |
+| **⚙️ Personalization** | Extensive settings including BDF section |
 
-The **BDF** section provides reliability options to ensure your downloads complete successfully:
+### 🔧 BDF Settings (BandcampDownloaderFixed Exclusive)
 
-* **Continue on error**: Keeps downloading remaining albums/tracks when errors occur instead of stopping everything.
-* **Wait for file ready**: Handles race conditions by waiting for downloaded files to be fully written before tagging.
-* **Split V/A titles**: Properly handles Various Artists releases by extracting artist names from track titles.
-* **Ignore tracks longer than**: Skips downloading tracks that exceed a specified duration in minutes.
-* **Assign album artist to all tracks**: Sets the album artist as the track artist for all tracks, useful for compilations.
-* **Show track count**: Displays the number of tracks downloaded in the action bar.
-* **Force bitrate**: Experimental feature to convert downloaded tracks to a specified bitrate.
-* **Show original download size**: Displays the original download size alongside converted size.
-* **Toast notifications**: Windows toast notifications for download events (complete, error, album complete, track skipped).
-* **Detailed error dialog**: Shows detailed error information in error dialogs instead of generic messages.
+> The **BDF** section provides reliability and convenience options for enhanced downloading experience
 
-<p align="center">
-    <img alt="Screenshot" src="docs/images/Screenshot.png">
-</p>
+| Feature | Description |
+|---------|-------------|
+| **✅ Continue on Error** | Keeps downloading remaining albums/tracks when errors occur |
+| **⏳ Wait for File Ready** | Handles race conditions by waiting for files to be fully written |
+| **🎨 Split V/A Titles** | Properly handles Various Artists releases |
+| **⏱️ Ignore Long Tracks** | Skips tracks exceeding specified duration |
+| **👤 Assign Album Artist** | Sets album artist for all tracks (compilations) |
+| **📊 Show Track Count** | Displays download progress in action bar |
+| **🎚️ Force Bitrate** | Experimental bitrate conversion |
+| **📏 Show Original Size** | Displays original vs converted file size |
+| **🔔 Toast Notifications** | Windows notifications for download events |
+| **🐛 Detailed Error Dialog** | Shows detailed error information |
 
-<p align="center">
-    <img alt="Screenshot-settings" src="docs/images/Screenshot-settings.png">
-</p>
+---
 
-## Release notes
+## 🖼️ Screenshots
 
-See the [changelog](CHANGELOG.md).
+<div align="center">
 
-## Contributing
+### Main Window
+![Screenshot](docs/images/Screenshot.png)
 
-You can help translating the application by going to the [Weblate project](https://hosted.weblate.org/engage/bandcampdownloader). See the [documentation](docs/help-translate.md) for more info.
+### Settings Window
+![Screenshot-settings](docs/images/Screenshot-settings.png)
+
+</div>
+
+---
+
+## 📜 Release Notes
+
+See the [changelog](CHANGELOG.md) for detailed version history.
+
+---
+
+## 🌍 Contributing
+
+### 🈸 Translation
+
+You can help translating the application by going to the [Weblate project](https://hosted.weblate.org/engage/bandcampdownloader).
+
+See the [documentation](docs/help-translate.md) for more info.
 
 [![Translation status](https://hosted.weblate.org/widget/bandcampdownloader/bandcampdownloader/multi-auto.svg)](https://hosted.weblate.org/engage/bandcampdownloader/)
 
-## License
+---
 
-BandcampDownloader is licensed under the MIT license - see the [LICENSE](LICENSE) file for details.
+## 📄 License
 
-## Credits
+BandcampDownloader is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
-**Original Author**: [Otiel](https://github.com/Otiel) - Created this awesome application!
+---
 
-**Maintained by**: [Nai64](https://github.com/Nai64) - Maintaining and updating the fork with fixes and improvements.
+## 👏 Credits
 
-Some icons by [Yusuke Kamiyamane](http://p.yusukekamiyamane.com) licensed under a [Creative Commons Attribution 3.0 License](https://creativecommons.org/licenses/by/3.0).
+<div align="center">
+
+### 🎨 Original Author
+**[Otiel](https://github.com/Otiel)** - Created this awesome application! 🚀
+
+### 🔧 Maintained by
+**[Nai64](https://github.com/Nai64)** - Maintaining and updating the fork with fixes and improvements
+
+### 🎁 Special Thanks
+- Icons by [Yusuke Kamiyamane](http://p.yusukekamiyamane.com) (CC BY 3.0)
+- All contributors and translators
+
+</div>
+
+<details>
+<summary>📚 Dependencies</summary>
 
 The list of open-source libraries used by BandcampDownloader can be found on the [dependency graph](https://github.com/Nai64/BandcampDownloaderFixed/network/dependencies).
 
-## Piracy
+</details>
 
-You'll do what you want to do with this app, but remember to buy albums from your favorite artists if you want to support them!
+---
 
-And for the artists, Bandcamp [says](https://get.bandcamp.help/hc/en-us/articles/23020694039575-I-heard-you-can-steal-music-on-Bandcamp-What-are-you-doing-about-this) it all:
+## ⚠️ Piracy Note
+
+> You'll do what you want to do with this app, but remember to **buy albums from your favorite artists** if you want to support them! 💜
+
+### Bandcamp's Stance
+
+From [Bandcamp's official statement](https://get.bandcamp.help/hc/en-us/articles/23020694039575-I-heard-you-can-steal-music-on-Bandcamp-What-are-you-doing-about-this):
+
 > **One of my fans showed me a totally easy way that someone could STEAL my music off of Bandcamp using RealPlayer 14.1 beta 3, or RipTheWeb.com, or by going into Temporary Internet Files and renaming blah blah blah. What are you doing about this grave problem?**
 >
-> Nothing. Since streams on Bandcamp are full-length, it’s true that someone could use one of the above methods to access the underlying MP3-128. And sure, we could throw some technical hurdles in their way, but if they hit one of those hurdles, it’s not like they’d slap their forehead and open their wallet. Instead, they’d just move on to some other site where those restrictions aren’t in place, and you’ll have squandered the chance to make your own site the premier destination for those seemingly cheap, but enthusiastic, word-spreading, and potentially later money-spending fans. In other words, the few people employing the above methods are better thought of as an opportunity, not a lost sale. If you’re still skeptical, [this may help](https://newmusicstrategies.com/but-if-they-steal-it/).
+> Nothing. Since streams on Bandcamp are full-length, it's true that someone could use one of the above methods to access the underlying MP3-128. And sure, we could throw some technical hurdles in their way, but if they hit one of those hurdles, it's not like they'd slap their forehead and open their wallet. Instead, they'd just move on to some other site where those restrictions aren't in place, and you'll have squandered the chance to make your own site the premier destination for those seemingly cheap, but enthusiastic, word-spreading, and potentially later money-spending fans. In other words, the few people employing the above methods are better thought of as an opportunity, not a lost sale. If you're still skeptical, [this may help](https://newmusicstrategies.com/but-if-they-steal-it/).
+
+---
+
+<div align="center">
+
+**⭐ Star this repo if you find it useful!**
+
+Made with ❤️ by the open-source community
+
+</div>
