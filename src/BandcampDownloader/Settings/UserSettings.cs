@@ -52,6 +52,8 @@ public enum Language
     kk,
     [Description("Kazakh (Latin) (Qazaqşa)")]
     kk_Latn,
+    [Description("Pirate (Arrr!)")]
+    pirate,
     //[Description("Korean (한국ы)")]
     //ko,
     [Description("Norwegian Bokmål (Norsk Bokmål)")]

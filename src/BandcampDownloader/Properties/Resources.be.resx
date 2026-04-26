@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    </value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    </value>
+  </resheader>
+  <data name="buttonBrowse" xml:space="preserve">
+    <value>…</value>
+  </data>
+  <data name="buttonBrowse_ToolTip" xml:space="preserve">
+    <value>Scour fer treasure maps</value>
+  </data>
+  <data name="buttonCancel" xml:space="preserve">
+    <value>_Abandon ship!</value>
+  </data>
+  <data name="buttonCheckForUpdates" xml:space="preserve">
+    <value>Scout horizon</value>
+  </data>
+  <data name="buttonDownloadUpdate" xml:space="preserve">
+    <value>_Plunder newer version</value>
+  </data>
+  <data name="buttonOpenSettingsWindow" xml:space="preserve">
+    <value>_Ship's log</value>
+  </data>
+  <data name="buttonOpenSettingsWindow_ToolTip" xml:space="preserve">
+    <value>Open the captain's log</value>
+  </data>
+  <data name="buttonResetSettings_ToolTip" xml:space="preserve">
+    <value>Reset ship's log to default</value>
+  </data>
+  <data name="buttonSave" xml:space="preserve">
+    <value>_Bury treasure</value>
+  </data>
+  <data name="buttonStart" xml:space="preserve">
+    <value>_Plunder</value>
+  </data>
+  <data name="buttonStop" xml:space="preserve">
+    <value>_Abandon ship!</value>
+  </data>
+  <data name="buttonViewChangelog" xml:space="preserve">
+    <value>_Spy glass</value>
+  </data>
+  <data name="changelogDownloadError" xml:space="preserve">
+    <value>Couldn't raid the chronicles from {0}</value>
+  </data>
+  <data name="checkBoxCheckForUpdates" xml:space="preserve">
+    <value>Scout horizon when boarding ship</value>
+  </data>
+  <data name="checkBoxCheckForUpdates_ToolTip_Part" xml:space="preserve">
+    <value>Scouts these waters when boarding:</value>
+  </data>
+  <data name="checkBoxCoverArtInFolderConvertToJpg" xml:space="preserve">
+    <value>Convert to Jolly Roger format</value>
+  </data>
+  <data name="checkBoxCoverArtInFolderConvertToJpg_ToolTip" xml:space="preserve">
+    <value>Converts plunder art to Jolly Roger format with 90% compression (fair trade betwixt size and quality).</value>
+  </data>
+  <data name="checkBoxCoverArtInFolderResize" xml:space="preserve">
+    <value>Constrain maximum width/height</value>
+  </data>
+  <data name="checkBoxCoverArtInFolderResize_ToolTip" xml:space="preserve">
+    <value>Resizes plunder art to specified max width/height.</value>
+  </data>
+  <data name="checkBoxCoverArtInTagsConvertToJpg" xml:space="preserve">
+    <value>Convert to Jolly Roge_r format</value>
+  </data>
+  <data name="checkBoxCoverArtInTagsConvertToJpg_ToolTip" xml:space="preserve">
+    <value>Converts plunder art to Jolly Roger format with 90% compression (fair trade betwixt size and quality).</value>
+  </data>
+  <data name="checkBoxCoverArtInTagsResize" xml:space="preserve">
+    <value>Constrain ma_ximum width/height</value>
+  </data>
+  <data name="checkBoxCoverArtInTagsResize_ToolTip" xml:space="preserve">
+    <value>Resizes plunder art to specified max width/height.</value>
+  </data>
+  <data name="checkBoxCreatePlaylist" xml:space="preserve">
+    <value>Create shanty list for each album</value>
+  </data>
+  <data name="checkBoxCreatePlaylist_ToolTip" xml:space="preserve">
+    <value>Creates a shanty list file for each plundered album.</value>
+  </data>
+  <data name="checkBoxDownloadDiscography" xml:space="preserve">
+    <value>Plunder artist's entire treasure hoard</value>
+  </data>
+  <data name="checkBoxDownloadDiscography_ToolTip" xml:space="preserve">
+    <value>Plunders the artist's entire treasure hoard.</value>
+  </data>
+  <data name="checkBoxEnableApplicationSounds" xml:space="preserve">
+    <value>Play parrot squawks</value>
+  </data>
+  <data name="checkBoxEnableApplicationSounds_ToolTip" xml:space="preserve">
+    <value>Parrot squawk for finished plundering.</value>
+  </data>
+  <data name="checkBoxM3uExtended" xml:space="preserve">
+    <value>Use extended format (only for M3U shanty lists)</value>
+  </data>
+  <data name="checkBoxM3uExtended_ToolTip" xml:space="preserve">
+    <value>M3U shanty lists in extended format (directives prefaced by the # character).</value>
+  </data>
+  <data name="checkBoxModifyTags" xml:space="preserve">
+    <value>_Modify ship manifests (ID3)</value>
+  </data>
+  <data name="checkBoxModifyTags_ToolTip" xml:space="preserve">
+    <value>Modifies each manifest as specified below.
+
+If not, all manifests be unchanged, equivalent to setting "Do not modify" for each manifest.</value>
+  </data>
+  <data name="checkBoxRetrieveFilesSize" xml:space="preserve">
+    <value>Retrieve treasure size before plundering tracks</value>
+  </data>
+  <data name="checkBoxRetrieveFilesSize_ToolTip" xml:space="preserve">
+    <value>Retrieves treasure size to show precise progress.
+If not, some booty/time be saved.</value>
+  </data>
+  <data name="checkBoxSaveCoverArtInFolder" xml:space="preserve">
+    <value>Bury in treasure chest</value>
+  </data>
+  <data name="checkBoxSaveCoverArtInFolder_ToolTip" xml:space="preserve">
+    <value>Downloads plunder art to the album treasure chest.</value>
+  </data>
+  <data name="checkBoxSaveCoverArtInTags" xml:space="preserve">
+    <value>Bury in manifests</value>
+  </data>
+  <data name="checkBoxSaveCoverArtInTags_ToolTip" xml:space="preserve">
+    <value>Buries plunder art in the track manifests.</value>
+  </data>
+  <data name="checkBoxVerboseLog" xml:space="preserve">
+    <value>Show captain's detailed log</value>
+  </data>
+  <data name="checkBoxVerboseLog_ToolTip" xml:space="preserve">
+    <value>Shows more info in the captain's log.</value>
+  </data>
+  <data name="labelAdvancedSettingsWarning" xml:space="preserve">
+    <value>Change these settings at yer own risk, matey.</value>
+  </data>
+  <data name="labelAlbumArtist" xml:space="preserve">
+    <value>Album a_rtist</value>
+  </data>
+  <data name="labelAlbumTitle" xml:space="preserve">
+    <value>Album _name</value>
+  </data>
+  <data name="labelAllowedFileSizeDifference" xml:space="preserve">
+    <value>Allowed treasure size _difference (%)</value>
+  </data>
+  <data name="labelArtist" xml:space="preserve">
+    <value>_Artist</value>
+  </data>
+  <data name="labelButtonResetSettings" xml:space="preserve">
+    <value>_Reset ship's log</value>
+  </data>
+  <data name="labelChangelog" xml:space="preserve">
+    <value>Captain's log</value>
+  </data>
+  <data name="labelChangelogTitle" xml:space="preserve">
+    <value>Captain's log</value>
+  </data>
+  <data name="labelComments" xml:space="preserve">
+    <value>Commen_ts</value>
+  </data>
+  <data name="labelCoverArtFileNameFormat" xml:space="preserve">
+    <value>Treasure _name format</value>
+  </data>
+  <data name="labelCoverArtInFolderMaxSize" xml:space="preserve">
+    <value>Max size (_px)</value>
+  </data>
+  <data name="labelCoverArtInTagsMaxSize" xml:space="preserve">
+    <value>Max size (p_x)</value>
+  </data>
+  <data name="labelCurrentVersion" xml:space="preserve">
+    <value>Current version:</value>
+  </data>
+  <data name="labelDownloadMaxTries" xml:space="preserve">
+    <value>_Max plunder attempts</value>
+  </data>
+  <data name="labelDownloadRetryCooldown" xml:space="preserve">
+    <value>Retry c_ooldown (sec)</value>
+  </data>
+  <data name="labelDownloadRetryExponent" xml:space="preserve">
+    <value>Retry _exponent</value>
+  </data>
+  <data name="labelDownloadsPath" xml:space="preserve">
+    <value>Bury albums _in</value>
+  </data>
+  <data name="labelFileNameFormat" xml:space="preserve">
+    <value>Treasure _name format:</value>
+  </data>
+  <data name="labelHttp" xml:space="preserve">
+    <value>_HTTP(S) proxy ship</value>
+  </data>
+  <data name="labelHttpPort" xml:space="preserve">
+    <value>_Port</value>
+  </data>
+  <data name="labelIssues" xml:space="preserve">
+    <value>Report a sea serpent</value>
+  </data>
+  <data name="labelLanguage" xml:space="preserve">
+    <value>_Tongue</value>
+  </data>
+  <data name="labelListBoxItemAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="labelListBoxItemAdvanced" xml:space="preserve">
+    <value>Advanced settings</value>
+  </data>
+  <data name="labelListBoxItemCoverArt" xml:space="preserve">
+    <value>Plunder art</value>
+  </data>
+  <data name="labelListBoxItemDownloads" xml:space="preserve">
+    <value>Plundering</value>
+  </data>
+  <data name="labelListBoxItemGeneral" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="labelListBoxItemNetwork" xml:space="preserve">
+    <value>Sailing routes</value>
+  </data>
+  <data name="labelListBoxItemPlaylist" xml:space="preserve">
+    <value>Shanty list</value>
+  </data>
+  <data name="labelListBoxItemTags" xml:space="preserve">
+    <value>Naming and manifests</value>
+  </data>
+  <data name="labelLyrics" xml:space="preserve">
+    <value>_Shanties</value>
+  </data>
+  <data name="labelPlaylistFileNameFormat" xml:space="preserve">
+    <value>Treasure _name format</value>
+  </data>
+  <data name="labelPlaylistFormat" xml:space="preserve">
+    <value>Shanty list _format</value>
+  </data>
+  <data name="labelSettingsInfo" xml:space="preserve">
+    <value>Some settings cannot be changed while tracks be plundering.</value>
+  </data>
+  <data name="labelTheme" xml:space="preserve">
+    <value>_Theme</value>
+  </data>
+  <data name="labelTrackNumber" xml:space="preserve">
+    <value>Track n_umber</value>
+  </data>
+  <data name="labelTrackTitle" xml:space="preserve">
+    <value>_Title</value>
+  </data>
+  <data name="labelVerboseLogInfo" xml:space="preserve">
+    <value>(the captain's log file always be detailed)</value>
+  </data>
+  <data name="labelVersion" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="labelVersionError" xml:space="preserve">
+    <value>Could not scout horizon for updates</value>
+  </data>
+  <data name="labelVersionNewUpdateAvailable" xml:space="preserve">
+    <value>New version spotted on horizon</value>
+  </data>
+  <data name="labelWebsite" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="labelYear" xml:space="preserve">
+    <value>Album release _year</value>
+  </data>
+  <data name="messageBoxButtonCancel" xml:space="preserve">
+    <value>_Abandon ship!</value>
+  </data>
+  <data name="messageBoxButtonNo" xml:space="preserve">
+    <value>_Nay</value>
+  </data>
+  <data name="messageBoxButtonOK" xml:space="preserve">
+    <value>_Aye</value>
+  </data>
+  <data name="messageBoxButtonYes" xml:space="preserve">
+    <value>_Aye</value>
+  </data>
+  <data name="messageBoxCancelDownloadsText" xml:space="preserve">
+    <value>Abandon all plundering?</value>
+  </data>
+  <data name="messageBoxCheckForUpdatesError" xml:space="preserve">
+    <value>An error occurred while scouting horizon. Please retry later.</value>
+  </data>
+  <data name="messageBoxCloseWindowWhenDownloadingButtonOk" xml:space="preserve">
+    <value>_Scuttle the ship</value>
+  </data>
+  <data name="messageBoxCloseWindowWhenDownloadingText" xml:space="preserve">
+    <value>There be active plundering operations. Be ye sure ye want to scuttle the ship and stop all plundering?</value>
+  </data>
+  <data name="messageBoxCouldNotOpenUrlError" xml:space="preserve">
+    <value>Could not open the following treasure map:
+{0}</value>
+  </data>
+  <data name="messageBoxNoUpdateAvailable" xml:space="preserve">
+    <value>Ye already have the latest version ({0}).</value>
+  </data>
+  <data name="messageBoxResetSettingsButtonOk" xml:space="preserve">
+    <value>_Reset ship's log</value>
+  </data>
+  <data name="messageBoxResetSettingsText" xml:space="preserve">
+      <value>Reset all settings to their default values?
+This action cannot be reverted.</value>
+  </data>
+  <data name="messageBoxUnhandledException" xml:space="preserve">
+    <value>An unhandled error occurred. The application will scuttle now.
+
+Please open a new issue with the content of yer captain's log on
+{0}</value>
+  </data>
+  <data name="radioButtonManualProxy" xml:space="preserve">
+    <value>_Manual navigation</value>
+  </data>
+  <data name="radioButtonNoProxy" xml:space="preserve">
+    <value>_None</value>
+  </data>
+  <data name="radioButtonSystemProxy" xml:space="preserve">
+    <value>S_ystem</value>
+  </data>
+  <data name="saveFileDialogTitle" xml:space="preserve">
+    <value>Bury treasure as</value>
+  </data>
+  <data name="Skin_Dark" xml:space="preserve">
+    <value>Dark as night</value>
+  </data>
+  <data name="Skin_Light" xml:space="preserve">
+    <value>Light as day</value>
+  </data>
+  <data name="TagEditAction_DoNotModify" xml:space="preserve">
+    <value>Do not modify</value>
+  </data>
+  <data name="TagEditAction_Empty" xml:space="preserve">
+    <value>Clear manifest</value>
+  </data>
+  <data name="TagEditAction_Modify" xml:space="preserve">
+    <value>Bury in manifest</value>
+  </data>
+  <data name="TagRemoveAction_DoNotModify" xml:space="preserve">
+    <value>Do not modify</value>
+  </data>
+  <data name="TagRemoveAction_Empty" xml:space="preserve">
+    <value>Clear manifest</value>
+  </data>
+  <data name="textBlockReleasesWebsite" xml:space="preserve">
+    <value>Plundering history</value>
+  </data>
+  <data name="textBlockTranslationHelp" xml:space="preserve">
+    <value>Help translate</value>
+  </data>
+  <data name="textBoxAllowedFileSizeDifference_ToolTip" xml:space="preserve">
+    <value>When plundering a track, if the same treasure (name) already exists, it will be checked against the track to plunder.
+If the size of both treasures differ from less than this value (in percent), the track plundering will be skipped.
+Set this value to 0 in order to always plunder tracks, even if already buried on disk.
+
+Recommended value = 5</value>
+  </data>
+  <data name="textBoxCoverArtFileNameFormat_ToolTip" xml:space="preserve">
+    <value>Ye can use placeholders to customize the treasure name:
+- {artist} will be replaced by the album artist
+- {album} will be replaced by the album name
+- {year}, {month} and {day} will be replaced by the album release date</value>
+  </data>
+  <data name="textBoxDownloadMaxTries_ToolTip" xml:space="preserve">
+    <value>Maximum number of tries performed to plunder a track if it fails.
+After that number be reached (for each track), the track plundering will be skipped.
+
+Recommended value = 7</value>
+  </data>
+  <data name="textBoxDownloadRetryCooldown_ToolTip" xml:space="preserve">
+    <value>Used to control the exponential back-off mechanism.
+After each failure of a track plundering, BandcampDownloader can wait for a specific time before trying again
+to plunder the track in order to avoid tickling the Bandcamp anti-spam filter.
+The formula used to compute the time to wait before trying again a plundering is the following:
+time = cooldown * (exponent ^ attempt-count)
+
+Recommended value = 0.2</value>
+  </data>
+  <data name="textBoxDownloadRetryExponent_ToolTip" xml:space="preserve">
+    <value>Used to control the exponential back-off mechanism.
+After each failure of a track plundering, BandcampDownloader can wait for a specific time before trying again
+to plunder the track in order to avoid tickling the Bandcamp anti-spam filter.
+The formula used to compute the time to wait before trying again a plundering is the following:
+time = cooldown * (exponent ^ attempt-count)
+
+Recommended value = 4</value>
+  </data>
+  <data name="textBoxDownloadsPath_ToolTip" xml:space="preserve">
+    <value>Ye can use placeholders to customize the plundering chest depending on the album:
+- {artist} will be replaced by the album artist
+- {album} will be replaced by the album name
+- {year}, {month} and {day} will be replaced by the album release date</value>
+  </data>
+  <data name="textBoxFileNameFormat_ToolTip" xml:space="preserve">
+    <value>Ye can use placeholders to customize the treasure name:
+- {artist} will be replaced by the album artist
+- {title} will be replaced by the track name
+- {tracknum} will be replaced by the track number
+- {album} will be replaced by the album name
+- {year}, {month} and {day} will be replaced by the album release date</value>
+  </data>
+  <data name="textBoxPlaylistFileNameFormat_ToolTip" xml:space="preserve">
+    <value>Ye can use placeholders to customize the treasure name:
+- {artist} will be replaced by the album artist
+- {album} will be replaced by the album name
+- {year}, {month} and {day} will be replaced by the album release date</value>
+  </data>
+  <data name="textBoxUrlsPlaceholder" xml:space="preserve">
+    <value>Paste treasure maps of albums to plunder here. Ye can specify multiple treasure maps by writing one map per line.
+
+A Bandcamp treasure map looks like: http://[artist].bandcamp.com/album/[album] or http://[artist].bandcamp.com/track/[track]
+Paste artist maps: http://[artist].bandcamp.com and check "☑ Plunder artist's treasure hoard" to plunder all their albums.</value>
+  </data>
+  <data name="windowSettings_Title" xml:space="preserve">
+    <value>Ship's log</value>
+  </data>
+  <data name="windowUpdate_Title" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="labelProxy" xml:space="preserve">
+    <value>Proxy ship</value>
+  </data>
+  <data name="labelMaxConcurrentAlbumsDownloads" xml:space="preserve">
+      <value>Max concurrent album plundering</value>
+  </data>
+  <data name="labelMaxConcurrentTracksDownloads" xml:space="preserve">
+      <value>Max concurrent track plundering</value>
+  </data>
+  <data name="textBoxMaxConcurrentAlbumsDownloads_ToolTip" xml:space="preserve">
+      <value>The maximum number of albums that can be plundered simultaneously</value>
+  </data>
+  <data name="textBoxMaxConcurrentTracksDownloads_ToolTip" xml:space="preserve">
+      <value>The maximum number of tracks (within the same album) that can be plundered simultaneously</value>
+  </data>
+  <data name="checkBoxContinueOnError" xml:space="preserve">
+    <value>_Continue plundering if sea serpent attacks</value>
+  </data>
+  <data name="checkBoxContinueOnError_ToolTip" xml:space="preserve">
+    <value>If enabled, the plunderer will continue with the next album or track when a sea serpent attacks instead of stopping the entire plundering.</value>
+  </data>
+  <data name="checkBoxWaitForFileAfterDownload" xml:space="preserve">
+    <value>_Wait for treasure to be ready before tagging</value>
+  </data>
+  <data name="checkBoxWaitForFileAfterDownload_ToolTip" xml:space="preserve">
+    <value>If enabled, waits for the plundered treasure to be fully buried to disk before attempting to add manifests. Helps prevent treasure-not-found errors.</value>
+  </data>
+  <data name="checkBoxSplitVariousArtistsTrackTitles" xml:space="preserve">
+    <value>_Split V/A track titles (Artist - Title)</value>
+  </data>
+  <data name="checkBoxSplitVariousArtistsTrackTitles_ToolTip" xml:space="preserve">
+    <value>For Various Artists releases, automatically splits track titles in the format "Artist Name - Track Name" into separate Artist and Title manifests.</value>
+  </data>
+  <data name="labelListBoxItemBDF" xml:space="preserve">
+    <value>BDF</value>
+  </data>
+  <data name="checkBoxIgnoreTracksLongerThan" xml:space="preserve">
+    <value>_Ignore tracks longer than</value>
+  </data>
+  <data name="checkBoxIgnoreTracksLongerThan_ToolTip" xml:space="preserve">
+    <value>Skips plundering tracks that exceed the specified duration in minutes.</value>
+  </data>
+  <data name="checkBoxAssignAlbumArtistToAllTracks" xml:space="preserve">
+    <value>Assign album artist to all tracks</value>
+  </data>
+  <data name="checkBoxAssignAlbumArtistToAllTracks_ToolTip" xml:space="preserve">
+    <value>Sets the album artist as the track artist for all tracks, useful for compilations or V/A releases.</value>
+  </data>
+  <data name="checkBoxShowTrackCountText" xml:space="preserve">
+    <value>Show track count during plundering</value>
+  </data>
+  <data name="checkBoxShowTrackCountText_ToolTip" xml:space="preserve">
+    <value>Displays the number of tracks plundered so far in the action bar.</value>
+  </data>
+  <data name="checkBoxForceBitrate" xml:space="preserve">
+    <value>_Force bitrate (Experimental)</value>
+  </data>
+  <data name="forceBitrateDialogTitle" xml:space="preserve">
+    <value>Experimental Feature Warning</value>
+  </data>
+  <data name="forceBitrateDialogText" xml:space="preserve">
+    <value>This feature be experimental. Bitrate conversion may not work correctly on all systems and could produce unexpected results.
+
+Be ye sure ye want to enable this feature?</value>
+  </data>
+  <data name="forceBitrateDialogDontShowAgain" xml:space="preserve">
+    <value>Don't show this warning again</value>
+  </data>
+  <data name="dialogButtonYes" xml:space="preserve">
+    <value>_Aye</value>
+  </data>
+  <data name="dialogButtonNo" xml:space="preserve">
+    <value>_Nay</value>
+  </data>
+  <data name="checkBoxForceBitrate_ToolTip" xml:space="preserve">
+    <value>Converts plundered tracks to the specified bitrate. Useful for reducing treasure size.</value>
+  </data>
+  <data name="checkBoxShowOriginalDownloadSize" xml:space="preserve">
+    <value>Show original plunder size</value>
+  </data>
+  <data name="checkBoxShowOriginalDownloadSize_ToolTip" xml:space="preserve">
+    <value>Displays the original plunder size in brackets alongside the converted size.</value>
+  </data>
+  <data name="checkBoxEnableToastNotifications" xml:space="preserve">
+    <value>Enable parrot notifications</value>
+  </data>
+  <data name="checkBoxEnableToastNotifications_ToolTip" xml:space="preserve">
+    <value>Shows Windows parrot notifications for plundering events.</value>
+  </data>
+  <data name="checkBoxToastOnDownloadComplete" xml:space="preserve">
+    <value>On plunder _complete</value>
+  </data>
+  <data name="checkBoxToastOnDownloadComplete_ToolTip" xml:space="preserve">
+    <value>Shows a notification when all plundering be finished.</value>
+  </data>
+  <data name="checkBoxToastOnDownloadError" xml:space="preserve">
+    <value>On plunder _error</value>
+  </data>
+  <data name="checkBoxToastOnDownloadError_ToolTip" xml:space="preserve">
+    <value>Shows a notification when a plundering fails.</value>
+  </data>
+  <data name="checkBoxToastOnAlbumComplete" xml:space="preserve">
+    <value>When _album plundered</value>
+  </data>
+  <data name="checkBoxToastOnAlbumComplete_ToolTip" xml:space="preserve">
+    <value>Shows a notification when each individual album finishes plundering.</value>
+  </data>
+  <data name="checkBoxToastOnTrackSkipped" xml:space="preserve">
+    <value>When track _skipped</value>
+  </data>
+  <data name="checkBoxToastOnTrackSkipped_ToolTip" xml:space="preserve">
+    <value>Shows a notification when a track be skipped (e.g., due to duration limit).</value>
+  </data>
+</root>
