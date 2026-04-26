@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    </value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    </value>
+  </resheader>
+  <data name="buttonBrowse" xml:space="preserve">
+    <value>…</value>
+  </data>
+  <data name="buttonBrowse_ToolTip" xml:space="preserve">
+    <value>Look 4 cheezburger locations</value>
+  </data>
+  <data name="buttonCancel" xml:space="preserve">
+    <value>_NOPE!</value>
+  </data>
+  <data name="buttonCheckForUpdates" xml:space="preserve">
+    <value>Cheez</value>
+  </data>
+  <data name="buttonDownloadUpdate" xml:space="preserve">
+    <value>_Get newer version</value>
+  </data>
+  <data name="buttonOpenSettingsWindow" xml:space="preserve">
+    <value>_Settingz</value>
+  </data>
+  <data name="buttonOpenSettingsWindow_ToolTip" xml:space="preserve">
+    <value>Open da settingz</value>
+  </data>
+  <data name="buttonResetSettings_ToolTip" xml:space="preserve">
+    <value>Reset settingz to default</value>
+  </data>
+  <data name="buttonSave" xml:space="preserve">
+    <value>_Save</value>
+  </data>
+  <data name="buttonStart" xml:space="preserve">
+    <value>_Download</value>
+  </data>
+  <data name="buttonStop" xml:space="preserve">
+    <value>_NOPE!</value>
+  </data>
+  <data name="buttonViewChangelog" xml:space="preserve">
+    <value>_View</value>
+  </data>
+  <data name="changelogDownloadError" xml:space="preserve">
+    <value>Cud not get changelog from {0}</value>
+  </data>
+  <data name="checkBoxCheckForUpdates" xml:space="preserve">
+    <value>Cheez 4 updates when start</value>
+  </data>
+  <data name="checkBoxCheckForUpdates_ToolTip_Part" xml:space="preserve">
+    <value>Cheez dis address when start app:</value>
+  </data>
+  <data name="checkBoxCoverArtInFolderConvertToJpg" xml:space="preserve">
+    <value>Convert 2 JPG</value>
+  </data>
+  <data name="checkBoxCoverArtInFolderConvertToJpg_ToolTip" xml:space="preserve">
+    <value>Converts cover art 2 JPG wif 90 compression (gud trade between size n quality).</value>
+  </data>
+  <data name="checkBoxCoverArtInFolderResize" xml:space="preserve">
+    <value>Limit max width/height</value>
+  </data>
+  <data name="checkBoxCoverArtInFolderResize_ToolTip" xml:space="preserve">
+    <value>Resizes cover art 2 specified max width/height.</value>
+  </data>
+  <data name="checkBoxCoverArtInTagsConvertToJpg" xml:space="preserve">
+    <value>Convert 2 JP_G</value>
+  </data>
+  <data name="checkBoxCoverArtInTagsConvertToJpg_ToolTip" xml:space="preserve">
+    <value>Converts cover art 2 JPG wif 90 compression (gud trade between size n quality).</value>
+  </data>
+  <data name="checkBoxCoverArtInTagsResize" xml:space="preserve">
+    <value>Limit ma_x width/height</value>
+  </data>
+  <data name="checkBoxCoverArtInTagsResize_ToolTip" xml:space="preserve">
+    <value>Resizes cover art 2 specified max width/height.</value>
+  </data>
+  <data name="checkBoxCreatePlaylist" xml:space="preserve">
+    <value>Make playlist 4 each album</value>
+  </data>
+  <data name="checkBoxCreatePlaylist_ToolTip" xml:space="preserve">
+    <value>Makes album playlist file 4 each downloaded album.</value>
+  </data>
+  <data name="checkBoxDownloadDiscography" xml:space="preserve">
+    <value>Download artist discography</value>
+  </data>
+  <data name="checkBoxDownloadDiscography_ToolTip" xml:space="preserve">
+    <value>Downloads all artist albums.</value>
+  </data>
+  <data name="checkBoxEnableApplicationSounds" xml:space="preserve">
+    <value>Play notification sounds</value>
+  </data>
+  <data name="checkBoxEnableApplicationSounds_ToolTip" xml:space="preserve">
+    <value>Notification sound 4 finished downloads.</value>
+  </data>
+  <data name="checkBoxM3uExtended" xml:space="preserve">
+    <value>Use extended format (only 4 M3U)</value>
+  </data>
+  <data name="checkBoxM3uExtended_ToolTip" xml:space="preserve">
+    <value>M3U playlists in extended format (directives prefaced by # character).</value>
+  </data>
+  <data name="checkBoxModifyTags" xml:space="preserve">
+    <value>_Modify track tags (ID3)</value>
+  </data>
+  <data name="checkBoxModifyTags_ToolTip" xml:space="preserve">
+    <value>Modifies each tag as below.
+
+If not, all tags unchanged, same as setting "Do not modify" 4 each tag.</value>
+  </data>
+  <data name="checkBoxRetrieveFilesSize" xml:space="preserve">
+    <value>Get file size b4 downloading tracks</value>
+  </data>
+  <data name="checkBoxRetrieveFilesSize_ToolTip" xml:space="preserve">
+    <value>Gets file size 2 show precise progress.
+If not, saves some bandwidth/time.</value>
+  </data>
+  <data name="checkBoxSaveCoverArtInFolder" xml:space="preserve">
+    <value>Save in folder</value>
+  </data>
+  <data name="checkBoxSaveCoverArtInFolder_ToolTip" xml:space="preserve">
+    <value>Downloads cover art 2 album folder.</value>
+  </data>
+  <data name="checkBoxSaveCoverArtInTags" xml:space="preserve">
+    <value>Save in tags</value>
+  </data>
+  <data name="checkBoxSaveCoverArtInTags_ToolTip" xml:space="preserve">
+    <value>Saves cover art in track tags.</value>
+  </data>
+  <data name="checkBoxVerboseLog" xml:space="preserve">
+    <value>Show verbose log</value>
+  </data>
+  <data name="checkBoxVerboseLog_ToolTip" xml:space="preserve">
+    <value>Shows more info in log.</value>
+  </data>
+  <data name="labelAdvancedSettingsWarning" xml:space="preserve">
+    <value>Change these settings at ur own risk.</value>
+  </data>
+  <data name="labelAlbumArtist" xml:space="preserve">
+    <value>Album art_ist</value>
+  </data>
+  <data name="labelAlbumTitle" xml:space="preserve">
+    <value>Album _name</value>
+  </data>
+  <data name="labelAllowedFileSizeDifference" xml:space="preserve">
+    <value>Allowed file size _difference (%)</value>
+  </data>
+  <data name="labelArtist" xml:space="preserve">
+    <value>_Artist</value>
+  </data>
+  <data name="labelButtonResetSettings" xml:space="preserve">
+    <value>_Reset settings</value>
+  </data>
+  <data name="labelChangelog" xml:space="preserve">
+    <value>Changelog</value>
+  </data>
+  <data name="labelChangelogTitle" xml:space="preserve">
+    <value>Changelog</value>
+  </data>
+  <data name="labelComments" xml:space="preserve">
+    <value>Comm_ents</value>
+  </data>
+  <data name="labelCoverArtFileNameFormat" xml:space="preserve">
+    <value>File_name format</value>
+  </data>
+  <data name="labelCoverArtInFolderMaxSize" xml:space="preserve">
+    <value>Max size (_px)</value>
+  </data>
+  <data name="labelCoverArtInTagsMaxSize" xml:space="preserve">
+    <value>Max size (p_x)</value>
+  </data>
+  <data name="labelCurrentVersion" xml:space="preserve">
+    <value>Current version:</value>
+  </data>
+  <data name="labelDownloadMaxTries" xml:space="preserve">
+    <value>_Max download tries</value>
+  </data>
+  <data name="labelDownloadRetryCooldown" xml:space="preserve">
+    <value>Retry c_ooldown (sec)</value>
+  </data>
+  <data name="labelDownloadRetryExponent" xml:space="preserve">
+    <value>Retry _exponent</value>
+  </data>
+  <data name="labelDownloadsPath" xml:space="preserve">
+    <value>Save albums _to</value>
+  </data>
+  <data name="labelFileNameFormat" xml:space="preserve">
+    <value>_Filename format:</value>
+  </data>
+  <data name="labelHttp" xml:space="preserve">
+    <value>_HTTP(S) proxy</value>
+  </data>
+  <data name="labelHttpPort" xml:space="preserve">
+    <value>_Port</value>
+  </data>
+  <data name="labelIssues" xml:space="preserve">
+    <value>Report bug</value>
+  </data>
+  <data name="labelLanguage" xml:space="preserve">
+    <value>_Language</value>
+  </data>
+  <data name="labelListBoxItemAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="labelListBoxItemAdvanced" xml:space="preserve">
+    <value>Advanced settings</value>
+  </data>
+  <data name="labelListBoxItemCoverArt" xml:space="preserve">
+    <value>Cover art</value>
+  </data>
+  <data name="labelListBoxItemDownloads" xml:space="preserve">
+    <value>Downloads</value>
+  </data>
+  <data name="labelListBoxItemGeneral" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="labelListBoxItemNetwork" xml:space="preserve">
+    <value>Network</value>
+  </data>
+  <data name="labelListBoxItemPlaylist" xml:space="preserve">
+    <value>Playlist</value>
+  </data>
+  <data name="labelListBoxItemTags" xml:space="preserve">
+    <value>Naming and tags</value>
+  </data>
+  <data name="labelLyrics" xml:space="preserve">
+    <value>_Lyrics</value>
+  </data>
+  <data name="labelPlaylistFileNameFormat" xml:space="preserve">
+    <value>File_name format</value>
+  </data>
+  <data name="labelPlaylistFormat" xml:space="preserve">
+    <value>Playlist _format</value>
+  </data>
+  <data name="labelSettingsInfo" xml:space="preserve">
+    <value>Some settings cannot be changed while tracks downloading.</value>
+  </data>
+  <data name="labelTheme" xml:space="preserve">
+    <value>_Theme</value>
+  </data>
+  <data name="labelTrackNumber" xml:space="preserve">
+    <value>Track n_umber</value>
+  </data>
+  <data name="labelTrackTitle" xml:space="preserve">
+    <value>_Title</value>
+  </data>
+  <data name="labelVerboseLogInfo" xml:space="preserve">
+    <value>(log file always verbose)</value>
+  </data>
+  <data name="labelVersion" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="labelVersionError" xml:space="preserve">
+    <value>Could not check 4 updates</value>
+  </data>
+  <data name="labelVersionNewUpdateAvailable" xml:space="preserve">
+    <value>New version available</value>
+  </data>
+  <data name="labelWebsite" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="labelYear" xml:space="preserve">
+    <value>Album release _year</value>
+  </data>
+  <data name="messageBoxButtonCancel" xml:space="preserve">
+    <value>_NOPE!</value>
+  </data>
+  <data name="messageBoxButtonNo" xml:space="preserve">
+    <value>_No</value>
+  </data>
+  <data name="messageBoxButtonOK" xml:space="preserve">
+    <value>_OK</value>
+  </data>
+  <data name="messageBoxButtonYes" xml:space="preserve">
+    <value>_Yes</value>
+  </data>
+  <data name="messageBoxCancelDownloadsText" xml:space="preserve">
+    <value>Cancel all downloads?</value>
+  </data>
+  <data name="messageBoxCheckForUpdatesError" xml:space="preserve">
+    <value>Error occurred when checking 4 updates. Try again later.</value>
+  </data>
+  <data name="messageBoxCloseWindowWhenDownloadingButtonOk" xml:space="preserve">
+    <value>_Close app</value>
+  </data>
+  <data name="messageBoxCloseWindowWhenDownloadingText" xml:space="preserve">
+    <value>Active downloads running. U sure u want close app and stop all downloads?</value>
+  </data>
+  <data name="messageBoxCouldNotOpenUrlError" xml:space="preserve">
+    <value>Could not open link:
+{0}</value>
+  </data>
+  <data name="messageBoxNoUpdateAvailable" xml:space="preserve">
+    <value>U already has latest version ({0}).</value>
+  </data>
+  <data name="messageBoxResetSettingsButtonOk" xml:space="preserve">
+    <value>_Reset settings</value>
+  </data>
+  <data name="messageBoxResetSettingsText" xml:space="preserve">
+      <value>Reset all settings 2 default values?
+This cannot be undone.</value>
+  </data>
+  <data name="messageBoxUnhandledException" xml:space="preserve">
+    <value>Unhandled error occurred. App will close now.
+
+Open new issue with log file content on
+{0}</value>
+  </data>
+  <data name="radioButtonManualProxy" xml:space="preserve">
+    <value>_Manual config</value>
+  </data>
+  <data name="radioButtonNoProxy" xml:space="preserve">
+    <value>_None</value>
+  </data>
+  <data name="radioButtonSystemProxy" xml:space="preserve">
+    <value>S_ystem</value>
+  </data>
+  <data name="saveFileDialogTitle" xml:space="preserve">
+    <value>Save as</value>
+  </data>
+  <data name="Skin_Dark" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="Skin_Light" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="TagEditAction_DoNotModify" xml:space="preserve">
+    <value>Do not modify</value>
+  </data>
+  <data name="TagEditAction_Empty" xml:space="preserve">
+    <value>Clear tag</value>
+  </data>
+  <data name="TagEditAction_Modify" xml:space="preserve">
+    <value>Save in tag</value>
+  </data>
+  <data name="TagRemoveAction_DoNotModify" xml:space="preserve">
+    <value>Do not modify</value>
+  </data>
+  <data name="TagRemoveAction_Empty" xml:space="preserve">
+    <value>Clear tag</value>
+  </data>
+  <data name="textBlockReleasesWebsite" xml:space="preserve">
+    <value>Releases history</value>
+  </data>
+  <data name="textBlockTranslationHelp" xml:space="preserve">
+    <value>Help translate</value>
+  </data>
+  <data name="textBoxAllowedFileSizeDifference_ToolTip" xml:space="preserve">
+    <value>When downloading track, if same file (name) already exists, it checks against track 2 download.
+If size of both files differ less than this value (in percent), track download skipped.
+Set to 0 2 always download tracks, even if already on disk.
+
+Recommended value = 5</value>
+  </data>
+  <data name="textBoxCoverArtFileNameFormat_ToolTip" xml:space="preserve">
+    <value>Can use placeholders 2 customize file name:
+- {artist} replaced by album artist
+- {album} replaced by album name
+- {year}, {month} and {day} replaced by album release date</value>
+  </data>
+  <data name="textBoxDownloadMaxTries_ToolTip" xml:space="preserve">
+    <value>Max tries 2 download track if fails.
+After reached (4 each track), track download skipped.
+
+Recommended value = 7</value>
+  </data>
+  <data name="textBoxDownloadRetryCooldown_ToolTip" xml:space="preserve">
+    <value>Controls exponential back-off mechanism.
+After each track download fail, BandcampDownloader can wait specific time b4 trying again
+2 download track 2 avoid tickling Bandcamp anti-spam filter.
+Formula 2 compute time 2 wait b4 trying download:
+time = cooldown * (exponent ^ attempt-count)
+
+Recommended value = 0.2</value>
+  </data>
+  <data name="textBoxDownloadRetryExponent_ToolTip" xml:space="preserve">
+    <value>Controls exponential back-off mechanism.
+After each track download fail, BandcampDownloader can wait specific time b4 trying again
+2 download track 2 avoid tickling Bandcamp anti-spam filter.
+Formula 2 compute time 2 wait b4 trying download:
+time = cooldown * (exponent ^ attempt-count)
+
+Recommended value = 4</value>
+  </data>
+  <data name="textBoxDownloadsPath_ToolTip" xml:space="preserve">
+    <value>Can use placeholders 2 customize download folder depending on album:
+- {artist} replaced by album artist
+- {album} replaced by album name
+- {year}, {month} and {day} replaced by album release date</value>
+  </data>
+  <data name="textBoxFileNameFormat_ToolTip" xml:space="preserve">
+    <value>Can use placeholders 2 customize file name:
+- {artist} replaced by album artist
+- {title} replaced by track name
+- {tracknum} replaced by track number
+- {album} replaced by album name
+- {year}, {month} and {day} replaced by album release date</value>
+  </data>
+  <data name="textBoxPlaylistFileNameFormat_ToolTip" xml:space="preserve">
+    <value>Can use placeholders 2 customize file name:
+- {artist} replaced by album artist
+- {album} replaced by album name
+- {year}, {month} and {day} replaced by album release date</value>
+  </data>
+  <data name="textBoxUrlsPlaceholder" xml:space="preserve">
+    <value>Paste album URLs 2 download here. Can specify multiple URLs by writing one URL per line.
+
+Bandcamp URL looks like: http://[artist].bandcamp.com/album/[album] or http://[artist].bandcamp.com/track/[track]
+Paste artist pages: http://[artist].bandcamp.com and check "☑ Download artist discography" 2 download all their albums.</value>
+  </data>
+  <data name="windowSettings_Title" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="windowUpdate_Title" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="labelProxy" xml:space="preserve">
+    <value>Proxy</value>
+  </data>
+  <data name="labelMaxConcurrentAlbumsDownloads" xml:space="preserve">
+      <value>Max concurrent albums downloads</value>
+  </data>
+  <data name="labelMaxConcurrentTracksDownloads" xml:space="preserve">
+      <value>Max concurrent tracks downloads</value>
+  </data>
+  <data name="textBoxMaxConcurrentAlbumsDownloads_ToolTip" xml:space="preserve">
+      <value>Max number of albums can download at same time</value>
+  </data>
+  <data name="textBoxMaxConcurrentTracksDownloads_ToolTip" xml:space="preserve">
+      <value>Max number of tracks (in same album) can download at same time</value>
+  </data>
+  <data name="checkBoxContinueOnError" xml:space="preserve">
+    <value>_Continue downloading if error occurs</value>
+  </data>
+  <data name="checkBoxContinueOnError_ToolTip" xml:space="preserve">
+    <value>If enabled, downloader continues with next album or track when error occurs instead of stopping entire download.</value>
+  </data>
+  <data name="checkBoxWaitForFileAfterDownload" xml:space="preserve">
+    <value>_Wait 4 file 2 be ready before tagging</value>
+  </data>
+  <data name="checkBoxWaitForFileAfterDownload_ToolTip" xml:space="preserve">
+    <value>If enabled, waits 4 downloaded file 2 be fully written 2 disk b4 adding tags. Helps prevent file-not-found errors.</value>
+  </data>
+  <data name="checkBoxSplitVariousArtistsTrackTitles" xml:space="preserve">
+    <value>_Split V/A track titles (Artist - Title)</value>
+  </data>
+  <data name="checkBoxSplitVariousArtistsTrackTitles_ToolTip" xml:space="preserve">
+    <value>For Various Artists releases, automatically splits track titles in format "Artist Name - Track Name" into separate Artist and Title tags.</value>
+  </data>
+  <data name="labelListBoxItemBDF" xml:space="preserve">
+    <value>BDF</value>
+  </data>
+  <data name="checkBoxIgnoreTracksLongerThan" xml:space="preserve">
+    <value>_Ignore tracks longer than</value>
+  </data>
+  <data name="checkBoxIgnoreTracksLongerThan_ToolTip" xml:space="preserve">
+    <value>Skips downloading tracks that exceed specified duration in minutes.</value>
+  </data>
+  <data name="checkBoxAssignAlbumArtistToAllTracks" xml:space="preserve">
+    <value>Assign album artist 2 all tracks</value>
+  </data>
+  <data name="checkBoxAssignAlbumArtistToAllTracks_ToolTip" xml:space="preserve">
+    <value>Sets album artist as track artist 4 all tracks, useful 4 compilations or V/A releases.</value>
+  </data>
+  <data name="checkBoxShowTrackCountText" xml:space="preserve">
+    <value>Show track count during download</value>
+  </data>
+  <data name="checkBoxShowTrackCountText_ToolTip" xml:space="preserve">
+    <value>Displays number of tracks downloaded so far in action bar.</value>
+  </data>
+  <data name="checkBoxForceBitrate" xml:space="preserve">
+    <value>_Force bitrate (Experimental)</value>
+  </data>
+  <data name="forceBitrateDialogTitle" xml:space="preserve">
+    <value>Experimental Feature Warning</value>
+  </data>
+  <data name="forceBitrateDialogText" xml:space="preserve">
+    <value>This feature experimental. Bitrate conversion may not work correctly on all systems and could produce unexpected results.
+
+U sure u want enable this feature?</value>
+  </data>
+  <data name="forceBitrateDialogDontShowAgain" xml:space="preserve">
+    <value>Don't show this warning again</value>
+  </data>
+  <data name="dialogButtonYes" xml:space="preserve">
+    <value>_Yes</value>
+  </data>
+  <data name="dialogButtonNo" xml:space="preserve">
+    <value>_No</value>
+  </data>
+  <data name="checkBoxForceBitrate_ToolTip" xml:space="preserve">
+    <value>Converts downloaded tracks 2 specified bitrate. Useful 4 reducing file size.</value>
+  </data>
+  <data name="checkBoxShowOriginalDownloadSize" xml:space="preserve">
+    <value>Show original download size</value>
+  </data>
+  <data name="checkBoxShowOriginalDownloadSize_ToolTip" xml:space="preserve">
+    <value>Displays original download size in brackets alongside converted size.</value>
+  </data>
+  <data name="checkBoxEnableToastNotifications" xml:space="preserve">
+    <value>Enable toast notifications</value>
+  </data>
+  <data name="checkBoxEnableToastNotifications_ToolTip" xml:space="preserve">
+    <value>Shows Windows toast notifications 4 download events.</value>
+  </data>
+  <data name="checkBoxToastOnDownloadComplete" xml:space="preserve">
+    <value>On download _complete</value>
+  </data>
+  <data name="checkBoxToastOnDownloadComplete_ToolTip" xml:space="preserve">
+    <value>Shows notification when all downloads finished.</value>
+  </data>
+  <data name="checkBoxToastOnDownloadError" xml:space="preserve">
+    <value>On download _error</value>
+  </data>
+  <data name="checkBoxToastOnDownloadError_ToolTip" xml:space="preserve">
+    <value>Shows notification when download fails.</value>
+  </data>
+  <data name="checkBoxToastOnAlbumComplete" xml:space="preserve">
+    <value>When _album downloaded</value>
+  </data>
+  <data name="checkBoxToastOnAlbumComplete_ToolTip" xml:space="preserve">
+    <value>Shows notification when each individual album finishes downloading.</value>
+  </data>
+  <data name="checkBoxToastOnTrackSkipped" xml:space="preserve">
+    <value>When track _skipped</value>
+  </data>
+  <data name="checkBoxToastOnTrackSkipped_ToolTip" xml:space="preserve">
+    <value>Shows notification when track skipped (e.g., due 2 duration limit).</value>
+  </data>
+</root>

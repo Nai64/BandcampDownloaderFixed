@@ -46,6 +46,7 @@ internal sealed class LanguageService : ILanguageService
             Language.kk => new CultureInfo("kk"),
             Language.kk_Latn => new CultureInfo("az"),
             Language.pirate => new CultureInfo("be"),
+            Language.lolcat => new CultureInfo("et"),
             // Language.ko => new CultureInfo("ko"),
             Language.nb_NO => new CultureInfo("nb-NO"),
             Language.pl => new CultureInfo("pl"),
