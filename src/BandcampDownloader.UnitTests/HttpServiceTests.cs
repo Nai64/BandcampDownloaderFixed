@@ -1,5 +1,4 @@
 ﻿using BandcampDownloader.Net;
-using BandcampDownloader.Settings;
 using Moq;
 
 namespace BandcampDownloader.UnitTests;
@@ -7,16 +6,14 @@ namespace BandcampDownloader.UnitTests;
 public sealed class HttpServiceTests
 {
     private HttpService _sut;
-    private Mock<ISettingsService> _settingsService;
     private Mock<IHttpClientFactory> _httpClientFactory;
 
     [SetUp]
     public void Setup()
     {
-        _settingsService = new Mock<ISettingsService>();
         _httpClientFactory = new Mock<IHttpClientFactory>();
 
-        _sut = new HttpService(_settingsService.Object, _httpClientFactory.Object);
+        _sut = new HttpService(_httpClientFactory.Object);
     }
 
     [Test]

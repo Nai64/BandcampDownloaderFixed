@@ -48,8 +48,7 @@ internal sealed partial class UserControlSettingsBDF : IUserControlSettings
         CheckBoxToastOnAlbumComplete.Unchecked += (s, e) => SaveSettings();
         CheckBoxToastOnTrackSkipped.Checked += (s, e) => SaveSettings();
         CheckBoxToastOnTrackSkipped.Unchecked += (s, e) => SaveSettings();
-        SliderIgnoreTracksLongerThanMinutes.ValueChanged += (s, e) => SaveSettings();
-        
+
         // Mark initial load as complete after UI is ready
         Dispatcher.BeginInvoke(new Action(() => _isInitialLoad = false), System.Windows.Threading.DispatcherPriority.Loaded);
     }
@@ -181,11 +180,6 @@ internal sealed partial class UserControlSettingsBDF : IUserControlSettings
         CheckBoxToastOnDownloadError.GetBindingExpression(ToggleButton.IsCheckedProperty)?.UpdateSource();
         CheckBoxToastOnAlbumComplete.GetBindingExpression(ToggleButton.IsCheckedProperty)?.UpdateSource();
         CheckBoxToastOnTrackSkipped.GetBindingExpression(ToggleButton.IsCheckedProperty)?.UpdateSource();
-    }
-
-    private void SliderIgnoreTracksLongerThanMinutes_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-    {
-        // This method is kept for potential future use
     }
 
     private void ComboBoxBitrate_SelectionChanged(object sender, SelectionChangedEventArgs e)

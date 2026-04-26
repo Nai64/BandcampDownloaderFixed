@@ -87,8 +87,7 @@
             TabIndex="3"
             ToolTip="{lex:Loc}"
             ToolTipService.ShowDuration="60000"
-            Value="{Binding IgnoreTracksLongerThanMinutes, UpdateSourceTrigger=Explicit}"
-            ValueChanged="SliderIgnoreTracksLongerThanMinutes_ValueChanged" />
+            Value="{Binding IgnoreTracksLongerThanMinutes, UpdateSourceTrigger=Explicit}" />
         <TextBlock
             Grid.Row="2"
             Grid.Column="2"
