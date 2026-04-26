@@ -48,6 +48,8 @@ public enum Language
 
     [Description("Japanese (日本語)")]
     ja,
+    [Description("Kazakh (Cyrillic) (Қазақша)")]
+    kk,
     //[Description("Korean (한국어)")]
     //ko,
     [Description("Norwegian Bokmål (Norsk Bokmål)")]

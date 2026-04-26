@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    </value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    </value>
+  </resheader>
+  <data name="buttonBrowse" xml:space="preserve">
+    <value>…</value>
+  </data>
+  <data name="buttonBrowse_ToolTip" xml:space="preserve">
+    <value>Қаптаманы шолу</value>
+  </data>
+  <data name="buttonCancel" xml:space="preserve">
+    <value>_Бас тарту</value>
+  </data>
+  <data name="buttonCheckForUpdates" xml:space="preserve">
+    <value>Тексеру</value>
+  </data>
+  <data name="buttonDownloadUpdate" xml:space="preserve">
+    <value>Жаңа нұсқаны жүктеп алу</value>
+  </data>
+  <data name="buttonOpenSettingsWindow" xml:space="preserve">
+    <value>_Баптаулар</value>
+  </data>
+  <data name="buttonOpenSettingsWindow_ToolTip" xml:space="preserve">
+    <value>Баптауларды ашу</value>
+  </data>
+  <data name="buttonResetSettings_ToolTip" xml:space="preserve">
+    <value>Баптауларды әдепкіге қайтару</value>
+  </data>
+  <data name="buttonSave" xml:space="preserve">
+    <value>_Сақтау</value>
+  </data>
+  <data name="buttonStart" xml:space="preserve">
+    <value>_Жүктеу</value>
+  </data>
+  <data name="buttonStop" xml:space="preserve">
+    <value>_Бас тарту</value>
+  </data>
+  <data name="buttonViewChangelog" xml:space="preserve">
+    <value>_Көру</value>
+  </data>
+  <data name="changelogDownloadError" xml:space="preserve">
+    <value>{0} мекен-жайынан өзгерістер тарихын жүктеп алу мүмкін болмады</value>
+  </data>
+  <data name="checkBoxCheckForUpdates" xml:space="preserve">
+    <value>Іске қосылғанда жаңартуларды тексеру</value>
+  </data>
+  <data name="checkBoxCheckForUpdates_ToolTip_Part" xml:space="preserve">
+    <value>Қолданба іске қосылғанда келесі мекен-жайды тексереді:</value>
+  </data>
+  <data name="checkBoxCoverArtInFolderConvertToJpg" xml:space="preserve">
+    <value>JPG-ге түрлендіру</value>
+  </data>
+  <data name="checkBoxCoverArtInFolderConvertToJpg_ToolTip" xml:space="preserve">
+    <value>Мұқаба суретін 90% сығымдылықпен JPG-ге түрлендіреді (өлшем мен сапат арасындағы жақсы баланс).</value>
+  </data>
+  <data name="checkBoxCoverArtInFolderResize" xml:space="preserve">
+    <value>Ені/биіктігіне шектеу қою</value>
+  </data>
+  <data name="checkBoxCoverArtInFolderResize_ToolTip" xml:space="preserve">
+    <value>Мұқаба суретін көрсетілген максимал ені/биіктігіне өзгертеді.</value>
+  </data>
+  <data name="checkBoxCoverArtInTagsConvertToJpg" xml:space="preserve">
+    <value>JPG-ге түрлендіру</value>
+  </data>
+  <data name="checkBoxCoverArtInTagsConvertToJpg_ToolTip" xml:space="preserve">
+    <value>Мұқаба суретін 90% сығымдылықпен JPG-ге түрлендіреді (өлшем мен сапат арасындағы жақсы баланс).</value>
+  </data>
+  <data name="checkBoxCoverArtInTagsResize" xml:space="preserve">
+    <value>Ені/биіктігіне шектеу қою</value>
+  </data>
+  <data name="checkBoxCoverArtInTagsResize_ToolTip" xml:space="preserve">
+    <value>Мұқаба суретін көрсетілген максимал ені/биіктігіне өзгертеді.</value>
+  </data>
+  <data name="checkBoxCreatePlaylist" xml:space="preserve">
+    <value>Әр альбом үшін плейлист жасау</value>
+  </data>
+  <data name="checkBoxCreatePlaylist_ToolTip" xml:space="preserve">
+    <value>Жүктеп алынған әр альбом үшін плейлист файлын жасайды.</value>
+  </data>
+  <data name="checkBoxDownloadDiscography" xml:space="preserve">
+    <value>Әртістің дискографиясын жүктеп алу</value>
+  </data>
+  <data name="checkBoxDownloadDiscography_ToolTip" xml:space="preserve">
+    <value>Әртістің толық дискографиясын жүктеп алады.</value>
+  </data>
+  <data name="checkBoxEnableApplicationSounds" xml:space="preserve">
+    <value>Хабарландыру дыбыстарын ойнату</value>
+  </data>
+  <data name="checkBoxEnableApplicationSounds_ToolTip" xml:space="preserve">
+    <value>Жүктеу аяқталғандағы хабарландыру дыбысы.</value>
+  </data>
+  <data name="checkBoxM3uExtended" xml:space="preserve">
+    <value>Кеңейтілген пішімді қолдану (тек M3U)</value>
+  </data>
+  <data name="checkBoxM3uExtended_ToolTip" xml:space="preserve">
+    <value>Кеңейтілген пішімдегі M3U плейлисттері (# таңбасымен басталатын директивалар).</value>
+  </data>
+  <data name="checkBoxModifyTags" xml:space="preserve">
+    <value>Трек тегтерін өзгерту (ID3)</value>
+  </data>
+  <data name="checkBoxModifyTags_ToolTip" xml:space="preserve">
+    <value>Әр тегті төмендегідей өзгертеді.
+
+Қосылмаған болса, барлық тегтер өзгертілмейді, бұл әр тегті "Өзгертпеу" деп белгілеумен бірдей.</value>
+  </data>
+  <data name="checkBoxRetrieveFilesSize" xml:space="preserve">
+    <value>Тректерді жүктеп алудың алдында файл өлшемін алу</value>
+  </data>
+  <data name="checkBoxRetrieveFilesSize_ToolTip" xml:space="preserve">
+    <value>Дәл үрдісті көрсету үшін файл өлшемін алады.
+Қосылмаған болса, жолақ ені мен уақытты үнемдеуге болады.</value>
+  </data>
+  <data name="checkBoxSaveCoverArtInFolder" xml:space="preserve">
+    <value>Қаптамада сақтау</value>
+  </data>
+  <data name="checkBoxSaveCoverArtInFolder_ToolTip" xml:space="preserve">
+    <value>Мұқаба суретін альбом қаптамасына жүктеп алады.</value>
+  </data>
+  <data name="checkBoxSaveCoverArtInTags" xml:space="preserve">
+    <value>Тегтерде сақтау</value>
+  </data>
+  <data name="checkBoxSaveCoverArtInTags_ToolTip" xml:space="preserve">
+    <value>Мұқаба суретін трек тегтеріне сақтайды.</value>
+  </data>
+  <data name="checkBoxVerboseLog" xml:space="preserve">
+    <value>Толық логты көрсету</value>
+  </data>
+  <data name="checkBoxVerboseLog_ToolTip" xml:space="preserve">
+    <value>Логқа көбірек ақпарат көрсетеді.</value>
+  </data>
+  <data name="labelAdvancedSettingsWarning" xml:space="preserve">
+    <value>Бұл баптауларды өз жауапкершілігіңізбен өзгертіңіз.</value>
+  </data>
+  <data name="labelAlbumArtist" xml:space="preserve">
+    <value>Альбом әртісі</value>
+  </data>
+  <data name="labelAlbumTitle" xml:space="preserve">
+    <value>Альбом аты</value>
+  </data>
+  <data name="labelAllowedFileSizeDifference" xml:space="preserve">
+    <value>Рұқсат етілген файл өлшемі айырмашылығы (%)</value>
+  </data>
+  <data name="labelArtist" xml:space="preserve">
+    <value>Әртіс</value>
+  </data>
+  <data name="labelButtonResetSettings" xml:space="preserve">
+    <value>Баптауларды қайтару</value>
+  </data>
+  <data name="labelChangelog" xml:space="preserve">
+    <value>Өзгерістер тарихы</value>
+  </data>
+  <data name="labelChangelogTitle" xml:space="preserve">
+    <value>Өзгерістер тарихы</value>
+  </data>
+  <data name="labelComments" xml:space="preserve">
+    <value>Пікірлер</value>
+  </data>
+  <data name="labelCoverArtFileNameFormat" xml:space="preserve">
+    <value>Файл аты пішімі</value>
+  </data>
+  <data name="labelCoverArtInFolderMaxSize" xml:space="preserve">
+    <value>Максимал өлшем (пиксель)</value>
+  </data>
+  <data name="labelCoverArtInTagsMaxSize" xml:space="preserve">
+    <value>Максимал өлшем (пиксель)</value>
+  </data>
+  <data name="labelCurrentVersion" xml:space="preserve">
+    <value>Ағымдағы нұсқа:</value>
+  </data>
+  <data name="labelDownloadMaxTries" xml:space="preserve">
+    <value>Максимал жүктеу әрекет саны</value>
+  </data>
+  <data name="labelDownloadRetryCooldown" xml:space="preserve">
+    <value>Қайталану күту уақыты (сек)</value>
+  </data>
+  <data name="labelDownloadRetryExponent" xml:space="preserve">
+    <value>Қайталану дәрежесі</value>
+  </data>
+  <data name="labelDownloadsPath" xml:space="preserve">
+    <value>Альбомдарды сақтау орны</value>
+  </data>
+  <data name="labelFileNameFormat" xml:space="preserve">
+    <value>Файл аты пішімі:</value>
+  </data>
+  <data name="labelHttp" xml:space="preserve">
+    <value>HTTP(S) прокси</value>
+  </data>
+  <data name="labelHttpPort" xml:space="preserve">
+    <value>Порт</value>
+  </data>
+  <data name="labelIssues" xml:space="preserve">
+    <value>Қате туралы хабарлау</value>
+  </data>
+  <data name="labelLanguage" xml:space="preserve">
+    <value>Тіл</value>
+  </data>
+  <data name="labelListBoxItemAbout" xml:space="preserve">
+    <value>Қолданба туралы</value>
+  </data>
+  <data name="labelListBoxItemAdvanced" xml:space="preserve">
+    <value>Қосымша баптаулар</value>
+  </data>
+  <data name="labelListBoxItemCoverArt" xml:space="preserve">
+    <value>Мұқаба суреті</value>
+  </data>
+  <data name="labelListBoxItemDownloads" xml:space="preserve">
+    <value>Жүктеп алу</value>
+  </data>
+  <data name="labelListBoxItemGeneral" xml:space="preserve">
+    <value>Жалпы</value>
+  </data>
+  <data name="labelListBoxItemNetwork" xml:space="preserve">
+    <value>Желі</value>
+  </data>
+  <data name="labelListBoxItemPlaylist" xml:space="preserve">
+    <value>Плейлист</value>
+  </data>
+  <data name="labelListBoxItemTags" xml:space="preserve">
+    <value>Атау және тегтер</value>
+  </data>
+  <data name="labelLyrics" xml:space="preserve">
+    <value>Өлең сөздері</value>
+  </data>
+  <data name="labelPlaylistFileNameFormat" xml:space="preserve">
+    <value>Файл аты пішімі</value>
+  </data>
+  <data name="labelPlaylistFormat" xml:space="preserve">
+    <value>Плейлист пішімі</value>
+  </data>
+  <data name="labelSettingsInfo" xml:space="preserve">
+    <value>Тректерді жүктеп алғанда кейбір баптауларды өзгерту мүмкін емес.</value>
+  </data>
+  <data name="labelTheme" xml:space="preserve">
+    <value>Тема</value>
+  </data>
+  <data name="labelTrackNumber" xml:space="preserve">
+    <value>Трек нөмірі</value>
+  </data>
+  <data name="labelTrackTitle" xml:space="preserve">
+    <value>Атауы</value>
+  </data>
+  <data name="labelVerboseLogInfo" xml:space="preserve">
+    <value>(лог файлы әрқашанда толық)</value>
+  </data>
+  <data name="labelVersion" xml:space="preserve">
+    <value>Нұсқа</value>
+  </data>
+  <data name="labelVersionError" xml:space="preserve">
+    <value>Жаңартуларды тексеру мүмкін болмады</value>
+  </data>
+  <data name="labelVersionNewUpdateAvailable" xml:space="preserve">
+    <value>Жаңа нұсқа қол жетімді</value>
+  </data>
+  <data name="labelWebsite" xml:space="preserve">
+    <value>Веб-сайт</value>
+  </data>
+  <data name="labelYear" xml:space="preserve">
+    <value>Альбом шығарылған жылы</value>
+  </data>
+  <data name="messageBoxButtonCancel" xml:space="preserve">
+    <value>_Бас тарту</value>
+  </data>
+  <data name="messageBoxButtonNo" xml:space="preserve">
+    <value>_Жоқ</value>
+  </data>
+  <data name="messageBoxButtonOK" xml:space="preserve">
+    <value>_ОК</value>
+  </data>
+  <data name="messageBoxButtonYes" xml:space="preserve">
+    <value>_Иә</value>
+  </data>
+  <data name="messageBoxCancelDownloadsText" xml:space="preserve">
+    <value>Барлық жүктеп алуларды болдырмау керек пе?</value>
+  </data>
+  <data name="messageBoxCheckForUpdatesError" xml:space="preserve">
+    <value>Жаңартуларды тексеру кезінде қате пайда болды. Кейінірек қайталап көріңіз.</value>
+  </data>
+  <data name="messageBoxCloseWindowWhenDownloadingButtonOk" xml:space="preserve">
+    <value>Қолданбаны жабу</value>
+  </data>
+  <data name="messageBoxCloseWindowWhenDownloadingText" xml:space="preserve">
+    <value>Ағымда белсенді жүктеп аулар бар. Қолданбаны жапып, барлық жүктеп ауларды тоқтатуға сенімдісіз бе?</value>
+  </data>
+  <data name="messageBoxCouldNotOpenUrlError" xml:space="preserve">
+    <value>Келесі сілтемені ашу мүмкін болмады:
+{0}</value>
+  </data>
+  <data name="messageBoxNoUpdateAvailable" xml:space="preserve">
+    <value>Сізде ең соңғы нұсқа ({0}) бар.</value>
+  </data>
+  <data name="messageBoxResetSettingsButtonOk" xml:space="preserve">
+    <value>Баптауларды қайтару</value>
+  </data>
+  <data name="messageBoxResetSettingsText" xml:space="preserve">
+      <value>Барлық баптауларды әдепкі мәндеріне қайтару керек пе?
+Бұл әрекетті жасау мүмкін емес.</value>
+  </data>
+  <data name="messageBoxUnhandledException" xml:space="preserve">
+    <value>Өңделмеген қате пайда болды. Қолданба енді жабылады.
+
+Лог файлының мазмұнымен жаңа мәселе хабарлаңыз:
+{0}</value>
+  </data>
+  <data name="radioButtonManualProxy" xml:space="preserve">
+    <value>Қолмен баптау</value>
+  </data>
+  <data name="radioButtonNoProxy" xml:space="preserve">
+    <value>Жоқ</value>
+  </data>
+  <data name="radioButtonSystemProxy" xml:space="preserve">
+    <value>Жүйе</value>
+  </data>
+  <data name="saveFileDialogTitle" xml:space="preserve">
+    <value>Атын сақтау</value>
+  </data>
+  <data name="Skin_Dark" xml:space="preserve">
+    <value>Қараңғы</value>
+  </data>
+  <data name="Skin_Light" xml:space="preserve">
+    <value>Ақ</value>
+  </data>
+  <data name="TagEditAction_DoNotModify" xml:space="preserve">
+    <value>Өзгертпеу</value>
+  </data>
+  <data name="TagEditAction_Empty" xml:space="preserve">
+    <value>Тегті тазалау</value>
+  </data>
+  <data name="TagEditAction_Modify" xml:space="preserve">
+    <value>Тегте сақтау</value>
+  </data>
+  <data name="TagRemoveAction_DoNotModify" xml:space="preserve">
+    <value>Өзгертпеу</value>
+  </data>
+  <data name="TagRemoveAction_Empty" xml:space="preserve">
+    <value>Тегті тазалау</value>
+  </data>
+  <data name="textBlockReleasesWebsite" xml:space="preserve">
+    <value>Шығарылымдар тарихы</value>
+  </data>
+  <data name="textBlockTranslationHelp" xml:space="preserve">
+    <value>Аудармаға көмектесу</value>
+  </data>
+  <data name="textBoxAllowedFileSizeDifference_ToolTip" xml:space="preserve">
+    <value>Трек жүктеп алынғанда, егер сол файл (аты) бар болса, жүктеп алынатын трекпен салыстырылады.
+Екі файлдың өлшемі ол мәннен (%-пен) аз айырмашылықтаса, трек жүктеп алуы елемейді.
+Бұл мәнді 0 деп қойсаңыз, дискіде бар болса да әрқашан тректерді жүктеп аласыз.
+
+Ұсынылатын мән = 5</value>
+  </data>
+  <data name="textBoxCoverArtFileNameFormat_ToolTip" xml:space="preserve">
+    <value>Файл атын теңшеу үшін орын ауыстырғыштарды қолдануға болады:
+- {artist} альбом әртісімен ауыстырылады
+- {album} альбом атымен ауыстырылады
+- {year}, {month} және {day} альбом шығарылған күнімен ауыстырылады</value>
+  </data>
+  <data name="textBoxDownloadMaxTries_ToolTip" xml:space="preserve">
+    <value>Трек жүктеп алу сәтсіз болса, орындалатын максимал әрекет саны.
+Бұл санға жеткенде (әр трек үшін), трек жүктеп алуы елемейді.
+
+Ұсынылатын мән = 7</value>
+  </data>
+  <data name="textBoxDownloadRetryCooldown_ToolTip" xml:space="preserve">
+    <value>Экспоненциалды кері қайтару механизмін басқару үшін қолданылады.
+Трек жүктеп алу әр сәтсіз болғанда, BandcampDownloader Bandcamp спам-қарсы фильтрін тітіктендірмеу үшін,
+тректі қайта жүктеп алудың алдында белгілі уақыт күтіп ала алады.
+Қайта жүктеп алуын қайталап көрудің алдында күтілетін уақытты есептеу үшін қолданылатын формула келесідей:
+уақыт = күту уақыты * (дәреже * әрекет саны)
+
+Ұсынылатын мән = 0.2</value>
+  </data>
+  <data name="textBoxDownloadRetryExponent_ToolTip" xml:space="preserve">
+    <value>Экспоненциалды кері қайтару механизмін басқару үшін қолданылады.
+Трек жүктеп алу әр сәтсіз болғанда, BandcampDownloader Bandcamp спам-қарсы фильтрін тітіктендірмеу үшін,
+тректі қайта жүктеп алудың алдында белгілі уақыт күтіп ала алады.
+Қайта жүктеп алуын қайталап көрудің алдында күтілетін уақытты есептеу үшін қолданылатын формула келесідей:
+уақыт = күту уақыты * (дәреже * әрекет саны)
+
+Ұсынылатын мән = 4</value>
+  </data>
+  <data name="textBoxDownloadsPath_ToolTip" xml:space="preserve">
+    <value>Орын ауыстырғыштарды қолдану арқылы альбомға байланысты жүктеп алу қаптамасын теңшеуге болады:
+- {artist} альбом әртісімен ауыстырылады
+- {album} альбом атымен ауыстырылады
+- {year}, {month} және {day} альбом шығарылған күнімен ауыстырылады</value>
+  </data>
+  <data name="textBoxFileNameFormat_ToolTip" xml:space="preserve">
+    <value>Файл атын теңшеу үшін орын ауыстырғыштарды қолдануға болады:
+- {artist} альбом әртісімен ауыстырылады
+- {title} трек атымен ауыстырылады
+- {tracknum} трек нөмірімен ауыстырылады
+- {album} альбом атымен ауыстырылады
+- {year}, {month} және {day} альбом шығарылған күнімен ауыстырылады</value>
+  </data>
+  <data name="textBoxPlaylistFileNameFormat_ToolTip" xml:space="preserve">
+    <value>Файл атын теңшеу үшін орын ауыстырғыштарды қолдануға болады:
+- {artist} альбом әртісімен ауыстырылады
+- {album} альбом атымен ауыстырылады
+- {year}, {month} және {day} альбом шығарылған күнімен ауыстырылады</value>
+  </data>
+  <data name="textBoxUrlsPlaceholder" xml:space="preserve">
+    <value>Жүктеп алу қажет альбомдардың URL-дарын осында қойыңыз. Бір жолға бір URL жазу арқылы бірнеше URL-ды көрсете аласыз.
+
+Bandcamp URL-сы келесідей болады: http://[artist].bandcamp.com/album/[album] немесе http://[artist].bandcamp.com/track/[track]
+Әртістің парақшаларын қойыңыз: http://[artist].bandcamp.com және "☑ Әртістің дискографиясын жүктеп алу" белгісін қойып, олардың барлық альбомдарын жүктеп алыңыз.</value>
+  </data>
+  <data name="windowSettings_Title" xml:space="preserve">
+    <value>Баптаулар</value>
+  </data>
+  <data name="windowUpdate_Title" xml:space="preserve">
+    <value>Жаңарту</value>
+  </data>
+  <data name="labelProxy" xml:space="preserve">
+    <value>Прокси</value>
+  </data>
+  <data name="labelMaxConcurrentAlbumsDownloads" xml:space="preserve">
+      <value>Максимал бір уақыттағы альбом жүктеп алу саны</value>
+  </data>
+  <data name="labelMaxConcurrentTracksDownloads" xml:space="preserve">
+      <value>Максимал бір уақыттағы трек жүктеп алу саны</value>
+  </data>
+  <data name="textBoxMaxConcurrentAlbumsDownloads_ToolTip" xml:space="preserve">
+      <value>Бір уақытта жүктеп алынатын альбомдардың максимал саны</value>
+  </data>
+  <data name="textBoxMaxConcurrentTracksDownloads_ToolTip" xml:space="preserve">
+      <value>Бір уақытта жүктеп алынатын тректердің (сол альбом ішінде) максимал саны</value>
+  </data>
+  <data name="checkBoxContinueOnError" xml:space="preserve">
+    <value>Қате пайда болса жүктеп алуды жалғастыру</value>
+  </data>
+  <data name="checkBoxContinueOnError_ToolTip" xml:space="preserve">
+    <value>Қосылса, қате пайда болғанда жүктеп алушы барлық жүктеп алуын тоқтату орнына, келесі альбомға немесе трекке өтеді.</value>
+  </data>
+  <data name="checkBoxWaitForFileAfterDownload" xml:space="preserve">
+    <value>Тегті қоймас бұрын файлдың дайын болуын күту</value>
+  </data>
+  <data name="checkBoxWaitForFileAfterDownload_ToolTip" xml:space="preserve">
+    <value>Қосылса, тег қосуды тырыспас бұрын жүктеп алынған файлдың дискіне толық жазылуын күтеді. Файл табылмады қатесін болдырмауға көмектеседі.</value>
+  </data>
+  <data name="checkBoxSplitVariousArtistsTrackTitles" xml:space="preserve">
+    <value>V/A трек атауларын бөлу (Әртіс - Атау)</value>
+  </data>
+  <data name="checkBoxSplitVariousArtistsTrackTitles_ToolTip" xml:space="preserve">
+    <value>Various Artists шығарылымдары үшін "Әртіс аты - Трек аты" пішіміндегі трек атауларын автоматты түрде бөлек әртіс және атау тегтеріне бөледі.</value>
+  </data>
+  <data name="labelListBoxItemBDF" xml:space="preserve">
+    <value>BDF</value>
+  </data>
+  <data name="checkBoxIgnoreTracksLongerThan" xml:space="preserve">
+    <value>Көрсетілген уақыттан ұзақ тректерді елемеу</value>
+  </data>
+  <data name="checkBoxIgnoreTracksLongerThan_ToolTip" xml:space="preserve">
+    <value>Көрсетілген уақыттан (минутпен) асып түсетін тректерді жүктеп алуды елемейді.</value>
+  </data>
+  <data name="checkBoxAssignAlbumArtistToAllTracks" xml:space="preserve">
+    <value>Барлық тректерге альбом әртісін тағайындау</value>
+  </data>
+  <data name="checkBoxAssignAlbumArtistToAllTracks_ToolTip" xml:space="preserve">
+    <value>Альбом әртісін барлық тректердің трек әртісі ретінде орнатады. Жинақтар немесе V/A шығарылымдары үшін пайдалы.</value>
+  </data>
+  <data name="checkBoxShowTrackCountText" xml:space="preserve">
+    <value>Жүктеп алғанда трек санын көрсету</value>
+  </data>
+  <data name="checkBoxShowTrackCountText_ToolTip" xml:space="preserve">
+    <value>Әрекеттер тақтасында осы уақытқа дейін жүктеп алынған тректер санын көрсетеді.</value>
+  </data>
+  <data name="checkBoxForceBitrate" xml:space="preserve">
+    <value>Битрейтті мәжбүрлеу (Эксперименталды)</value>
+  </data>
+  <data name="forceBitrateDialogTitle" xml:space="preserve">
+    <value>Эксперименталды мүмкіндік туралы ескерту</value>
+  </data>
+  <data name="forceBitrateDialogText" xml:space="preserve">
+    <value>Бұл мүмкіндік эксперименталды. Битрейт түрлендіруі барлық жүйелерде дұрыс жұмыс істемеуі мүмкін және күтпеген нәтижелерге әкелуі мүмкін.
+
+Бұл мүмкіндікті қосуға сенімдісіз бе?</value>
+  </data>
+  <data name="forceBitrateDialogDontShowAgain" xml:space="preserve">
+    <value>Бұл ескертуді қайта көрсетпеу</value>
+  </data>
+  <data name="dialogButtonYes" xml:space="preserve">
+    <value>_Иә</value>
+  </data>
+  <data name="dialogButtonNo" xml:space="preserve">
+    <value>_Жоқ</value>
+  </data>
+  <data name="checkBoxForceBitrate_ToolTip" xml:space="preserve">
+    <value>Жүктеп алынған тректерді көрсетілген битрейтке түрлендіреді. Файл өлшемін азайтуға көмектеседі.</value>
+  </data>
+  <data name="checkBoxShowOriginalDownloadSize" xml:space="preserve">
+    <value>Бастапқы жүктеп алу өлшемін көрсету</value>
+  </data>
+  <data name="checkBoxShowOriginalDownloadSize_ToolTip" xml:space="preserve">
+    <value>Түрлендірілген өлшеммен қатар бастапқы жүктеп алу өлшемін жақшалар ішінде көрсетеді.</value>
+  </data>
+  <data name="checkBoxEnableToastNotifications" xml:space="preserve">
+    <value>Toast хабарландыруларын қосу</value>
+  </data>
+  <data name="checkBoxEnableToastNotifications_ToolTip" xml:space="preserve">
+    <value>Жүктеп алу оқиғалары үшін Windows toast хабарландыруларын көрсетеді.</value>
+  </data>
+  <data name="checkBoxToastOnDownloadComplete" xml:space="preserve">
+    <value>Жүктеп алу аяқталғанда</value>
+  </data>
+  <data name="checkBoxToastOnDownloadComplete_ToolTip" xml:space="preserve">
+    <value>Барлық жүктеп аулар аяқталғанда хабарландыруды көрсетеді.</value>
+  </data>
+  <data name="checkBoxToastOnDownloadError" xml:space="preserve">
+    <value>Жүктеп алу қатесі кезінде</value>
+  </data>
+  <data name="checkBoxToastOnDownloadError_ToolTip" xml:space="preserve">
+    <value>Жүктеп алу сәтсіз болғанда хабарландыруды көрсетеді.</value>
+  </data>
+  <data name="checkBoxToastOnAlbumComplete" xml:space="preserve">
+    <value>Альбом жүктеп алынғанда</value>
+  </data>
+  <data name="checkBoxToastOnAlbumComplete_ToolTip" xml:space="preserve">
+    <value>Әр альбом жүктеп алуы аяқталғанда хабарландыруды көрсетеді.</value>
+  </data>
+  <data name="checkBoxToastOnTrackSkipped" xml:space="preserve">
+    <value>Трек елемегенде</value>
+  </data>
+  <data name="checkBoxToastOnTrackSkipped_ToolTip" xml:space="preserve">
+    <value>Трек елемегенде (мысалы, уақыт шегіне байланысты) хабарландыруды көрсетеді.</value>
+  </data>
+</root>
