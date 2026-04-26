@@ -12,13 +12,15 @@
     x:Name="windowSettings"
     Title="{lex:Loc}"
     Width="620"
-    Height="380"
+    Height="400"
+    MinHeight="380"
+    MinWidth="620"
     lex:LocalizeDictionary.DesignCulture="en"
     lex:ResxLocalizationProvider.DefaultAssembly="BandcampDownloader"
     lex:ResxLocalizationProvider.DefaultDictionary="Resources"
     FocusManager.FocusedElement="{Binding ElementName=ListBoxSections}"
     Icon="/BandcampDownloader;component/Resources/Cloud.ico"
-    ResizeMode="NoResize"
+    ResizeMode="CanResize"
     TextOptions.TextFormattingMode="Display"
     WindowStartupLocation="CenterOwner"
     WindowStyle="SingleBorderWindow"
@@ -51,10 +53,10 @@
         <ListBox
             x:Name="ListBoxSections"
             Width="170"
-            Height="269"
+            Height="Auto"
             Margin="0,26,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
+            VerticalAlignment="Stretch"
             TabIndex="0">
             <ListBoxItem x:Name="ListBoxItemGeneral" IsSelected="True">
                 <StackPanel Orientation="Horizontal">
@@ -158,14 +160,14 @@
         </ListBox>
         <settings:UserControlSettingsGeneral
             x:Name="UserControlSettingsGeneral"
-            Margin="175,31,0,0"
+            Margin="175,31,10,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TabIndex="1"
             Visibility="{Binding IsSelected, ElementName=ListBoxItemGeneral, Converter={StaticResource BooleanToVisibilityConverter}}" />
         <settings:UserControlSettingsTags
             x:Name="UserControlSettingsTags"
-            Margin="175,31,0,0"
+            Margin="175,31,10,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             IsEnabled="{Binding ActiveDownloads, ElementName=windowSettings, Converter={StaticResource InverseBooleanConverter}}"
@@ -173,7 +175,7 @@
             Visibility="{Binding IsSelected, ElementName=ListBoxItemTags, Converter={StaticResource BooleanToVisibilityConverter}}" />
         <settings:UserControlSettingsCoverArt
             x:Name="UserControlSettingsCoverArt"
-            Margin="175,31,0,0"
+            Margin="175,31,10,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             IsEnabled="{Binding ActiveDownloads, ElementName=windowSettings, Converter={StaticResource InverseBooleanConverter}}"
@@ -181,7 +183,7 @@
             Visibility="{Binding IsSelected, ElementName=ListBoxItemCoverArt, Converter={StaticResource BooleanToVisibilityConverter}}" />
         <settings:UserControlSettingsPlaylist
             x:Name="UserControlSettingsPlaylist"
-            Margin="175,31,0,0"
+            Margin="175,31,10,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             IsEnabled="{Binding ActiveDownloads, ElementName=windowSettings, Converter={StaticResource InverseBooleanConverter}}"
@@ -189,7 +191,7 @@
             Visibility="{Binding IsSelected, ElementName=ListBoxItemPlaylist, Converter={StaticResource BooleanToVisibilityConverter}}" />
         <settings:UserControlSettingsDownloads
             x:Name="UserControlSettingsDownloads"
-            Margin="175,31,0,0"
+            Margin="175,31,10,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             IsEnabled="{Binding ActiveDownloads, ElementName=windowSettings, Converter={StaticResource InverseBooleanConverter}}"
@@ -197,7 +199,7 @@
             Visibility="{Binding IsSelected, ElementName=ListBoxItemDownloads, Converter={StaticResource BooleanToVisibilityConverter}}" />
         <settings:UserControlSettingsBDF
             x:Name="UserControlSettingsBDF"
-            Margin="175,31,0,0"
+            Margin="175,31,10,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             IsEnabled="{Binding ActiveDownloads, ElementName=windowSettings, Converter={StaticResource InverseBooleanConverter}}"
@@ -205,7 +207,7 @@
             Visibility="{Binding IsSelected, ElementName=ListBoxItemBDF, Converter={StaticResource BooleanToVisibilityConverter}}" />
         <settings:UserControlSettingsNetwork
             x:Name="UserControlSettingsNetwork"
-            Margin="175,31,0,0"
+            Margin="175,31,10,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             IsEnabled="{Binding ActiveDownloads, Converter={StaticResource InverseBooleanConverter}, ElementName=windowSettings}"
@@ -213,7 +215,7 @@
             Visibility="{Binding IsSelected, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=ListBoxItemNetwork}" />
         <settings:UserControlSettingsAdvanced
             x:Name="UserControlSettingsAdvanced"
-            Margin="175,31,0,0"
+            Margin="175,31,10,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             IsEnabled="{Binding ActiveDownloads, ElementName=windowSettings, Converter={StaticResource InverseBooleanConverter}}"
@@ -221,7 +223,7 @@
             Visibility="{Binding IsSelected, ElementName=ListBoxItemAdvanced, Converter={StaticResource BooleanToVisibilityConverter}}" />
         <settings:UserControlSettingsAbout
             x:Name="UserControlSettingsAbout"
-            Margin="175,31,0,0"
+            Margin="175,31,10,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TabIndex="1"
