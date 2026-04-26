@@ -32,6 +32,13 @@ The **BDF** section provides reliability options to ensure your downloads comple
 * **Continue on error**: Keeps downloading remaining albums/tracks when errors occur instead of stopping everything.
 * **Wait for file ready**: Handles race conditions by waiting for downloaded files to be fully written before tagging.
 * **Split V/A titles**: Properly handles Various Artists releases by extracting artist names from track titles.
+* **Ignore tracks longer than**: Skips downloading tracks that exceed a specified duration in minutes.
+* **Assign album artist to all tracks**: Sets the album artist as the track artist for all tracks, useful for compilations.
+* **Show track count**: Displays the number of tracks downloaded in the action bar.
+* **Force bitrate**: Experimental feature to convert downloaded tracks to a specified bitrate.
+* **Show original download size**: Displays the original download size alongside converted size.
+* **Toast notifications**: Windows toast notifications for download events (complete, error, album complete, track skipped).
+* **Detailed error dialog**: Shows detailed error information in error dialogs instead of generic messages.
 
 <p align="center">
     <img alt="Screenshot" src="docs/images/Screenshot.png">
