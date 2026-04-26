@@ -84,7 +84,7 @@
                 NavigateUri="{Binding Source={x:Static core:Constants.URL_WEBSITE}}"
                 RequestNavigate="Hyperlink_RequestNavigate"
                 ToolTip="{Binding Source={x:Static core:Constants.URL_WEBSITE}}">
-                <TextBlock x:Name="TextBlockWebsite" Text="github.com/Otiel/BandcampDownloader" />
+                <TextBlock x:Name="TextBlockWebsite" Text="github.com/Nai64/BandcampDownloaderFixed" />
             </Hyperlink>
         </TextBlock>
         <Label
@@ -101,7 +101,7 @@
                 NavigateUri="{Binding Source={x:Static core:Constants.URL_ISSUES}}"
                 RequestNavigate="Hyperlink_RequestNavigate"
                 ToolTip="{Binding Source={x:Static core:Constants.URL_ISSUES}}">
-                <TextBlock x:Name="TextBlockIssuesWebsite" Text="github.com/Otiel/BandcampDownloader/issues" />
+                <TextBlock x:Name="TextBlockIssuesWebsite" Text="github.com/Nai64/BandcampDownloaderFixed/issues" />
             </Hyperlink>
         </TextBlock>
     </Grid>

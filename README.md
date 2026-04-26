@@ -1,10 +1,10 @@
 <h1 align="center"><img alt="Icon" src="docs/images/Cloud.png"> Bandcamp Downloader</h1>
 
 <p align="center">
-    <a href="https://github.com/Otiel/BandcampDownloader/releases/latest"><img alt="Download" src="docs/images/DownloadButton.png"></a>
+    <a href="https://github.com/Nai64/BandcampDownloaderFixed/releases/latest"><img alt="Download" src="docs/images/DownloadButton.png"></a>
 </p>
 
-[![Workflow status](https://github.com/Otiel/BandcampDownloader/actions/workflows/dotnet.yml/badge.svg?branch=master)](https://github.com/Otiel/BandcampDownloader/actions/workflows/dotnet.yml) [![Translation status](https://hosted.weblate.org/widgets/bandcampdownloader/-/bandcampdownloader/svg-badge.svg)](https://hosted.weblate.org/engage/bandcampdownloader/)
+[![Workflow status](https://github.com/Nai64/BandcampDownloaderFixed/actions/workflows/dotnet.yml/badge.svg?branch=master)](https://github.com/Nai64/BandcampDownloaderFixed/actions/workflows/dotnet.yml) [![Translation status](https://hosted.weblate.org/widgets/bandcampdownloader/-/bandcampdownloader/svg-badge.svg)](https://hosted.weblate.org/engage/bandcampdownloader/)
 
 ## Description
 
@@ -55,9 +55,13 @@ BandcampDownloader is licensed under the MIT license - see the [LICENSE](LICENSE
 
 ## Credits
 
+**Original Author**: [Otiel](https://github.com/Otiel) - Created this awesome application!
+
+**Maintained/Updated by**: [Nai64](https://github.com/Nai64) - Keeping the project alive with fixes and improvements.
+
 Some icons by [Yusuke Kamiyamane](http://p.yusukekamiyamane.com) licensed under a [Creative Commons Attribution 3.0 License](https://creativecommons.org/licenses/by/3.0).
 
-The list of open-source libraries used by BandcampDownloader can be found on the [dependency graph](https://github.com/Otiel/BandcampDownloader/network/dependencies).
+The list of open-source libraries used by BandcampDownloader can be found on the [dependency graph](https://github.com/Nai64/BandcampDownloaderFixed/network/dependencies).
 
 ## Piracy
 

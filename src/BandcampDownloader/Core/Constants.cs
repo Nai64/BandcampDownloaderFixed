@@ -18,25 +18,25 @@ internal static class Constants
     /// <summary>
     /// The URL redirecting to the help page on translating the app on GitHub.
     /// </summary>
-    public const string URL_HELP_TRANSLATE = "https://github.com/Otiel/BandcampDownloader/blob/master/docs/help-translate.md";
+    public const string URL_HELP_TRANSLATE = "https://github.com/Nai64/BandcampDownloaderFixed/blob/master/docs/help-translate.md";
 
     /// <summary>
     /// The URL redirecting to the issues page on GitHub.
     /// </summary>
-    public const string URL_ISSUES = "https://github.com/Otiel/BandcampDownloader/issues";
+    public const string URL_ISSUES = "https://github.com/Nai64/BandcampDownloaderFixed/issues";
 
     /// <summary>
     /// The URL redirecting to the latest release on GitHub.
     /// </summary>
-    public const string URL_LATEST_RELEASE = "https://github.com/Otiel/BandcampDownloader/releases/latest";
+    public const string URL_LATEST_RELEASE = "https://github.com/Nai64/BandcampDownloaderFixed/releases/latest";
 
     /// <summary>
     /// The URL redirecting to the releases page on GitHub.
     /// </summary>
-    public const string URL_RELEASES = "https://github.com/Otiel/BandcampDownloader/releases";
+    public const string URL_RELEASES = "https://github.com/Nai64/BandcampDownloaderFixed/releases";
 
     /// <summary>
     /// The website URL of BandcampDownloader.
     /// </summary>
-    public const string URL_WEBSITE = "https://github.com/Otiel/BandcampDownloader";
+    public const string URL_WEBSITE = "https://github.com/Nai64/BandcampDownloaderFixed";
 }
