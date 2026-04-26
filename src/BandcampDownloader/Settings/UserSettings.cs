@@ -58,8 +58,6 @@ public enum Language
     lolcat,
     [Description("Shakespearean (Thou shalt)")]
     shakespeare,
-    [Description("Braille (⠓⠗⠑⠊⠇⠇⠑⠂)")]
-    braille,
     //[Description("Korean (한국ы)")]
     //ko,
     [Description("Norwegian Bokmål (Norsk Bokmål)")]
