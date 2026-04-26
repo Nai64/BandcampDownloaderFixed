@@ -6,7 +6,7 @@
 
 **用于从 Bandcamp 下载专辑的 Windows 应用程序**
 
-[English](README.md) | [简体中文](README.zh-CN.md)
+[English](README.md) | [简体中文](README.zh-CN.md) | [Русский](README.ru.md)
 
 [![下载](https://img.shields.io/badge/下载-最新版本-blue?style=for-the-badge&logo=github)](https://github.com/Nai64/BandcampDownloaderFixed/releases/latest)
 [![工作流状态](https://github.com/Nai64/BandcampDownloaderFixed/actions/workflows/dotnet.yml/badge.svg?branch=master)](https://github.com/Nai64/BandcampDownloaderFixed/actions/workflows/dotnet.yml)
