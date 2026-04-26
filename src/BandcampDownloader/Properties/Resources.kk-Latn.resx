@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    </value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    </value>
+  </resheader>
+  <data name="buttonBrowse" xml:space="preserve">
+    <value>…</value>
+  </data>
+  <data name="buttonBrowse_ToolTip" xml:space="preserve">
+    <value>Qaptamany ağu</value>
+  </data>
+  <data name="buttonCancel" xml:space="preserve">
+    <value>_Bastartu</value>
+  </data>
+  <data name="buttonCheckForUpdates" xml:space="preserve">
+    <value>Tekseru</value>
+  </data>
+  <data name="buttonDownloadUpdate" xml:space="preserve">
+    <value>Jaña nusqani jüktep alu</value>
+  </data>
+  <data name="buttonOpenSettingsWindow" xml:space="preserve">
+    <value>_Baptawlar</value>
+  </data>
+  <data name="buttonOpenSettingsWindow_ToolTip" xml:space="preserve">
+    <value>Baptawlardy açu</value>
+  </data>
+  <data name="buttonResetSettings_ToolTip" xml:space="preserve">
+    <value>Baptawlardy ädepkige qaitaru</value>
+  </data>
+  <data name="buttonSave" xml:space="preserve">
+    <value>_Saqtaw</value>
+  </data>
+  <data name="buttonStart" xml:space="preserve">
+    <value>_Jükteu</value>
+  </data>
+  <data name="buttonStop" xml:space="preserve">
+    <value>_Bastartu</value>
+  </data>
+  <data name="buttonViewChangelog" xml:space="preserve">
+    <value>_Köru</value>
+  </data>
+  <data name="changelogDownloadError" xml:space="preserve">
+    <value>{0} meken-jaýynan özgerister tarikhin jüktep alu mümkin bolmady</value>
+  </data>
+  <data name="checkBoxCheckForUpdates" xml:space="preserve">
+    <value>Iske qosylğanda jañartulardy tekseru</value>
+  </data>
+  <data name="checkBoxCheckForUpdates_ToolTip_Part" xml:space="preserve">
+    <value>Qoldanba iske qosylğanda kelesi meken-jaýdy tekseredi:</value>
+  </data>
+  <data name="checkBoxCoverArtInFolderConvertToJpg" xml:space="preserve">
+    <value>JPG-ge türlendiru</value>
+  </data>
+  <data name="checkBoxCoverArtInFolderConvertToJpg_ToolTip" xml:space="preserve">
+    <value>Muqaba süratin 90% syğymdylyqpen JPG-ge türlendiredi (ölşem men sapat arasyndağı jaqsı balans).</value>
+  </data>
+  <data name="checkBoxCoverArtInFolderResize" xml:space="preserve">
+    <value>Eni/biikigine shekteu qoyu</value>
+  </data>
+  <data name="checkBoxCoverArtInFolderResize_ToolTip" xml:space="preserve">
+    <value>Muqaba süratin körsetilgen maksimal eni/biikigine özgertedi.</value>
+  </data>
+  <data name="checkBoxCoverArtInTagsConvertToJpg" xml:space="preserve">
+    <value>JPG-ge türlendiru</value>
+  </data>
+  <data name="checkBoxCoverArtInTagsConvertToJpg_ToolTip" xml:space="preserve">
+    <value>Muqaba süratin 90% syğymdylyqpen JPG-ge türlendiredi (ölşem men sapat arasyndağı jaqsı balans).</value>
+  </data>
+  <data name="checkBoxCoverArtInTagsResize" xml:space="preserve">
+    <value>Eni/biikigine shekteu qoyu</value>
+  </data>
+  <data name="checkBoxCoverArtInTagsResize_ToolTip" xml:space="preserve">
+    <value>Muqaba süratin körsetilgen maksimal eni/biikigine özgertedi.</value>
+  </data>
+  <data name="checkBoxCreatePlaylist" xml:space="preserve">
+    <value>Är albom üşin pleýlist jasau</value>
+  </data>
+  <data name="checkBoxCreatePlaylist_ToolTip" xml:space="preserve">
+    <value>Jüktep alınğan är albom üşin pleýlist failin jasaidy.</value>
+  </data>
+  <data name="checkBoxDownloadDiscography" xml:space="preserve">
+    <value>Ärtistıñ diskografiyasyn jüktep alu</value>
+  </data>
+  <data name="checkBoxDownloadDiscography_ToolTip" xml:space="preserve">
+    <value>Ärtistıñ tolıq diskografiyasyn jüktep alady.</value>
+  </data>
+  <data name="checkBoxEnableApplicationSounds" xml:space="preserve">
+    <value>Xabarlandiru duybstarin oynatu</value>
+  </data>
+  <data name="checkBoxEnableApplicationSounds_ToolTip" xml:space="preserve">
+    <value>Jükteu aiaqtalğandagı xabarlandiru duybysy.</value>
+  </data>
+  <data name="checkBoxM3uExtended" xml:space="preserve">
+    <value>Keñeitilgen pişimdi qoldanu (tek M3U)</value>
+  </data>
+  <data name="checkBoxM3uExtended_ToolTip" xml:space="preserve">
+    <value>Keñeitilgen pişimdégi M3U pleýistleri (# tañbasymen bastalatyn direktivalar).</value>
+  </data>
+  <data name="checkBoxModifyTags" xml:space="preserve">
+    <value>Trek tetterin özgertu (ID3)</value>
+  </data>
+  <data name="checkBoxModifyTags_ToolTip" xml:space="preserve">
+    <value>Är tegti tömendegidey özgertedi.
+
+Qosylmağan bolsa, barlıq tetter özgertilmeýdi, bül är tegti "Özgertpew" dep belgileuimen birdéý.</value>
+  </data>
+  <data name="checkBoxRetrieveFilesSize" xml:space="preserve">
+    <value>Trekterdi jüktep aludıñ aldynda fail ölşemin alu</value>
+  </data>
+  <data name="checkBoxRetrieveFilesSize_ToolTip" xml:space="preserve">
+    <value>Del ürdisti körsetu üşin fail ölşemin alady.
+Qosylmağan bolsa, jolaq eni men waqytty üñdeuge bolady.</value>
+  </data>
+  <data name="checkBoxSaveCoverArtInFolder" xml:space="preserve">
+    <value>Qaptamada saqtaw</value>
+  </data>
+  <data name="checkBoxSaveCoverArtInFolder_ToolTip" xml:space="preserve">
+    <value>Muqaba süratin albom qaptamasyna jüktep alady.</value>
+  </data>
+  <data name="checkBoxSaveCoverArtInTags" xml:space="preserve">
+    <value>Tegterde saqtaw</value>
+  </data>
+  <data name="checkBoxSaveCoverArtInTags_ToolTip" xml:space="preserve">
+    <value>Muqaba süratin trek tetterine saqtaydy.</value>
+  </data>
+  <data name="checkBoxVerboseLog" xml:space="preserve">
+    <value>Tolyq logti körsetu</value>
+  </data>
+  <data name="checkBoxVerboseLog_ToolTip" xml:space="preserve">
+    <value>Logqa köbirek aqparat körsetedi.</value>
+  </data>
+  <data name="labelAdvancedSettingsWarning" xml:space="preserve">
+    <value>Bul baptawlardı öz jaýapkşılığiñizben özgertiñiz.</value>
+  </data>
+  <data name="labelAlbumArtist" xml:space="preserve">
+    <value>Albom ärtisi</value>
+  </data>
+  <data name="labelAlbumTitle" xml:space="preserve">
+    <value>Albom aty</value>
+  </data>
+  <data name="labelAllowedFileSizeDifference" xml:space="preserve">
+    <value>Ruqsat etilgen fail ölşemi aýyrmaşylyğy (%)</value>
+  </data>
+  <data name="labelArtist" xml:space="preserve">
+    <value>Ärtis</value>
+  </data>
+  <data name="labelButtonResetSettings" xml:space="preserve">
+    <value>Baptawlardy qaitaru</value>
+  </data>
+  <data name="labelChangelog" xml:space="preserve">
+    <value>Özgerister tarikhı</value>
+  </data>
+  <data name="labelChangelogTitle" xml:space="preserve">
+    <value>Özgerister tarikhı</value>
+  </data>
+  <data name="labelComments" xml:space="preserve">
+    <value>Pikirler</value>
+  </data>
+  <data name="labelCoverArtFileNameFormat" xml:space="preserve">
+    <value>Fail aty pişimi</value>
+  </data>
+  <data name="labelCoverArtInFolderMaxSize" xml:space="preserve">
+    <value>Maksimal ölşem (piksel)</value>
+  </data>
+  <data name="labelCoverArtInTagsMaxSize" xml:space="preserve">
+    <value>Maksimal ölşem (piksel)</value>
+  </data>
+  <data name="labelCurrentVersion" xml:space="preserve">
+    <value>Ağymdağı nusqa:</value>
+  </data>
+  <data name="labelDownloadMaxTries" xml:space="preserve">
+    <value>Maksimal jükteu ärekettany sany</value>
+  </data>
+  <data name="labelDownloadRetryCooldown" xml:space="preserve">
+    <value>Qaitalanu kütu waqyty (sek)</value>
+  </data>
+  <data name="labelDownloadRetryExponent" xml:space="preserve">
+    <value>Qaitalanu derejesi</value>
+  </data>
+  <data name="labelDownloadsPath" xml:space="preserve">
+    <value>Albomlardy saqtau ornı</value>
+  </data>
+  <data name="labelFileNameFormat" xml:space="preserve">
+    <value>Fail aty pişimi:</value>
+  </data>
+  <data name="labelHttp" xml:space="preserve">
+    <value>HTTP(S) proksi</value>
+  </data>
+  <data name="labelHttpPort" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="labelIssues" xml:space="preserve">
+    <value>Qate turaly xabarlaw</value>
+  </data>
+  <data name="labelLanguage" xml:space="preserve">
+    <value>Til</value>
+  </data>
+  <data name="labelListBoxItemAbout" xml:space="preserve">
+    <value>Qoldanba turaly</value>
+  </data>
+  <data name="labelListBoxItemAdvanced" xml:space="preserve">
+    <value>Qosymsha baptawlar</value>
+  </data>
+  <data name="labelListBoxItemCoverArt" xml:space="preserve">
+    <value>Muqaba sürti</value>
+  </data>
+  <data name="labelListBoxItemDownloads" xml:space="preserve">
+    <value>Jüktep alu</value>
+  </data>
+  <data name="labelListBoxItemGeneral" xml:space="preserve">
+    <value>Jalpy</value>
+  </data>
+  <data name="labelListBoxItemNetwork" xml:space="preserve">
+    <value>Jeli</value>
+  </data>
+  <data name="labelListBoxItemPlaylist" xml:space="preserve">
+    <value>Pleýlist</value>
+  </data>
+  <data name="labelListBoxItemTags" xml:space="preserve">
+    <value>Atau jäne tetter</value>
+  </data>
+  <data name="labelLyrics" xml:space="preserve">
+    <value>Ölen sözderi</value>
+  </data>
+  <data name="labelPlaylistFileNameFormat" xml:space="preserve">
+    <value>Fail aty pişimi</value>
+  </data>
+  <data name="labelPlaylistFormat" xml:space="preserve">
+    <value>Pleýlist pişimi</value>
+  </data>
+  <data name="labelSettingsInfo" xml:space="preserve">
+    <value>Trekterdi jüktep alğanda keýbir baptawlardy özgertu mümkin emes.</value>
+  </data>
+  <data name="labelTheme" xml:space="preserve">
+    <value>Tema</value>
+  </data>
+  <data name="labelTrackNumber" xml:space="preserve">
+    <value>Trek nömiri</value>
+  </data>
+  <data name="labelTrackTitle" xml:space="preserve">
+    <value>Atauy</value>
+  </data>
+  <data name="labelVerboseLogInfo" xml:space="preserve">
+    <value>(log faily ärqaşanda tolyq)</value>
+  </data>
+  <data name="labelVersion" xml:space="preserve">
+    <value>Nusqa</value>
+  </data>
+  <data name="labelVersionError" xml:space="preserve">
+    <value>Jañartulardy tekseru mümkin bolmady</value>
+  </data>
+  <data name="labelVersionNewUpdateAvailable" xml:space="preserve">
+    <value>Jaña nusqa qol jetimdi</value>
+  </data>
+  <data name="labelWebsite" xml:space="preserve">
+    <value>Web-saýt</value>
+  </data>
+  <data name="labelYear" xml:space="preserve">
+    <value>Albom shyğarılğan jyly</value>
+  </data>
+  <data name="messageBoxButtonCancel" xml:space="preserve">
+    <value>_Bastartu</value>
+  </data>
+  <data name="messageBoxButtonNo" xml:space="preserve">
+    <value>_Joq</value>
+  </data>
+  <data name="messageBoxButtonOK" xml:space="preserve">
+    <value>_OK</value>
+  </data>
+  <data name="messageBoxButtonYes" xml:space="preserve">
+    <value>_Ia</value>
+  </data>
+  <data name="messageBoxCancelDownloadsText" xml:space="preserve">
+    <value>Barlyq jüktep alulardy boldyrma kerek pe?</value>
+  </data>
+  <data name="messageBoxCheckForUpdatesError" xml:space="preserve">
+    <value>Jañartulardy tekseru kezinde qate paiğa boldy. Keýin qaitalap köriñiz.</value>
+  </data>
+  <data name="messageBoxCloseWindowWhenDownloadingButtonOk" xml:space="preserve">
+    <value>Qoldanbany jabu</value>
+  </data>
+  <data name="messageBoxCloseWindowWhenDownloadingText" xml:space="preserve">
+    <value>Ağymda belsendi jüktep aular bar. Qoldanbany japıp, barlyq jüktep aulardy toqtatuğa senimdisiz be?</value>
+  </data>
+  <data name="messageBoxCouldNotOpenUrlError" xml:space="preserve">
+    <value>Kelesi siltemeni açu mümkin bolmady:
+{0}</value>
+  </data>
+  <data name="messageBoxNoUpdateAvailable" xml:space="preserve">
+    <value>Sizde eñ soñğı nusqa ({0}) bar.</value>
+  </data>
+  <data name="messageBoxResetSettingsButtonOk" xml:space="preserve">
+    <value>Baptawlardy qaitaru</value>
+  </data>
+  <data name="messageBoxResetSettingsText" xml:space="preserve">
+      <value>Barlyq baptawlardy ädepki mänderine qaitaru kerek pe?
+Bul äraketti jasau mümkin emes.</value>
+  </data>
+  <data name="messageBoxUnhandledException" xml:space="preserve">
+    <value>Öñdelmegen qate paiğa boldy. Qoldanba endi jabylady.
+
+Log failynyñmazmunymen jäne mesele xabarlañız:
+{0}</value>
+  </data>
+  <data name="radioButtonManualProxy" xml:space="preserve">
+    <value>Qolmen baptaw</value>
+  </data>
+  <data name="radioButtonNoProxy" xml:space="preserve">
+    <value>Joq</value>
+  </data>
+  <data name="radioButtonSystemProxy" xml:space="preserve">
+    <value>Jüýe</value>
+  </data>
+  <data name="saveFileDialogTitle" xml:space="preserve">
+    <value>Atyn saqtaw</value>
+  </data>
+  <data name="Skin_Dark" xml:space="preserve">
+    <value>Qarañğı</value>
+  </data>
+  <data name="Skin_Light" xml:space="preserve">
+    <value>Aq</value>
+  </data>
+  <data name="TagEditAction_DoNotModify" xml:space="preserve">
+    <value>Özgertpew</value>
+  </data>
+  <data name="TagEditAction_Empty" xml:space="preserve">
+    <value>Tegti tazalaw</value>
+  </data>
+  <data name="TagEditAction_Modify" xml:space="preserve">
+    <value>Tegte saqtaw</value>
+  </data>
+  <data name="TagRemoveAction_DoNotModify" xml:space="preserve">
+    <value>Özgertpew</value>
+  </data>
+  <data name="TagRemoveAction_Empty" xml:space="preserve">
+    <value>Tegti tazalaw</value>
+  </data>
+  <data name="textBlockReleasesWebsite" xml:space="preserve">
+    <value>Shyğarymlar tarikhı</value>
+  </data>
+  <data name="textBlockTranslationHelp" xml:space="preserve">
+    <value>Audarmağa kömektesu</value>
+  </data>
+  <data name="textBoxAllowedFileSizeDifference_ToolTip" xml:space="preserve">
+    <value>Trek jüktep alınğananda, eger sol fail (aty) bar bolsa, jüktep alatyn trekpen salystyrylady.
+Eki faildıñ ölşemi ol mänden (%-pen) az aýyrmaşylyqtasa, trek jüktep aluy elemeydi.
+Bul mändi 0 dep qoýsañyz, diskide bar bolsa da ärqaşan trekterdi jüktep alasız.
+
+Usynatyn män = 5</value>
+  </data>
+  <data name="textBoxCoverArtFileNameFormat_ToolTip" xml:space="preserve">
+    <value>Fail atyn teñşeu üşin oryn awystyrğyştarı qoldanuğa bolady:
+- {artist} albom ärtisiimen awystyrylady
+- {album} albom atymen awystyrylady
+- {year}, {month} jäne {day} albom shyğarılğan küniimen awystyrylady</value>
+  </data>
+  <data name="textBoxDownloadMaxTries_ToolTip" xml:space="preserve">
+    <value>Trek jüktep alu sättsiz bolsa, orındalatyn maksimal ärekettany sany.
+Bul sanğa jetkende (är trek üşin), trek jüktep aluy elemeydi.
+
+Usynatyn män = 7</value>
+  </data>
+  <data name="textBoxDownloadRetryCooldown_ToolTip" xml:space="preserve">
+    <value>Ekspencialdy keri qaitaru mexanizmin basqaru üşin qoldanyldy.
+Trek jüktep alu är sättsiz bolğanda, BandcampDownloader Bandcamp spam-qarsi filterin titiktendirmeu üşin,
+trekti qaýta jüktep aludıñ aldynda belgili waqyt kütip ala alady.
+Qaýta jüktep aluyyn qaýtalap körüdiñ aldynda kütiletin waqyttı esepteu üşin qoldanylatyn formula kelesideý:
+waqyt = kütu waqyty * (dereje * ärekettany sany)
+
+Usynatyn män = 0.2</value>
+  </data>
+  <data name="textBoxDownloadRetryExponent_ToolTip" xml:space="preserve">
+    <value>Ekspencialdy keri qaitaru mexanizmin basqaru üşin qoldanyldy.
+Trek jüktep alu är sättsiz bolğanda, BandcampDownloader Bandcamp spam-qarsi filterin titiktendirmeu üşin,
+trekti qaýta jüktep aludıñ aldynda belgili waqyt kütip ala alady.
+Qaýta jüktep aluyyn qaýtalap körüdiñ aldynda kütiletin waqyttı esepteu üşin qoldanylatyn formula kelesideý:
+waqyt = kütu waqyty * (dereje * ärekettany sany)
+
+Usynatyn män = 4</value>
+  </data>
+  <data name="textBoxDownloadsPath_ToolTip" xml:space="preserve">
+    <value>Oryn awystyrğyştarı qoldanu arqyly albomğa baylanysty jüktep alu qaptamasyn teñşeuge bolady:
+- {artist} albom ärtisiimen awystyrylady
+- {album} albom atymen awystyrylady
+- {year}, {month} jäne {day} albom shyğarılğan küniimen awystyrylady</value>
+  </data>
+  <data name="textBoxFileNameFormat_ToolTip" xml:space="preserve">
+    <value>Fail atyn teñşeu üşin oryn awystyrğyştarı qoldanuğa bolady:
+- {artist} albom ärtisiimen awystyrylady
+- {title} trek atymen awystyrylady
+- {tracknum} trek nömirimen awystyrylady
+- {album} albom atymen awystyrylady
+- {year}, {month} jäne {day} albom shyğarılğan küniimen awystyrylady</value>
+  </data>
+  <data name="textBoxPlaylistFileNameFormat_ToolTip" xml:space="preserve">
+    <value>Fail atyn teñşeu üşin oryn awystyrğyştarı qoldanuğa bolady:
+- {artist} albom ärtisiimen awystyrylady
+- {album} albom atymen awystyrylady
+- {year}, {month} jäne {day} albom shyğarılğan küniimen awystyrylady</value>
+  </data>
+  <data name="textBoxUrlsPlaceholder" xml:space="preserve">
+    <value>Jüktep alu qajet albomlardyñ URL-daryn osynda qoyıñız. Bir jolğa bir URL jazu arqyly birneshe URL-dy körsete alasız.
+
+Bandcamp URL-sy kelesideý bolady: http://[artist].bandcamp.com/album/[album] nemese http://[artist].bandcamp.com/track/[track]
+Ärtistıñ paraqşaların qoyıñız: http://[artist].bandcamp.com jäne "☑ Ärtistıñ diskografiyasyn jüktep alu" belgisin qoyıp, olardyñ barlyq albomlaryn jüktep alıñız.</value>
+  </data>
+  <data name="windowSettings_Title" xml:space="preserve">
+    <value>Baptawlar</value>
+  </data>
+  <data name="windowUpdate_Title" xml:space="preserve">
+    <value>Jañartu</value>
+  </data>
+  <data name="labelProxy" xml:space="preserve">
+    <value>Proksi</value>
+  </data>
+  <data name="labelMaxConcurrentAlbumsDownloads" xml:space="preserve">
+      <value>Maksimal bir waqyttagı albom jüktep alu sany</value>
+  </data>
+  <data name="labelMaxConcurrentTracksDownloads" xml:space="preserve">
+      <value>Maksimal bir waqyttagı trek jüktep alu sany</value>
+  </data>
+  <data name="textBoxMaxConcurrentAlbumsDownloads_ToolTip" xml:space="preserve">
+      <value>Bir waqıtta jüktep alınatyn albomlardyñ maksimal sany</value>
+  </data>
+  <data name="textBoxMaxConcurrentTracksDownloads_ToolTip" xml:space="preserve">
+      <value>Bir waqıtta jüktep alınatyn trekterdiñ (sol albom işinde) maksimal sany</value>
+  </data>
+  <data name="checkBoxContinueOnError" xml:space="preserve">
+    <value>Qate paiğa bolsa jüktep aludy jalğasturu</value>
+  </data>
+  <data name="checkBoxContinueOnError_ToolTip" xml:space="preserve">
+    <value>Qossalsa, qate paiğa bolğanda jüktep aluşy barlyq jüktep aluyyn toqtatu ornyna, kelesi albomğa nemese trekke ötedi.</value>
+  </data>
+  <data name="checkBoxWaitForFileAfterDownload" xml:space="preserve">
+    <value>Tegti qoymas büryn faildyñ daıy boluyyn kütu</value>
+  </data>
+  <data name="checkBoxWaitForFileAfterDownload_ToolTip" xml:space="preserve">
+    <value>Qossalsa, teg qosudı tyrımpas büryn jüktep alınğan faildıñ diskine tolıq jazyluyyn kütedi. Fail tabıldy qatesin boldyrmauğa kömektesedi.</value>
+  </data>
+  <data name="checkBoxSplitVariousArtistsTrackTitles" xml:space="preserve">
+    <value>V/A trek ataularyn bölu (Ärtis - Atau)</value>
+  </data>
+  <data name="checkBoxSplitVariousArtistsTrackTitles_ToolTip" xml:space="preserve">
+    <value>Various Artists shyğyrymlary üşin "Ärtis aty - Trek aty" pişimindegi trek ataularyn avtomatty türde bölek ärtis jäne atau tetterine böledi.</value>
+  </data>
+  <data name="labelListBoxItemBDF" xml:space="preserve">
+    <value>BDF</value>
+  </data>
+  <data name="checkBoxIgnoreTracksLongerThan" xml:space="preserve">
+    <value>Körsetilgen waqyttan uzaq trekterdi elemew</value>
+  </data>
+  <data name="checkBoxIgnoreTracksLongerThan_ToolTip" xml:space="preserve">
+    <value>Körsetilgen waqyttan (minutpen) asyp tüsetin trekterdi jüktep aludy elemeydi.</value>
+  </data>
+  <data name="checkBoxAssignAlbumArtistToAllTracks" xml:space="preserve">
+    <value>Barlyq trekterge albom ärtisin tağayndau</value>
+  </data>
+  <data name="checkBoxAssignAlbumArtistToAllTracks_ToolTip" xml:space="preserve">
+    <value>Albom ärtisin barlyq trekterdiñ trek ärtisi retinde ornatady. Jinaqtar nemese V/A shyğyrymlary üşin paydaly.</value>
+  </data>
+  <data name="checkBoxShowTrackCountText" xml:space="preserve">
+    <value>Jüktep alğanda trek sanyyn körsetu</value>
+  </data>
+  <data name="checkBoxShowTrackCountText_ToolTip" xml:space="preserve">
+    <value>Äreketter taqtasynda osy waqytqa deýin jüktep alınğan trekter sanyyn körsetedi.</value>
+  </data>
+  <data name="checkBoxForceBitrate" xml:space="preserve">
+    <value>Bitretti mäjbürlenu (Eksperimentaldy)</value>
+  </data>
+  <data name="forceBitrateDialogTitle" xml:space="preserve">
+    <value>Eksperimentaldy mümkindik turaly eskertu</value>
+  </data>
+  <data name="forceBitrateDialogText" xml:space="preserve">
+    <value>Bul mümkindik eksperimentaldy. Bitreit türlendirüi barlyq jüýelerde durys jumis istemeüi mümkin jäne kütpegen nätijelerge äkelui mümkin.
+
+Bul mümkindikti qosuğa senimdisiz be?</value>
+  </data>
+  <data name="forceBitrateDialogDontShowAgain" xml:space="preserve">
+    <value>Bul eskertüdi qaýta körsetpeu</value>
+  </data>
+  <data name="dialogButtonYes" xml:space="preserve">
+    <value>_Ia</value>
+  </data>
+  <data name="dialogButtonNo" xml:space="preserve">
+    <value>_Joq</value>
+  </data>
+  <data name="checkBoxForceBitrate_ToolTip" xml:space="preserve">
+    <value>Jüktep alınğan trekterdi körsetilgen bitrekte türlendiredi. Fail ölşemin azaituğa kömektesedi.</value>
+  </data>
+  <data name="checkBoxShowOriginalDownloadSize" xml:space="preserve">
+    <value>Bastapqy jüktep alu ölşemin körsetu</value>
+  </data>
+  <data name="checkBoxShowOriginalDownloadSize_ToolTip" xml:space="preserve">
+    <value>Türlendirilgen ölşemen qatar bastapqy jüktep alu ölşemin jaqşalar işinde körsetedi.</value>
+  </data>
+  <data name="checkBoxEnableToastNotifications" xml:space="preserve">
+    <value>Toast xabarlandiruların qosu</value>
+  </data>
+  <data name="checkBoxEnableToastNotifications_ToolTip" xml:space="preserve">
+    <value>Jüktep alu oqiğalary üşin Windows toast xabarlandiruların körsetedi.</value>
+  </data>
+  <data name="checkBoxToastOnDownloadComplete" xml:space="preserve">
+    <value>Jüktep alu aiaqtalğanda</value>
+  </data>
+  <data name="checkBoxToastOnDownloadComplete_ToolTip" xml:space="preserve">
+    <value>Barlyq jüktep aular aiaqtalğanda xabarlandirudy körsetedi.</value>
+  </data>
+  <data name="checkBoxToastOnDownloadError" xml:space="preserve">
+    <value>Jüktep alu qatesi kezinde</value>
+  </data>
+  <data name="checkBoxToastOnDownloadError_ToolTip" xml:space="preserve">
+    <value>Jüktep alu sättsiz bolğanda xabarlandirudy körsetedi.</value>
+  </data>
+  <data name="checkBoxToastOnAlbumComplete" xml:space="preserve">
+    <value>Albom jüktep alınğanda</value>
+  </data>
+  <data name="checkBoxToastOnAlbumComplete_ToolTip" xml:space="preserve">
+    <value>Är albom jüktep aluy aiaqtalğanda xabarlandirudy körsetedi.</value>
+  </data>
+  <data name="checkBoxToastOnTrackSkipped" xml:space="preserve">
+    <value>Trek elemegende</value>
+  </data>
+  <data name="checkBoxToastOnTrackSkipped_ToolTip" xml:space="preserve">
+    <value>Trek elemegende (mysaly, waqyt shegine baylanysty) xabarlandirudy körsetedi.</value>
+  </data>
+</root>

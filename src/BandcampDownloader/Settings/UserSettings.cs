@@ -50,7 +50,9 @@ public enum Language
     ja,
     [Description("Kazakh (Cyrillic) (Қазақша)")]
     kk,
-    //[Description("Korean (한국어)")]
+    [Description("Kazakh (Latin) (Qazaqşa)")]
+    kk_Latn,
+    //[Description("Korean (한국ы)")]
     //ko,
     [Description("Norwegian Bokmål (Norsk Bokmål)")]
     nb_NO,
