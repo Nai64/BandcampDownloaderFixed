@@ -19,3 +19,6 @@ _ReSharper*
 
 # Temporary csproj during build
 *wpftmp.csproj
+
+# Notes
+read.md
