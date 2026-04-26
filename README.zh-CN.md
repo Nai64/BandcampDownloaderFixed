@@ -6,7 +6,7 @@
 
 **用于从 Bandcamp 下载专辑的 Windows 应用程序**
 
-[English](README.md) | [简体中文](README.zh-CN.md) | [Русский](README.ru.md)
+[English](README.md) | [简体中文](README.zh-CN.md) | [Русский](README.ru.md) | [⠓⠗⠑⠊](README.br.md)
 
 [![下载](https://img.shields.io/badge/下载-最新版本-blue?style=for-the-badge&logo=github)](https://github.com/Nai64/BandcampDownloaderFixed/releases/latest)
 [![工作流状态](https://github.com/Nai64/BandcampDownloaderFixed/actions/workflows/dotnet.yml/badge.svg?branch=master)](https://github.com/Nai64/BandcampDownloaderFixed/actions/workflows/dotnet.yml)
@@ -55,6 +55,17 @@ BandcampDownloader 是一个 Windows 应用程序，通过从 [bandcamp.com](htt
 | **📏 显示原始大小** | 显示原始与转换后的文件大小 |
 | **🔔 Toast 通知** | 下载事件的 Windows 通知 |
 | **🐛 详细错误对话框** | 显示详细的错误信息 |
+
+### 🎭 有趣语言
+
+> 为了娱乐目的，应用程序包含几个有趣的语言选项：
+
+| 语言 | 描述 |
+|----------|-------------|
+| **🏴‍☠️ 海盗** | Arrr! 像海盗一样说话 |
+| **🐱 LOLcat** | 我可以汉堡吗？ |
+| **🎭 莎士比亚风格** | 你应该用古英语说话 |
+| **⠓⠗⠑⠊ 盲文** | ⠓⠗⠑⠊⠇⠇⠑⠂（仅供娱乐！） |
 
 ---
 

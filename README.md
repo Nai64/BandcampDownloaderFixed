@@ -6,7 +6,7 @@
 
 **A Windows application to download albums from Bandcamp**
 
-[English](README.md) | [简体中文](README.zh-CN.md) | [Русский](README.ru.md)
+[English](README.md) | [简体中文](README.zh-CN.md) | [Русский](README.ru.md) | [⠓⠗⠑⠊](README.br.md)
 
 [![Download](https://img.shields.io/badge/Download-Latest-blue?style=for-the-badge&logo=github)](https://github.com/Nai64/BandcampDownloaderFixed/releases/latest)
 [![Workflow status](https://github.com/Nai64/BandcampDownloaderFixed/actions/workflows/dotnet.yml/badge.svg?branch=master)](https://github.com/Nai64/BandcampDownloaderFixed/actions/workflows/dotnet.yml)
@@ -55,6 +55,17 @@ BandcampDownloader is a Windows application that helps downloading albums from [
 | **📏 Show Original Size** | Displays original vs converted file size |
 | **🔔 Toast Notifications** | Windows notifications for download events |
 | **🐛 Detailed Error Dialog** | Shows detailed error information |
+
+### 🎭 Fun Languages
+
+> For entertainment purposes, the app includes several joke language options:
+
+| Language | Description |
+|----------|-------------|
+| **🏴‍☠️ Pirate** | Arrr! Talk like a pirate |
+| **🐱 LOLcat** | I can haz cheezburger? |
+| **🎭 Shakespearean** | Thou shalt speaketh in olde English |
+| **⠓⠗⠑⠊ Braille** | ⠓⠗⠑⠊⠇⠇⠑⠂ (just for fun!) |
 
 ---
 

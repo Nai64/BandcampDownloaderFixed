@@ -6,7 +6,7 @@
 
 **Приложение Windows для загрузки альбомов с Bandcamp**
 
-[English](README.md) | [简体中文](README.zh-CN.md) | [Русский](README.ru.md)
+[English](README.md) | [简体中文](README.zh-CN.md) | [Русский](README.ru.md) | [⠓⠗⠑⠊](README.br.md)
 
 [![Скачать](https://img.shields.io/badge/Скачать-Последняя-версия-blue?style=for-the-badge&logo=github)](https://github.com/Nai64/BandcampDownloaderFixed/releases/latest)
 [![Статус рабочего процесса](https://github.com/Nai64/BandcampDownloaderFixed/actions/workflows/dotnet.yml/badge.svg?branch=master)](https://github.com/Nai64/BandcampDownloaderFixed/actions/workflows/dotnet.yml)
