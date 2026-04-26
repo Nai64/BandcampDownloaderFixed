@@ -56,6 +56,8 @@ public enum Language
     pirate,
     [Description("LOLcat (I can haz)")]
     lolcat,
+    [Description("Shakespearean (Thou shalt)")]
+    shakespeare,
     //[Description("Korean (한국ы)")]
     //ko,
     [Description("Norwegian Bokmål (Norsk Bokmål)")]
