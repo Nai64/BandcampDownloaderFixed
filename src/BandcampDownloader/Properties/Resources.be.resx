@@ -512,13 +512,13 @@ Paste artist maps: http://[artist].bandcamp.com and check "☑ Plunder artist's 
     <value>Skips plundering tracks that exceed the specified duration in minutes.</value>
   </data>
   <data name="checkBoxAssignAlbumArtistToAllTracks" xml:space="preserve">
-    <value>Assign album artist to all tracks</value>
+    <value>Assign _album artist to all tracks</value>
   </data>
   <data name="checkBoxAssignAlbumArtistToAllTracks_ToolTip" xml:space="preserve">
     <value>Sets the album artist as the track artist for all tracks, useful for compilations or V/A releases.</value>
   </data>
   <data name="checkBoxShowTrackCountText" xml:space="preserve">
-    <value>Show track count during plundering</value>
+    <value>Show _track count during plundering</value>
   </data>
   <data name="checkBoxShowTrackCountText_ToolTip" xml:space="preserve">
     <value>Displays the number of tracks plundered so far in the action bar.</value>
@@ -553,7 +553,7 @@ Be ye sure ye want to enable this feature?</value>
     <value>Displays the original plunder size in brackets alongside the converted size.</value>
   </data>
   <data name="checkBoxEnableToastNotifications" xml:space="preserve">
-    <value>Enable parrot notifications</value>
+    <value>Enable _parrot notifications</value>
   </data>
   <data name="checkBoxEnableToastNotifications_ToolTip" xml:space="preserve">
     <value>Shows Windows parrot notifications for plundering events.</value>

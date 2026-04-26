@@ -512,13 +512,13 @@ Paste artist pages: http://[artist].bandcamp.com and check "☑ Download artist 
     <value>Skips downloading tracks that exceed the specified duration in minutes.</value>
   </data>
   <data name="checkBoxAssignAlbumArtistToAllTracks" xml:space="preserve">
-    <value>Assign album artist unto all tracks</value>
+    <value>Assign _album artist unto all tracks</value>
   </data>
   <data name="checkBoxAssignAlbumArtistToAllTracks_ToolTip" xml:space="preserve">
     <value>Sets the album artist as the track artist for all tracks, useful for compilations or V/A releases.</value>
   </data>
   <data name="checkBoxShowTrackCountText" xml:space="preserve">
-    <value>Show track count during download</value>
+    <value>Show _track count during download</value>
   </data>
   <data name="checkBoxShowTrackCountText_ToolTip" xml:space="preserve">
     <value>Displays the number of tracks downloaded thus far in the action bar.</value>
@@ -553,7 +553,7 @@ Art thou sure thou wishest to enable this feature?</value>
     <value>Displays the original download size in brackets alongside the converted size.</value>
   </data>
   <data name="checkBoxEnableToastNotifications" xml:space="preserve">
-    <value>Enable toast notifications</value>
+    <value>Enable _toast notifications</value>
   </data>
   <data name="checkBoxEnableToastNotifications_ToolTip" xml:space="preserve">
     <value>Shows Windows toast notifications for download events.</value>
