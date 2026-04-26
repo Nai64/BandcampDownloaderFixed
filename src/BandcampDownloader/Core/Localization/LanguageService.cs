@@ -42,7 +42,7 @@ internal sealed class LanguageService : ILanguageService
             Language.hu => new CultureInfo("hu"),
             Language.id => new CultureInfo("id"),
             Language.it => new CultureInfo("it"),
-            // Language.ja => new CultureInfo("ja"),
+            Language.ja => new CultureInfo("ja"),
             // Language.ko => new CultureInfo("ko"),
             Language.nb_NO => new CultureInfo("nb-NO"),
             Language.pl => new CultureInfo("pl"),
