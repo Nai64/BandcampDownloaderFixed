@@ -104,9 +104,27 @@ internal sealed partial class WindowMain
         var dialogResult = dialog.ShowDialog();
         if (dialogResult is true)
         {
+            _userSettings.DownloadsPath = dialog.FolderName;
             TextBoxDownloadsPath.Text = dialog.FolderName + "\\{artist}\\{album}";
             // Force update of the settings file (it's not done unless the user gives then loses focus on the textbox)
             TextBoxDownloadsPath.GetBindingExpression(TextBox.TextProperty)?.UpdateSource();
+        }
+    }
+
+    private void ButtonOpenDownloadsFolder_Click(object sender, RoutedEventArgs e)
+    {
+        var downloadsPath = _userSettings.DownloadsPath;
+        if (!string.IsNullOrEmpty(downloadsPath))
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("explorer.exe", downloadsPath);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Error opening downloads folder");
+                MessageBox.Show($"Error opening folder: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 

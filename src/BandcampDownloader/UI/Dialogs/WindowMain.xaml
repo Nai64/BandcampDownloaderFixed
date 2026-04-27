@@ -79,6 +79,7 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition />
                 <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <Label
                 Name="LabelDownloadsPath"
@@ -103,6 +104,15 @@
                 Content="{lex:Loc}"
                 TabIndex="2"
                 ToolTip="{lex:Loc}" />
+            <Button
+                Name="ButtonOpenDownloadsFolder"
+                Grid.Column="3"
+                Width="27"
+                Margin="5,0,0,0"
+                Click="ButtonOpenDownloadsFolder_Click"
+                Content="📁"
+                TabIndex="3"
+                ToolTip="Open downloads folder" />
         </Grid>
         <CheckBox
             x:Name="CheckBoxDownloadDiscography"
