@@ -31,16 +31,20 @@ internal sealed partial class App
         // 3. Log the application properties
         LogAppProperties();
 
-        // 4. Check if first-time user and show setup dialog
+        // 4. Initialize settings first
+        var settingsService = container.GetService<ISettingsService>();
+        settingsService.InitializeSettings();
+
+        // 5. Check if first-time user and show setup dialog
         ShowSetupDialogIfNeeded(container);
 
-        // 5. Initialize less critical services
+        // 6. Initialize less critical services
         InitializeCoreServices(container);
 
-        // 6. Log the user settings
+        // 7. Log the user settings
         LogUserSettings(container);
 
-        // 7. Open the main window
+        // 8. Open the main window
         var windowMain = container.GetService<WindowMain>();
         windowMain.Show();
     }
@@ -48,7 +52,7 @@ internal sealed partial class App
     private static void InitializeCoreServices(IContainer container)
     {
         var settingsService = container.GetService<ISettingsService>();
-        var userSettings = settingsService.InitializeSettings();
+        var userSettings = settingsService.GetUserSettings();
 
         var languageService = container.GetService<ILanguageService>();
         languageService.ApplyLanguage(userSettings.Language);
@@ -74,6 +78,7 @@ internal sealed partial class App
     private static void LogUserSettings(IContainer container)
     {
         var settingsService = container.GetService<ISettingsService>();
+        var userSettings = settingsService.GetUserSettings();
         var userSettingsJson = settingsService.GetUserSettingsInJson();
 
         _logger.Info($"Settings: {userSettingsJson}");
