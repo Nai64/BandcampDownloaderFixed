@@ -61,7 +61,11 @@ internal sealed class Container : IContainer
         serviceCollection.AddSingleton<IThemeService, ThemeService>();
         serviceCollection.AddSingleton<ITrackFileService, TrackFileService>();
         serviceCollection.AddSingleton<IUpdatesService, UpdatesService>();
-        serviceCollection.AddSingleton<WindowMain>();
+        serviceCollection.AddSingleton<WindowMain>(sp => new WindowMain(
+            sp.GetRequiredService<ISettingsService>(),
+            sp.GetRequiredService<IDownloadManager>(),
+            sp.GetRequiredService<IUpdatesService>(),
+            sp.GetRequiredService<IAlbumUrlRetriever>()));
 
         return serviceCollection;
     }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Media;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -10,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shell;
 using BandcampDownloader.Bandcamp.Download;
+using BandcampDownloader.Bandcamp.Extraction;
 using BandcampDownloader.Core.Logging;
 using BandcampDownloader.Core.Updates;
 using BandcampDownloader.Helpers;
@@ -28,6 +31,7 @@ internal sealed partial class WindowMain
     private readonly IUserSettings _userSettings;
     private readonly IDownloadManager _downloadManager;
     private readonly IUpdatesService _updatesService;
+    private readonly IAlbumUrlRetriever _albumUrlRetriever;
     private readonly Logger _logger = LogManager.GetCurrentClassLogger();
     private CancellationTokenSource _downloadCts;
 
@@ -46,11 +50,12 @@ internal sealed partial class WindowMain
     /// </summary>
     private long _lastTotalReceivedBytes;
 
-    public WindowMain(ISettingsService settingsService, IDownloadManager downloadManager, IUpdatesService updatesService)
+    public WindowMain(ISettingsService settingsService, IDownloadManager downloadManager, IUpdatesService updatesService, IAlbumUrlRetriever albumUrlRetriever)
     {
         _userSettings = settingsService.GetUserSettings();
         _downloadManager = downloadManager;
         _updatesService = updatesService;
+        _albumUrlRetriever = albumUrlRetriever;
 
         _downloadManager.DownloadProgressChanged += DownloadProgressChanged;
 
@@ -114,6 +119,59 @@ internal sealed partial class WindowMain
                     // No URL to look
                     await LogAsync("Paste some albums URLs to be downloaded", DownloadProgressChangedLevel.Error).ConfigureAwait(false);
                     return;
+                }
+
+                // If discography checkbox is checked, show selection dialog
+                if (_userSettings.DownloadArtistDiscography)
+                {
+                    await ThreadUtils.ExecuteOnUiAsync(
+                        async () =>
+                        {
+                            try
+                            {
+                                var albumInfos = await _albumUrlRetriever.RetrieveAlbumsInfoAsync(inputUrls, true, _downloadCts.Token).ConfigureAwait(false);
+
+                                if (albumInfos.Count > 0)
+                                {
+                                    var selectionDialog = new WindowDiscographySelection(albumInfos)
+                                    {
+                                        Owner = this,
+                                        ShowInTaskbar = false,
+                                        WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                                    };
+
+                                    var result = selectionDialog.ShowDialog();
+                                    if (result != true)
+                                    {
+                                        // User cancelled the selection
+                                        await LogAsync("Discography selection cancelled by user", DownloadProgressChangedLevel.Info).ConfigureAwait(false);
+                                        return;
+                                    }
+
+                                    // Get selected albums and convert to URLs
+                                    var selectedAlbums = selectionDialog.SelectedAlbums;
+                                    if (selectedAlbums.Count == 0)
+                                    {
+                                        await LogAsync("No albums selected for download", DownloadProgressChangedLevel.Error).ConfigureAwait(false);
+                                        return;
+                                    }
+
+                                    // Convert selected albums to URLs
+                                    var artistPageRegex = new Regex("https?://[^/]*");
+                                    var firstUrl = inputUrls.Split([Environment.NewLine], StringSplitOptions.RemoveEmptyEntries).First();
+                                    var artistPage = artistPageRegex.Match(firstUrl).ToString();
+
+                                    inputUrls = string.Join(Environment.NewLine, selectedAlbums.Select(a => a.GetFullUrl(artistPage)));
+                                    _logger.Info($"User selected {selectedAlbums.Count} albums for download");
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                _logger.Error(ex, "Error showing discography selection dialog");
+                                await LogAsync($"Error showing discography selection: {ex.Message}", DownloadProgressChangedLevel.Error).ConfigureAwait(false);
+                                return;
+                            }
+                        }).ConfigureAwait(false);
                 }
 
                 // Set controls to "downloading..." state

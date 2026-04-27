@@ -118,7 +118,7 @@
                 x:Name="HyperlinkOriginalRepo"
                 NavigateUri="{Binding Source={x:Static core:Constants.URL_ORIGINAL_REPO}}"
                 RequestNavigate="Hyperlink_RequestNavigate"
-                ToolTip="{Binding Source={x:Static core:Constants.URL_ORIGINAL_REPO}">
+                ToolTip="{Binding Source={x:Static core:Constants.URL_ORIGINAL_REPO}}">
                 <TextBlock x:Name="TextBlockOriginalRepo" Text="github.com/otiel/bandcampdownloader" />
             </Hyperlink>
         </TextBlock>
