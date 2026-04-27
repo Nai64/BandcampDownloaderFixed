@@ -109,11 +109,8 @@ internal sealed partial class App
             var result1 = windowSetupStep1.ShowDialog();
             if (result1 != true)
             {
-                // User cancelled, mark as completed so they don't see it again
-                userSettings.HasCompletedSetup = true;
-                settingsService.ResetSettings();
-                var settings1 = settingsService.InitializeSettings();
-                settings1.HasCompletedSetup = true;
+                // User cancelled, exit application
+                Application.Current.Shutdown();
                 return;
             }
 
@@ -127,11 +124,8 @@ internal sealed partial class App
             var result2 = windowSetupStep2.ShowDialog();
             if (result2 != true)
             {
-                // User went back or cancelled, mark as completed so they don't see it again
-                userSettings.HasCompletedSetup = true;
-                settingsService.ResetSettings();
-                var settings2 = settingsService.InitializeSettings();
-                settings2.HasCompletedSetup = true;
+                // User went back or cancelled, exit application
+                Application.Current.Shutdown();
                 return;
             }
 
