@@ -80,7 +80,7 @@
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn
-                        Width="200"
+                        Width="*"
                         DisplayMemberBinding="{Binding Title}"
                         Header="Title" />
                     <GridViewColumn
