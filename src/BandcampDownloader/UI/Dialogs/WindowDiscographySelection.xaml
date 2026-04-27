@@ -86,7 +86,7 @@
                         Width="80"
                         DisplayMemberBinding="{Binding Type}"
                         Header="Type" />
-                    <GridViewColumn Width="70">
+                    <GridViewColumn Width="70" Header="Actions">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Button
