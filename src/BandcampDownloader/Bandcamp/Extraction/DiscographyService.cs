@@ -60,56 +60,8 @@ internal sealed class DiscographyService : IDiscographyService
 
     public IReadOnlyCollection<AlbumInfo> GetReferredAlbumsInfo(string musicPageHtmlContent)
     {
-        // Try to parse JSON data from data-client-items attribute
-        var jsonDataRegex = new Regex("data-client-items=\"(?<data>[^\"]+)\"");
-        var jsonDataMatch = jsonDataRegex.Match(musicPageHtmlContent);
-
-        if (jsonDataMatch.Success)
-        {
-            try
-            {
-                var jsonData = jsonDataMatch.Groups["data"].Value;
-                // Unescape HTML entities
-                jsonData = jsonData.Replace("&quot;", "\"");
-                _logger.Info($"Attempting to parse JSON data with length: {jsonData.Length}");
-                var albumInfos = JsonSerializer.Deserialize<List<JsonAlbumData>>(jsonData);
-
-                if (albumInfos != null && albumInfos.Count > 0)
-                {
-                    _logger.Info($"Successfully parsed {albumInfos.Count} albums from JSON");
-                    var result = albumInfos.Select(data => new AlbumInfo
-                    {
-                        Artist = "Unknown", // Artist name not in JSON, would need to fetch from page
-                        Title = data.Title ?? "Unknown",
-                        RelativeUrl = data.PageUrl ?? "",
-                        Type = data.Type ?? "album"
-                    }).ToList();
-
-                    // Log first album for debugging
-                    if (result.Count > 0)
-                    {
-                        _logger.Info($"First album: Artist='{result[0].Artist}', Title='{result[0].Title}', Type='{result[0].Type}', URL='{result[0].RelativeUrl}'");
-                    }
-
-                    return result;
-                }
-                else
-                {
-                    _logger.Warn("JSON deserialization returned null or empty list");
-                }
-            }
-            catch (JsonException ex)
-            {
-                _logger.Warn(ex, "Failed to parse JSON data from music page, falling back to regex method");
-            }
-        }
-        else
-        {
-            _logger.Info("No JSON data-client-items attribute found, using regex fallback");
-        }
-
-        // Fallback to regex method if JSON parsing fails
-        _logger.Info("Using regex fallback method for album info extraction");
+        // Use regex method to get all releases (JSON only contains first few)
+        _logger.Info("Using regex method for album info extraction to get all releases");
         var urls = GetReferredAlbumsRelativeUrls(musicPageHtmlContent);
         var regexResult = urls.Select(url => new AlbumInfo
         {
