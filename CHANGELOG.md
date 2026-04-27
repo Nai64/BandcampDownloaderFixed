@@ -1,7 +1,5 @@
 # 1.3.0 (2026-04-27)
 
-> This project is based on the original [BandcampDownloader](https://github.com/otiel/bandcampdownloader) by Otiel.
-
 ## Added Languages
 - Japanese (日本語)
 - Kazakh Cyrillic (Қазақша)
