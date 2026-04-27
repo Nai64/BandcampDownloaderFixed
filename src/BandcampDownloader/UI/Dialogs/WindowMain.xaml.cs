@@ -661,8 +661,12 @@ internal sealed partial class WindowMain
             {
                 // Cancel closing the window
                 e.Cancel = true;
+                return;
             }
         }
+
+        // Shutdown the application when the main window closes
+        Application.Current.Shutdown();
     }
 
     private void WindowMain_Loaded(object sender, RoutedEventArgs e)

@@ -72,6 +72,9 @@
     <Page Update="Core\Themes\OrangeTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Update="UI\Dialogs\WindowSetup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
 </Project>

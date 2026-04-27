@@ -15,6 +15,7 @@ namespace BandcampDownloader;
 internal sealed partial class App
 {
     private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
+    private static bool _coreServicesInitialized = false;
 
     protected override void OnStartup(StartupEventArgs e)
     {
@@ -38,8 +39,11 @@ internal sealed partial class App
         // 5. Check if first-time user and show setup dialog
         ShowSetupDialogIfNeeded(container);
 
-        // 6. Initialize less critical services
-        InitializeCoreServices(container);
+        // 6. Initialize less critical services (only if not already initialized by setup dialog)
+        if (!_coreServicesInitialized)
+        {
+            InitializeCoreServices(container);
+        }
 
         // 7. Log the user settings
         LogUserSettings(container);
@@ -59,6 +63,8 @@ internal sealed partial class App
 
         var themeService = container.GetService<IThemeService>();
         themeService.ApplySkin(userSettings.Theme);
+
+        _coreServicesInitialized = true;
     }
 
     private static void LogAppProperties()
@@ -121,6 +127,9 @@ internal sealed partial class App
                 var newSettings = settingsService.InitializeSettings();
                 newSettings.HasCompletedSetup = true;
             }
+
+            // Re-initialize services with the new settings
+            InitializeCoreServices(container);
         }
     }
 }
