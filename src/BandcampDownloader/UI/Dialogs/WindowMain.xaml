@@ -132,6 +132,7 @@
         </RichTextBox>
         <Grid x:Name="GridActionBar" VerticalAlignment="Bottom">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition />
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
@@ -139,11 +140,21 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
+            <Button
+                x:Name="ButtonClearUrls"
+                Grid.Column="0"
+                Height="24"
+                MinWidth="80"
+                Margin="0,0,5,0"
+                Padding="10,0"
+                Click="ButtonClearUrls_Click"
+                Content="Clear URLs"
+                TabIndex="6"
+                ToolTip="Clear URLs" />
             <Label
                 x:Name="LabelNewVersion"
-                Grid.Column="0"
+                Grid.Column="1"
                 Margin="0"
                 HorizontalAlignment="Left"
                 Content=""
@@ -165,36 +176,36 @@
             </Label>
             <Label
                 x:Name="LabelDownloadSpeed"
-                Grid.Column="1"
+                Grid.Column="2"
                 HorizontalAlignment="Right"
                 HorizontalContentAlignment="Right"
                 Content="" />
             <TextBlock
                 x:Name="TextBlockTrackCount"
-                Grid.Column="2"
+                Grid.Column="3"
                 Margin="10,0,0,0"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Center"
                 FontSize="12" />
             <Label
                 x:Name="LabelProgress"
-                Grid.Column="3"
+                Grid.Column="4"
                 Margin="10,0,0,0"
                 HorizontalAlignment="Right"
                 HorizontalContentAlignment="Right"
                 Content="" />
             <Button
                 x:Name="ButtonStart"
-                Grid.Column="4"
+                Grid.Column="5"
                 Height="24"
                 MinWidth="100"
                 Padding="10,0"
                 Click="ButtonStart_Click"
                 Content="{lex:Loc}"
-                TabIndex="6" />
+                TabIndex="7" />
             <Button
                 x:Name="ButtonStop"
-                Grid.Column="5"
+                Grid.Column="6"
                 Height="24"
                 MinWidth="100"
                 Margin="5,0,0,0"
@@ -202,29 +213,18 @@
                 Click="ButtonStop_Click"
                 Content="{lex:Loc}"
                 IsEnabled="False"
-                TabIndex="7" />
+                TabIndex="8" />
             <Button
                 x:Name="ButtonOpenSettingsWindow"
-                Grid.Column="6"
+                Grid.Column="7"
                 Height="24"
                 MinWidth="100"
                 Margin="5,0,0,0"
                 Padding="10,0"
                 Click="ButtonOpenSettingsWindow_Click"
                 Content="{lex:Loc}"
-                TabIndex="8"
-                ToolTip="{lex:Loc}" />
-            <Button
-                x:Name="ButtonClearUrls"
-                Grid.Column="7"
-                Height="24"
-                MinWidth="80"
-                Margin="5,0,0,0"
-                Padding="10,0"
-                Click="ButtonClearUrls_Click"
-                Content="Clear URLs"
                 TabIndex="9"
-                ToolTip="Clear URLs" />
+                ToolTip="{lex:Loc}" />
         </Grid>
     </Grid>
 </Window>
