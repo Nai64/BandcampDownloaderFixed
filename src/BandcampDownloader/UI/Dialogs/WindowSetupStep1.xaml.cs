@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
+using BandcampDownloader.Core.Themes;
 using BandcampDownloader.Settings;
 using LanguageEnum = BandcampDownloader.Settings.Language;
 
@@ -10,12 +11,15 @@ namespace BandcampDownloader.UI.Dialogs;
 
 internal sealed partial class WindowSetupStep1
 {
+    private readonly IThemeService _themeService;
+
     public LanguageEnum SelectedLanguage { get; private set; }
     public Skin SelectedTheme { get; private set; }
 
-    public WindowSetupStep1()
+    public WindowSetupStep1(IThemeService themeService)
     {
         InitializeComponent();
+        _themeService = themeService;
         SelectedLanguage = LanguageEnum.en;
         SelectedTheme = Skin.Light;
         PopulateLanguageComboBox();
@@ -47,6 +51,17 @@ internal sealed partial class WindowSetupStep1
             .Cast<T>()
             .Select(GetEnumDescription)
             .ToList();
+    }
+
+    private void ComboBoxTheme_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+    {
+        if (ComboBoxTheme.SelectedItem != null)
+        {
+            var themeDescription = (string)ComboBoxTheme.SelectedItem;
+            SelectedTheme = System.Enum.GetValues<Skin>()
+                .First(t => GetEnumDescription(t) == themeDescription);
+            _themeService.ApplySkin(SelectedTheme);
+        }
     }
 
     private void ButtonNext_Click(object sender, RoutedEventArgs e)

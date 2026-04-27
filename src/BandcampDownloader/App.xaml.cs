@@ -98,9 +98,10 @@ internal sealed partial class App
         if (!userSettings.HasCompletedSetup)
         {
             var setupService = container.GetService<ISetupService>();
+            var themeService = container.GetService<IThemeService>();
 
             // Step 1: Language and Theme selection
-            var windowSetupStep1 = new WindowSetupStep1
+            var windowSetupStep1 = new WindowSetupStep1(themeService)
             {
                 ShowInTaskbar = false,
                 WindowStartupLocation = WindowStartupLocation.CenterScreen
