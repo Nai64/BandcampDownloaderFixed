@@ -90,7 +90,7 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Button
-                                    Width="80"
+                                    Width="70"
                                     Height="20"
                                     HorizontalAlignment="Center"
                                     Content="Open"
