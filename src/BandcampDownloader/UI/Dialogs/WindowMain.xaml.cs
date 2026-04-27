@@ -122,10 +122,10 @@ internal sealed partial class WindowMain
                     return;
                 }
 
-                // If discography checkbox is checked, show selection dialog
+                // If discography checkbox is checked, show selection dialog (if enabled in settings)
                 bool shouldDownload = true;
                 bool skipDiscographyRetrieval = false; // Flag to skip discography retrieval after selection
-                if (_userSettings.DownloadArtistDiscography)
+                if (_userSettings.DownloadArtistDiscography && _userSettings.EnableDiscographySelectionDialog)
                 {
                     // First retrieve album info on background thread
                     IReadOnlyCollection<AlbumInfo> albumInfos;

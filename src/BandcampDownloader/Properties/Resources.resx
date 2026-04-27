@@ -647,4 +647,10 @@ Are you sure you want to enable this feature?</value>
   <data name="checkBoxShowDetailedErrorDialog_ToolTip" xml:space="preserve">
     <value>Shows detailed error information in error dialogs instead of generic messages.</value>
   </data>
+  <data name="checkBoxEnableDiscographySelectionDialog" xml:space="preserve">
+    <value>Enable discography selection dialog</value>
+  </data>
+  <data name="checkBoxEnableDiscographySelectionDialog_ToolTip" xml:space="preserve">
+    <value>When downloading an artist discography, shows a dialog to select which releases to download. If disabled, all releases will be downloaded.</value>
+  </data>
 </root>

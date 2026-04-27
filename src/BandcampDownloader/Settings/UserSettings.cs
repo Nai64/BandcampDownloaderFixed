@@ -320,4 +320,7 @@ public interface IUserSettings
 
     [Option(DefaultValue = Skin.Light)]
     Skin Theme { get; set; }
+
+    [Option(DefaultValue = false)]
+    bool EnableDiscographySelectionDialog { get; set; }
 }

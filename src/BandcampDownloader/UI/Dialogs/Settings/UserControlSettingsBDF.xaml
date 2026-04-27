@@ -9,7 +9,7 @@
     xmlns:settings="clr-namespace:BandcampDownloader.Settings"
     Width="410"
     Height="Auto"
-    MaxHeight="300"
+    MaxHeight="326"
     lex:LocalizeDictionary.DesignCulture="en"
     lex:ResxLocalizationProvider.DefaultAssembly="BandcampDownloader"
     lex:ResxLocalizationProvider.DefaultDictionary="Resources"
@@ -24,6 +24,7 @@
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="26" />
             <RowDefinition Height="26" />
             <RowDefinition Height="26" />
             <RowDefinition Height="26" />
@@ -274,6 +275,19 @@
             IsChecked="{Binding ShowDetailedErrorDialog, UpdateSourceTrigger=Explicit}"
             IsEnabled="True"
             TabIndex="15"
+            ToolTip="{lex:Loc}"
+            ToolTipService.ShowDuration="60000" />
+        <CheckBox
+            x:Name="CheckBoxEnableDiscographySelectionDialog"
+            Grid.Row="14"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Content="{lex:Loc}"
+            IsChecked="{Binding EnableDiscographySelectionDialog, UpdateSourceTrigger=Explicit}"
+            IsEnabled="True"
+            TabIndex="16"
             ToolTip="{lex:Loc}"
             ToolTipService.ShowDuration="60000" />
     </Grid>
