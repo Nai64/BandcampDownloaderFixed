@@ -26,6 +26,18 @@ internal sealed class ThemeService : IThemeService
             case Skin.Light:
                 // Do nothing
                 break;
+            case Skin.Blue:
+                Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("Core\\Themes\\BlueTheme.xaml", UriKind.Relative) });
+                break;
+            case Skin.Green:
+                Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("Core\\Themes\\GreenTheme.xaml", UriKind.Relative) });
+                break;
+            case Skin.Purple:
+                Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("Core\\Themes\\PurpleTheme.xaml", UriKind.Relative) });
+                break;
+            case Skin.Orange:
+                Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("Core\\Themes\\OrangeTheme.xaml", UriKind.Relative) });
+                break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(skin), skin, null);
         }

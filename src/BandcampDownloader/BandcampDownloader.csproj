@@ -60,6 +60,18 @@
     <Page Update="Core\Themes\DarkTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Update="Core\Themes\BlueTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Core\Themes\GreenTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Core\Themes\PurpleTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Core\Themes\OrangeTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
 </Project>

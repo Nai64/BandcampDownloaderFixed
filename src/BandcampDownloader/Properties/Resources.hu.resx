@@ -196,6 +196,18 @@ Illesze be az előadók oldalát: http://[előadó].bandcamp.com és jelölje be
   <data name="Skin_Light" xml:space="preserve">
     <value>Világos</value>
   </data>
+  <data name="Skin_Blue" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="Skin_Green" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="Skin_Purple" xml:space="preserve">
+    <value>Purple</value>
+  </data>
+  <data name="Skin_Orange" xml:space="preserve">
+    <value>Orange</value>
+  </data>
   <data name="messageBoxCloseWindowWhenDownloadingButtonOk" xml:space="preserve">
     <value>_Program bezárása</value>
   </data>

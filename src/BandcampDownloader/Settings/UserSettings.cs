@@ -121,6 +121,18 @@ public enum Skin
 
     [Description("Light")]
     Light,
+
+    [Description("Blue")]
+    Blue,
+
+    [Description("Green")]
+    Green,
+
+    [Description("Purple")]
+    Purple,
+
+    [Description("Orange")]
+    Orange,
 }
 
 public enum TagEditAction

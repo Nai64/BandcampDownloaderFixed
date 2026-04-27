@@ -170,6 +170,18 @@
                             <DataTrigger Binding="{Binding Theme}" Value="{x:Static settings:Skin.Dark}">
                                 <Setter Property="Foreground" Value="Orange" />
                             </DataTrigger>
+                            <DataTrigger Binding="{Binding Theme}" Value="{x:Static settings:Skin.Blue}">
+                                <Setter Property="Foreground" Value="#60a5fa" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Theme}" Value="{x:Static settings:Skin.Green}">
+                                <Setter Property="Foreground" Value="#4ade80" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Theme}" Value="{x:Static settings:Skin.Purple}">
+                                <Setter Property="Foreground" Value="#c084fc" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Theme}" Value="{x:Static settings:Skin.Orange}">
+                                <Setter Property="Foreground" Value="#fb923c" />
+                            </DataTrigger>
                         </Style.Triggers>
                     </Style>
                 </Label.Style>

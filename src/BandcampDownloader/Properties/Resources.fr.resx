@@ -438,6 +438,18 @@ Merci d'ouvrir un nouveau problème avec le contenu de votre ficher log sur
   <data name="Skin_Light" xml:space="preserve">
     <value>Clair</value>
   </data>
+  <data name="Skin_Blue" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="Skin_Green" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="Skin_Purple" xml:space="preserve">
+    <value>Purple</value>
+  </data>
+  <data name="Skin_Orange" xml:space="preserve">
+    <value>Orange</value>
+  </data>
   <data name="TagEditAction_DoNotModify" xml:space="preserve">
     <value>Ne pas modifier</value>
   </data>
