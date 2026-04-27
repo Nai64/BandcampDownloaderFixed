@@ -123,6 +123,7 @@ internal sealed partial class WindowMain
                 }
 
                 // If discography checkbox is checked, show selection dialog
+                bool shouldDownload = true;
                 if (_userSettings.DownloadArtistDiscography)
                 {
                     // First retrieve album info on background thread
@@ -139,7 +140,7 @@ internal sealed partial class WindowMain
                     }
 
                     // Then show dialog on UI thread
-                    await ThreadUtils.ExecuteOnUiAsync(
+                    bool dialogResult = await ThreadUtils.ExecuteOnUiAsync(
                         () =>
                         {
                             try
@@ -158,7 +159,7 @@ internal sealed partial class WindowMain
                                     {
                                         // User cancelled the selection
                                         _logger.Info("Discography selection cancelled by user");
-                                        return;
+                                        return false;
                                     }
 
                                     // Get selected albums and convert to URLs
@@ -166,7 +167,7 @@ internal sealed partial class WindowMain
                                     if (selectedAlbums.Count == 0)
                                     {
                                         _logger.Info("No albums selected for download");
-                                        return;
+                                        return false;
                                     }
 
                                     // Convert selected albums to URLs
@@ -176,13 +177,24 @@ internal sealed partial class WindowMain
 
                                     inputUrls = string.Join(Environment.NewLine, selectedAlbums.Select(a => a.GetFullUrl(artistPage)));
                                     _logger.Info($"User selected {selectedAlbums.Count} albums for download");
+                                    return true;
                                 }
+                                return false;
                             }
                             catch (Exception ex)
                             {
                                 _logger.Error(ex, "Error showing discography selection dialog");
+                                return false;
                             }
                         }).ConfigureAwait(false);
+
+                    shouldDownload = dialogResult;
+                }
+
+                if (!shouldDownload)
+                {
+                    await LogAsync("Download cancelled", DownloadProgressChangedLevel.Info).ConfigureAwait(false);
+                    return;
                 }
 
                 // Set controls to "downloading..." state
