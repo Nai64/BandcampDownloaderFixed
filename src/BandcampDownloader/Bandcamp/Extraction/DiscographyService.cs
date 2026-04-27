@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.Json;
 using System.Text.RegularExpressions;
@@ -59,27 +60,6 @@ internal sealed class DiscographyService : IDiscographyService
 
     public IReadOnlyCollection<AlbumInfo> GetReferredAlbumsInfo(string musicPageHtmlContent)
     {
-        // Temporarily force regex method to get all releases
-        _logger.Info("Using regex method for album info extraction (temporarily forced)");
-        var urls = GetReferredAlbumsRelativeUrls(musicPageHtmlContent);
-        var regexResult = urls.Select(url => new AlbumInfo
-        {
-            Artist = "Unknown",
-            Title = ExtractTitleFromUrl(url),
-            RelativeUrl = url,
-            Type = url.Contains("/track/") ? "track" : "album"
-        }).ToList();
-
-        // Log first album for debugging
-        if (regexResult.Count > 0)
-        {
-            _logger.Info($"First album (regex): Artist='{regexResult[0].Artist}', Title='{regexResult[0].Title}', Type='{regexResult[0].Type}', URL='{regexResult[0].RelativeUrl}'");
-            _logger.Info($"Total albums found via regex: {regexResult.Count}");
-        }
-
-        return regexResult;
-
-        /*
         // Try to parse JSON data from data-client-items attribute
         var jsonDataRegex = new Regex("data-client-items=\"(?<data>[^\"]+)\"");
         var jsonDataMatch = jsonDataRegex.Match(musicPageHtmlContent);
@@ -92,7 +72,6 @@ internal sealed class DiscographyService : IDiscographyService
                 // Unescape HTML entities
                 jsonData = jsonData.Replace("&quot;", "\"");
                 _logger.Info($"Attempting to parse JSON data with length: {jsonData.Length}");
-                _logger.Info($"JSON data preview: {jsonData.Substring(0, Math.Min(200, jsonData.Length))}...");
                 var albumInfos = JsonSerializer.Deserialize<List<JsonAlbumData>>(jsonData);
 
                 if (albumInfos != null && albumInfos.Count > 0)
@@ -148,7 +127,6 @@ internal sealed class DiscographyService : IDiscographyService
         }
 
         return regexResult;
-        */
     }
 
     private static string ExtractTitleFromUrl(string url)
@@ -157,9 +135,15 @@ internal sealed class DiscographyService : IDiscographyService
         var parts = url.Split('/');
         if (parts.Length >= 3)
         {
-            return parts[2].Replace("-", " ");
+            var title = parts[2].Replace("-", " ");
+            return ToTitleCase(title);
         }
         return "Unknown";
+    }
+
+    private static string ToTitleCase(string str)
+    {
+        return System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str.ToLower());
     }
 
     // JSON data structure for deserialization
