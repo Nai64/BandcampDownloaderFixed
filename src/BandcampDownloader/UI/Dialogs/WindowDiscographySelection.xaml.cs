@@ -50,16 +50,7 @@ internal sealed partial class WindowDiscographySelection
         var selectedCount = ((IReadOnlyCollection<AlbumInfo>)ListViewAlbums.ItemsSource).Count(a => a.IsSelected);
         var totalCount = ((IReadOnlyCollection<AlbumInfo>)ListViewAlbums.ItemsSource).Count;
 
-        // Find the TextBlock in the selection buttons panel
-        var textBlock = ((StackPanel)Content).Children[1] as StackPanel;
-        if (textBlock != null)
-        {
-            var countTextBlock = textBlock.Children[2] as TextBlock;
-            if (countTextBlock != null)
-            {
-                countTextBlock.Text = $"Selected: {selectedCount}/{totalCount}";
-            }
-        }
+        TextBlockSelectedCount.Text = $"Selected: {selectedCount}/{totalCount}";
     }
 
     private void ButtonOK_Click(object sender, RoutedEventArgs e)

@@ -130,7 +130,9 @@ internal sealed partial class WindowMain
                     IReadOnlyCollection<AlbumInfo> albumInfos;
                     try
                     {
+                        await LogAsync("Retrieving album information for discography selection...", DownloadProgressChangedLevel.Info).ConfigureAwait(false);
                         albumInfos = await _albumUrlRetriever.RetrieveAlbumsInfoAsync(inputUrls, true, _downloadCts.Token).ConfigureAwait(false);
+                        _logger.Info($"Retrieved {albumInfos.Count} albums for selection");
                     }
                     catch (Exception ex)
                     {
@@ -145,6 +147,7 @@ internal sealed partial class WindowMain
                         {
                             try
                             {
+                                _logger.Info($"Attempting to show dialog with {albumInfos.Count} albums");
                                 if (albumInfos.Count > 0)
                                 {
                                     var selectionDialog = new WindowDiscographySelection(albumInfos)
@@ -154,7 +157,9 @@ internal sealed partial class WindowMain
                                         WindowStartupLocation = WindowStartupLocation.CenterOwner,
                                     };
 
+                                    _logger.Info("Showing discography selection dialog");
                                     var result = selectionDialog.ShowDialog();
+                                    _logger.Info($"Dialog result: {result}");
                                     if (result != true)
                                     {
                                         // User cancelled the selection
@@ -179,6 +184,7 @@ internal sealed partial class WindowMain
                                     _logger.Info($"User selected {selectedAlbums.Count} albums for download");
                                     return true;
                                 }
+                                _logger.Info("No albums found to show in dialog");
                                 return false;
                             }
                             catch (Exception ex)
@@ -189,6 +195,7 @@ internal sealed partial class WindowMain
                         }).ConfigureAwait(false);
 
                     shouldDownload = dialogResult;
+                    _logger.Info($"Dialog result: {dialogResult}, shouldDownload: {shouldDownload}");
                 }
 
                 if (!shouldDownload)

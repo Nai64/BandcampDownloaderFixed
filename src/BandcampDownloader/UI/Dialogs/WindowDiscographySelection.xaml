@@ -47,12 +47,13 @@
                 Click="ButtonDeselectAll_Click"
                 Content="Deselect All" />
             <TextBlock
+                x:Name="TextBlockSelectedCount"
                 VerticalAlignment="Center"
                 Margin="10,0,0,0">
                 <Run Text="Selected:" />
-                <Run Text="{Binding ElementName=ListViewAlbums, Path=Items.Count, Mode=OneWay}" />
+                <Run Text="0" />
                 <Run Text="/" />
-                <Run Text="{Binding ElementName=ListViewAlbums, Path=Items.Count, Mode=OneWay}" />
+                <Run Text="0" />
             </TextBlock>
         </StackPanel>
 
