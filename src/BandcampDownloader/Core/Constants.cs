@@ -39,4 +39,9 @@ internal static class Constants
     /// The website URL of BandcampDownloader.
     /// </summary>
     public const string URL_WEBSITE = "https://github.com/Nai64/BandcampDownloaderFixed";
+
+    /// <summary>
+    /// The URL of the original BandcampDownloader project.
+    /// </summary>
+    public const string URL_ORIGINAL_REPO = "https://github.com/otiel/bandcampdownloader";
 }

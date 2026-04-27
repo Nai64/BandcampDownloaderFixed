@@ -8,7 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:core="clr-namespace:BandcampDownloader.Core"
     Width="410"
-    Height="200"
+    Height="226"
     lex:LocalizeDictionary.DesignCulture="en"
     lex:ResxLocalizationProvider.DefaultAssembly="BandcampDownloader"
     lex:ResxLocalizationProvider.DefaultDictionary="Resources"
@@ -21,6 +21,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="26" />
             <RowDefinition Height="26" />
             <RowDefinition Height="26" />
             <RowDefinition Height="26" />
@@ -102,6 +103,23 @@
                 RequestNavigate="Hyperlink_RequestNavigate"
                 ToolTip="{Binding Source={x:Static core:Constants.URL_ISSUES}}">
                 <TextBlock x:Name="TextBlockIssuesWebsite" Text="github.com/Nai64/BandcampDownloaderFixed/issues" />
+            </Hyperlink>
+        </TextBlock>
+        <Label
+            x:Name="LabelOriginalRepo"
+            Grid.Row="5"
+            Grid.Column="0"
+            Content="Based on:" />
+        <TextBlock
+            Grid.Row="5"
+            Grid.Column="1"
+            VerticalAlignment="Center">
+            <Hyperlink
+                x:Name="HyperlinkOriginalRepo"
+                NavigateUri="{Binding Source={x:Static core:Constants.URL_ORIGINAL_REPO}}"
+                RequestNavigate="Hyperlink_RequestNavigate"
+                ToolTip="{Binding Source={x:Static core:Constants.URL_ORIGINAL_REPO}">
+                <TextBlock x:Name="TextBlockOriginalRepo" Text="github.com/otiel/bandcampdownloader" />
             </Hyperlink>
         </TextBlock>
     </Grid>
