@@ -100,54 +100,58 @@ internal sealed partial class App
             var setupService = container.GetService<ISetupService>();
             var themeService = container.GetService<IThemeService>();
 
-            // Step 1: Language and Theme selection
-            var windowSetupStep1 = new WindowSetupStep1(themeService)
+            bool completed = false;
+            while (!completed)
             {
-                ShowInTaskbar = false,
-                WindowStartupLocation = WindowStartupLocation.CenterScreen
-            };
+                // Step 1: Language and Theme selection
+                var windowSetupStep1 = new WindowSetupStep1(themeService)
+                {
+                    ShowInTaskbar = false,
+                    WindowStartupLocation = WindowStartupLocation.CenterScreen
+                };
 
-            var result1 = windowSetupStep1.ShowDialog();
-            if (result1 != true)
-            {
-                // User cancelled, exit application
-                Application.Current.Shutdown();
-                return;
+                var result1 = windowSetupStep1.ShowDialog();
+                if (result1 != true)
+                {
+                    // User cancelled, exit application
+                    Application.Current.Shutdown();
+                    return;
+                }
+
+                // Step 2: Feature mode selection
+                var windowSetupStep2 = new WindowSetupStep2
+                {
+                    ShowInTaskbar = false,
+                    WindowStartupLocation = WindowStartupLocation.CenterScreen
+                };
+
+                var result2 = windowSetupStep2.ShowDialog();
+                if (result2 == true)
+                {
+                    // User clicked Continue, setup is complete
+                    completed = true;
+
+                    // Apply settings from both dialogs
+                    setupService.ApplySetupMode(windowSetupStep2.SelectedMode, userSettings);
+                    userSettings.Language = windowSetupStep1.SelectedLanguage;
+                    userSettings.Theme = windowSetupStep1.SelectedTheme;
+                    userSettings.HasCompletedSetup = true;
+
+                    // Force save settings by resetting the settings service
+                    settingsService.ResetSettings();
+                    var finalSettings = settingsService.InitializeSettings();
+                    finalSettings.HasCompletedSetup = true;
+                    finalSettings.Theme = windowSetupStep1.SelectedTheme;
+                    finalSettings.Language = windowSetupStep1.SelectedLanguage;
+                    finalSettings.DownloadsPath = userSettings.DownloadsPath;
+                    setupService.ApplySetupMode(windowSetupStep2.SelectedMode, finalSettings);
+                    finalSettings.HasCompletedSetup = true;
+
+                    // Re-initialize services with the new settings
+                    InitializeCoreServices(container);
+                }
+                // If result2 is false, user clicked Previous Step, so loop back to step 1
             }
-
-            // Step 2: Feature mode selection
-            var windowSetupStep2 = new WindowSetupStep2
-            {
-                ShowInTaskbar = false,
-                WindowStartupLocation = WindowStartupLocation.CenterScreen
-            };
-
-            var result2 = windowSetupStep2.ShowDialog();
-            if (result2 != true)
-            {
-                // User went back or cancelled, exit application
-                Application.Current.Shutdown();
-                return;
-            }
-
-            // Apply settings from both dialogs
-            setupService.ApplySetupMode(windowSetupStep2.SelectedMode, userSettings);
-            userSettings.Language = windowSetupStep1.SelectedLanguage;
-            userSettings.Theme = windowSetupStep1.SelectedTheme;
-            userSettings.HasCompletedSetup = true;
-
-            // Force save settings by resetting the settings service
-            settingsService.ResetSettings();
-            var finalSettings = settingsService.InitializeSettings();
-            finalSettings.HasCompletedSetup = true;
-            finalSettings.Theme = windowSetupStep1.SelectedTheme;
-            finalSettings.Language = windowSetupStep1.SelectedLanguage;
-            finalSettings.DownloadsPath = userSettings.DownloadsPath;
-            setupService.ApplySetupMode(windowSetupStep2.SelectedMode, finalSettings);
-            finalSettings.HasCompletedSetup = true;
-
-            // Re-initialize services with the new settings
-            InitializeCoreServices(container);
         }
     }
 }
