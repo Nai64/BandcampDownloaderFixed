@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:extraction="clr-namespace:BandcampDownloader.Bandcamp.Extraction"
     Title="Select Releases to Download"
-    Width="680"
+    Width="700"
     Height="500"
     ResizeMode="NoResize"
     WindowStartupLocation="CenterOwner"
