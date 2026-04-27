@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Media;
@@ -124,13 +125,25 @@ internal sealed partial class WindowMain
                 // If discography checkbox is checked, show selection dialog
                 if (_userSettings.DownloadArtistDiscography)
                 {
+                    // First retrieve album info on background thread
+                    IReadOnlyCollection<AlbumInfo> albumInfos;
+                    try
+                    {
+                        albumInfos = await _albumUrlRetriever.RetrieveAlbumsInfoAsync(inputUrls, true, _downloadCts.Token).ConfigureAwait(false);
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.Error(ex, "Error retrieving album info for discography selection");
+                        await LogAsync($"Error retrieving album info: {ex.Message}", DownloadProgressChangedLevel.Error).ConfigureAwait(false);
+                        return;
+                    }
+
+                    // Then show dialog on UI thread
                     await ThreadUtils.ExecuteOnUiAsync(
-                        async () =>
+                        () =>
                         {
                             try
                             {
-                                var albumInfos = await _albumUrlRetriever.RetrieveAlbumsInfoAsync(inputUrls, true, _downloadCts.Token).ConfigureAwait(false);
-
                                 if (albumInfos.Count > 0)
                                 {
                                     var selectionDialog = new WindowDiscographySelection(albumInfos)
@@ -144,7 +157,7 @@ internal sealed partial class WindowMain
                                     if (result != true)
                                     {
                                         // User cancelled the selection
-                                        await LogAsync("Discography selection cancelled by user", DownloadProgressChangedLevel.Info).ConfigureAwait(false);
+                                        _logger.Info("Discography selection cancelled by user");
                                         return;
                                     }
 
@@ -152,7 +165,7 @@ internal sealed partial class WindowMain
                                     var selectedAlbums = selectionDialog.SelectedAlbums;
                                     if (selectedAlbums.Count == 0)
                                     {
-                                        await LogAsync("No albums selected for download", DownloadProgressChangedLevel.Error).ConfigureAwait(false);
+                                        _logger.Info("No albums selected for download");
                                         return;
                                     }
 
@@ -168,8 +181,6 @@ internal sealed partial class WindowMain
                             catch (Exception ex)
                             {
                                 _logger.Error(ex, "Error showing discography selection dialog");
-                                await LogAsync($"Error showing discography selection: {ex.Message}", DownloadProgressChangedLevel.Error).ConfigureAwait(false);
-                                return;
                             }
                         }).ConfigureAwait(false);
                 }
