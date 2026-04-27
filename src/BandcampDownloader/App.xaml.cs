@@ -103,6 +103,23 @@ internal sealed partial class App
             {
                 setupService.ApplySetupMode(windowSetup.SelectedMode, userSettings);
                 userSettings.HasCompletedSetup = true;
+                // Force save settings by resetting the settings service
+                settingsService.ResetSettings();
+                var newSettings = settingsService.InitializeSettings();
+                newSettings.HasCompletedSetup = true;
+                newSettings.Theme = userSettings.Theme;
+                newSettings.Language = userSettings.Language;
+                newSettings.DownloadsPath = userSettings.DownloadsPath;
+                setupService.ApplySetupMode(windowSetup.SelectedMode, newSettings);
+                newSettings.HasCompletedSetup = true;
+            }
+            else
+            {
+                // User cancelled, mark as completed so they don't see it again
+                userSettings.HasCompletedSetup = true;
+                settingsService.ResetSettings();
+                var newSettings = settingsService.InitializeSettings();
+                newSettings.HasCompletedSetup = true;
             }
         }
     }

@@ -6,6 +6,9 @@ artifacts/
 # Publish Folder
 publish/
 
+# Tools folder (for development/testing)
+Tools/
+
 # User-specific files
 *.suo
 *.user
