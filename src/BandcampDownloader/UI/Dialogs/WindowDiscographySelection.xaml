@@ -9,7 +9,8 @@
     Title="Select Releases to Download"
     Width="600"
     Height="500"
-    ResizeMode="NoResize"
+    ResizeMode="CanResizeWithGrip"
+    SizeToContent="WidthAndHeight"
     WindowStartupLocation="CenterOwner"
     mc:Ignorable="d">
     <Grid Margin="10">
