@@ -20,7 +20,8 @@ internal interface IDiscographyService
     /// Returns all the album information existing on the specified "/music" Bandcamp page.
     /// </summary>
     /// <param name="musicPageHtmlContent">The HTML source code of the "/music" Bandcamp page of an artist.</param>
-    IReadOnlyCollection<AlbumInfo> GetReferredAlbumsInfo(string musicPageHtmlContent);
+    /// <param name="artistBaseUrl">Optional artist name to use for all albums.</param>
+    IReadOnlyCollection<AlbumInfo> GetReferredAlbumsInfo(string musicPageHtmlContent, string artistBaseUrl = "");
 }
 
 internal sealed class DiscographyService : IDiscographyService
@@ -58,14 +59,28 @@ internal sealed class DiscographyService : IDiscographyService
         return distinctAlbumsUrl;
     }
 
-    public IReadOnlyCollection<AlbumInfo> GetReferredAlbumsInfo(string musicPageHtmlContent)
+    public IReadOnlyCollection<AlbumInfo> GetReferredAlbumsInfo(string musicPageHtmlContent, string artistBaseUrl = "")
     {
         // Use regex method to get all releases (JSON only contains first few)
         _logger.Info("Using regex method for album info extraction to get all releases");
         var urls = GetReferredAlbumsRelativeUrls(musicPageHtmlContent);
+        
+        // Extract artist name from base URL if not provided
+        if (string.IsNullOrEmpty(artistBaseUrl))
+        {
+            // Try to extract artist name from the HTML page title
+            var titleRegex = new Regex("<title>([^<]+)</title>");
+            var titleMatch = titleRegex.Match(musicPageHtmlContent);
+            if (titleMatch.Success)
+            {
+                artistBaseUrl = titleMatch.Groups[1].Value.Trim();
+                _logger.Info($"Extracted artist from title: {artistBaseUrl}");
+            }
+        }
+        
         var regexResult = urls.Select(url => new AlbumInfo
         {
-            Artist = "Unknown",
+            Artist = artistBaseUrl,
             Title = ExtractTitleFromUrl(url),
             RelativeUrl = url,
             Type = url.Contains("/track/") ? "track" : "album"

@@ -170,7 +170,9 @@ internal sealed class AlbumUrlRetriever : IAlbumUrlRetriever
 
             try
             {
-                var albumsInfo = _discographyService.GetReferredAlbumsInfo(htmlContent);
+                // Extract artist name from the base URL
+                var artistName = artistPage.Replace("https://", "").Replace("http://", "").Replace(".bandcamp.com", "");
+                var albumsInfo = _discographyService.GetReferredAlbumsInfo(htmlContent, artistName);
                 // Set full URLs for each album
                 foreach (var albumInfo in albumsInfo)
                 {
