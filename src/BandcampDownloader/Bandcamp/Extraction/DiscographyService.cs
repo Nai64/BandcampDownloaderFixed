@@ -65,22 +65,8 @@ internal sealed class DiscographyService : IDiscographyService
         _logger.Info("Using regex method for album info extraction to get all releases");
         var urls = GetReferredAlbumsRelativeUrls(musicPageHtmlContent);
         
-        // Extract artist name from base URL if not provided
-        if (string.IsNullOrEmpty(artistBaseUrl))
-        {
-            // Try to extract artist name from the HTML page title
-            var titleRegex = new Regex("<title>([^<]+)</title>");
-            var titleMatch = titleRegex.Match(musicPageHtmlContent);
-            if (titleMatch.Success)
-            {
-                artistBaseUrl = titleMatch.Groups[1].Value.Trim();
-                _logger.Info($"Extracted artist from title: {artistBaseUrl}");
-            }
-        }
-        
         var regexResult = urls.Select(url => new AlbumInfo
         {
-            Artist = artistBaseUrl,
             Title = ExtractTitleFromUrl(url),
             RelativeUrl = url,
             Type = url.Contains("/track/") ? "track" : "album"
@@ -89,7 +75,7 @@ internal sealed class DiscographyService : IDiscographyService
         // Log first album for debugging
         if (regexResult.Count > 0)
         {
-            _logger.Info($"First album (regex): Artist='{regexResult[0].Artist}', Title='{regexResult[0].Title}', Type='{regexResult[0].Type}', URL='{regexResult[0].RelativeUrl}'");
+            _logger.Info($"First album (regex): Title='{regexResult[0].Title}', Type='{regexResult[0].Type}', URL='{regexResult[0].RelativeUrl}'");
             _logger.Info($"Total albums found via regex: {regexResult.Count}");
         }
 

@@ -71,17 +71,14 @@
                             <DataTemplate>
                                 <CheckBox
                                     HorizontalAlignment="Center"
-                                    Background="Transparent"
-                                    BorderBrush="Transparent"
+                                    Background="White"
+                                    BorderBrush="Black"
+                                    BorderThickness="1"
                                     IsChecked="{Binding IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                     Click="CheckBox_Click" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn
-                        Width="120"
-                        DisplayMemberBinding="{Binding Artist}"
-                        Header="Artist" />
                     <GridViewColumn
                         Width="200"
                         DisplayMemberBinding="{Binding Title}"

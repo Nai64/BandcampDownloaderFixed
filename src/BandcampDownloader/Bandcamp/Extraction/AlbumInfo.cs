@@ -6,11 +6,6 @@ namespace BandcampDownloader.Bandcamp.Extraction;
 internal sealed class AlbumInfo
 {
     /// <summary>
-    /// The artist name.
-    /// </summary>
-    public string Artist { get; set; } = string.Empty;
-
-    /// <summary>
     /// The album or track title.
     /// </summary>
     public string Title { get; set; } = string.Empty;

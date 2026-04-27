@@ -54,7 +54,6 @@ internal sealed class AlbumUrlRetriever : IAlbumUrlRetriever
             // Convert URLs to AlbumInfo objects
             return sanitizedUrls.Select(url => new AlbumInfo
             {
-                Artist = "Unknown",
                 Title = ExtractTitleFromUrl(url),
                 RelativeUrl = new Uri(url).PathAndQuery,
                 Type = url.Contains("/track/") ? "track" : "album",
@@ -170,9 +169,7 @@ internal sealed class AlbumUrlRetriever : IAlbumUrlRetriever
 
             try
             {
-                // Extract artist name from the base URL
-                var artistName = artistPage.Replace("https://", "").Replace("http://", "").Replace(".bandcamp.com", "");
-                var albumsInfo = _discographyService.GetReferredAlbumsInfo(htmlContent, artistName);
+                var albumsInfo = _discographyService.GetReferredAlbumsInfo(htmlContent);
                 // Set full URLs for each album
                 foreach (var albumInfo in albumsInfo)
                 {
