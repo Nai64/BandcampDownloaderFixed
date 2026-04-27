@@ -28,8 +28,13 @@
     </Window.TaskbarItemInfo>
     <Grid x:Name="GridMain" Margin="10,10,10,10">
         <Grid x:Name="GridUrls" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
             <TextBox
                 Name="TextBoxUrls"
+                Grid.Column="0"
                 Height="111"
                 VerticalAlignment="Top"
                 AcceptsReturn="True"
@@ -37,6 +42,17 @@
                 TabIndex="0"
                 Text=""
                 VerticalScrollBarVisibility="Auto" />
+            <Button
+                Name="ButtonClearUrls"
+                Grid.Column="1"
+                Width="30"
+                Height="25"
+                Margin="5,0,0,0"
+                VerticalAlignment="Top"
+                Click="ButtonClearUrls_Click"
+                Content="X"
+                TabIndex="1"
+                ToolTip="Clear URLs" />
             <TextBlock
                 x:Name="TextBoxUrlsPlaceholder"
                 Margin="3,1,0,0"

@@ -93,6 +93,11 @@ internal sealed partial class WindowMain
 #endif
     }
 
+    private void ButtonClearUrls_Click(object sender, RoutedEventArgs e)
+    {
+        TextBoxUrls.Text = "";
+    }
+
     private void ButtonBrowse_Click(object sender, RoutedEventArgs e)
     {
         var dialog = new OpenFolderDialog();
