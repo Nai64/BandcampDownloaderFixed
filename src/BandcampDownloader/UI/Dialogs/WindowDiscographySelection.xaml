@@ -65,6 +65,11 @@
             SelectionMode="Single">
             <ListView.View>
                 <GridView AllowsColumnReorder="False">
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="GridViewColumnHeader">
+                            <Setter Property="IsEnabled" Value="False" />
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
                     <GridViewColumn Width="40">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
