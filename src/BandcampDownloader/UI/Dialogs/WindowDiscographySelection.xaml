@@ -86,11 +86,11 @@
                         Width="80"
                         DisplayMemberBinding="{Binding Type}"
                         Header="Type" />
-                    <GridViewColumn Width="60">
+                    <GridViewColumn Width="70">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Button
-                                    Width="50"
+                                    Width="60"
                                     Height="20"
                                     HorizontalAlignment="Center"
                                     Content="Open"
