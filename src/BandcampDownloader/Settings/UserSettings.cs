@@ -323,4 +323,10 @@ public interface IUserSettings
 
     [Option(DefaultValue = false)]
     bool EnableDiscographySelectionDialog { get; set; }
+
+    [Option(DefaultValue = false)]
+    bool RememberLastUrl { get; set; }
+
+    [Option(DefaultValue = "")]
+    string LastUrl { get; set; }
 }
