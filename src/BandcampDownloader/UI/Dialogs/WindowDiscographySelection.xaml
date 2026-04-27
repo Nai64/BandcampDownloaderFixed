@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:extraction="clr-namespace:BandcampDownloader.Bandcamp.Extraction"
     Title="Select Releases to Download"
-    Width="670"
+    Width="680"
     Height="500"
     ResizeMode="NoResize"
     WindowStartupLocation="CenterOwner"
@@ -86,11 +86,11 @@
                         Width="80"
                         DisplayMemberBinding="{Binding Type}"
                         Header="Type" />
-                    <GridViewColumn Width="80" Header="Actions">
+                    <GridViewColumn Width="90" Header="Actions">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Button
-                                    Width="70"
+                                    Width="80"
                                     Height="20"
                                     HorizontalAlignment="Center"
                                     Content="Open"
