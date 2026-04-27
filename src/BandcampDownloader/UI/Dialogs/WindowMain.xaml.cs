@@ -189,7 +189,12 @@ internal sealed partial class WindowMain
                                 _logger.Info($"Attempting to show dialog with {albumInfos.Count} albums");
                                 if (albumInfos.Count > 0)
                                 {
-                                    var selectionDialog = new WindowDiscographySelection(albumInfos)
+                                    // Extract artist page URL for opening URLs in browser
+                                    var artistPageRegex = new Regex("https?://[^/]*");
+                                    var firstUrl = inputUrls.Split([Environment.NewLine], StringSplitOptions.RemoveEmptyEntries).First();
+                                    var artistPage = artistPageRegex.Match(firstUrl).ToString();
+
+                                    var selectionDialog = new WindowDiscographySelection(albumInfos, artistPage)
                                     {
                                         Owner = this,
                                         ShowInTaskbar = false,
@@ -215,10 +220,6 @@ internal sealed partial class WindowMain
                                     }
 
                                     // Convert selected albums to URLs
-                                    var artistPageRegex = new Regex("https?://[^/]*");
-                                    var firstUrl = inputUrls.Split([Environment.NewLine], StringSplitOptions.RemoveEmptyEntries).First();
-                                    var artistPage = artistPageRegex.Match(firstUrl).ToString();
-
                                     inputUrls = string.Join(Environment.NewLine, selectedAlbums.Select(a => a.GetFullUrl(artistPage)));
                                     _logger.Info($"User selected {selectedAlbums.Count} albums for download");
                                     _logger.Info($"Updated input URLs to selected albums only");

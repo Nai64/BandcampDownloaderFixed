@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -8,8 +9,11 @@ namespace BandcampDownloader.UI.Dialogs;
 
 internal sealed partial class WindowDiscographySelection
 {
-    public WindowDiscographySelection(IReadOnlyCollection<AlbumInfo> albumInfos)
+    private readonly string _artistBaseUrl;
+
+    public WindowDiscographySelection(IReadOnlyCollection<AlbumInfo> albumInfos, string artistBaseUrl)
     {
+        _artistBaseUrl = artistBaseUrl;
         InitializeComponent();
         ListViewAlbums.ItemsSource = albumInfos;
         UpdateSelectedCount();
@@ -63,5 +67,25 @@ internal sealed partial class WindowDiscographySelection
     {
         DialogResult = false;
         Close();
+    }
+
+    private void ButtonOpenUrl_Click(object sender, RoutedEventArgs e)
+    {
+        if (sender is Button button && button.DataContext is AlbumInfo albumInfo)
+        {
+            var fullUrl = albumInfo.GetFullUrl(_artistBaseUrl);
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = fullUrl,
+                    UseShellExecute = true
+                });
+            }
+            catch
+            {
+                // Ignore errors opening browser
+            }
+        }
     }
 }
