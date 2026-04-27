@@ -1,11 +1,11 @@
 <Window
-    x:Class="BandcampDownloader.UI.Dialogs.WindowSetup"
+    x:Class="BandcampDownloader.UI.Dialogs.WindowSetupStep2"
     x:ClassModifier="internal"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="Setup"
+    Title="Setup - Step 2/2"
     Width="500"
     Height="450"
     ResizeMode="NoResize"
@@ -31,7 +31,7 @@
         <TextBlock
             Grid.Row="1"
             Margin="0,0,0,20"
-            Text="Choose your experience level:"
+            Text="Step 2/2: Choose your experience level"
             TextAlignment="Center"
             TextWrapping="Wrap" />
 
@@ -105,8 +105,8 @@
                 Width="100"
                 Height="30"
                 Margin="0,0,10,0"
-                Click="ButtonCancel_Click"
-                Content="Cancel" />
+                Click="ButtonBack_Click"
+                Content="Back" />
             <Button
                 Width="100"
                 Height="30"

@@ -98,35 +98,58 @@ internal sealed partial class App
         if (!userSettings.HasCompletedSetup)
         {
             var setupService = container.GetService<ISetupService>();
-            var windowSetup = new WindowSetup
+
+            // Step 1: Language and Theme selection
+            var windowSetupStep1 = new WindowSetupStep1
             {
                 ShowInTaskbar = false,
                 WindowStartupLocation = WindowStartupLocation.CenterScreen
             };
 
-            var result = windowSetup.ShowDialog();
-            if (result == true)
-            {
-                setupService.ApplySetupMode(windowSetup.SelectedMode, userSettings);
-                userSettings.HasCompletedSetup = true;
-                // Force save settings by resetting the settings service
-                settingsService.ResetSettings();
-                var newSettings = settingsService.InitializeSettings();
-                newSettings.HasCompletedSetup = true;
-                newSettings.Theme = userSettings.Theme;
-                newSettings.Language = userSettings.Language;
-                newSettings.DownloadsPath = userSettings.DownloadsPath;
-                setupService.ApplySetupMode(windowSetup.SelectedMode, newSettings);
-                newSettings.HasCompletedSetup = true;
-            }
-            else
+            var result1 = windowSetupStep1.ShowDialog();
+            if (result1 != true)
             {
                 // User cancelled, mark as completed so they don't see it again
                 userSettings.HasCompletedSetup = true;
                 settingsService.ResetSettings();
-                var newSettings = settingsService.InitializeSettings();
-                newSettings.HasCompletedSetup = true;
+                var settings1 = settingsService.InitializeSettings();
+                settings1.HasCompletedSetup = true;
+                return;
             }
+
+            // Step 2: Feature mode selection
+            var windowSetupStep2 = new WindowSetupStep2
+            {
+                ShowInTaskbar = false,
+                WindowStartupLocation = WindowStartupLocation.CenterScreen
+            };
+
+            var result2 = windowSetupStep2.ShowDialog();
+            if (result2 != true)
+            {
+                // User went back or cancelled, mark as completed so they don't see it again
+                userSettings.HasCompletedSetup = true;
+                settingsService.ResetSettings();
+                var settings2 = settingsService.InitializeSettings();
+                settings2.HasCompletedSetup = true;
+                return;
+            }
+
+            // Apply settings from both dialogs
+            setupService.ApplySetupMode(windowSetupStep2.SelectedMode, userSettings);
+            userSettings.Language = windowSetupStep1.SelectedLanguage;
+            userSettings.Theme = windowSetupStep1.SelectedTheme;
+            userSettings.HasCompletedSetup = true;
+
+            // Force save settings by resetting the settings service
+            settingsService.ResetSettings();
+            var finalSettings = settingsService.InitializeSettings();
+            finalSettings.HasCompletedSetup = true;
+            finalSettings.Theme = windowSetupStep1.SelectedTheme;
+            finalSettings.Language = windowSetupStep1.SelectedLanguage;
+            finalSettings.DownloadsPath = userSettings.DownloadsPath;
+            setupService.ApplySetupMode(windowSetupStep2.SelectedMode, finalSettings);
+            finalSettings.HasCompletedSetup = true;
 
             // Re-initialize services with the new settings
             InitializeCoreServices(container);

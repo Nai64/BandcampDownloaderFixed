@@ -3,11 +3,11 @@ using BandcampDownloader.Core.Setup;
 
 namespace BandcampDownloader.UI.Dialogs;
 
-internal sealed partial class WindowSetup
+internal sealed partial class WindowSetupStep2
 {
     public SetupMode SelectedMode { get; private set; } = SetupMode.Moderate;
 
-    public WindowSetup()
+    public WindowSetupStep2()
     {
         InitializeComponent();
     }
@@ -27,7 +27,7 @@ internal sealed partial class WindowSetup
         Close();
     }
 
-    private void ButtonCancel_Click(object sender, RoutedEventArgs e)
+    private void ButtonBack_Click(object sender, RoutedEventArgs e)
     {
         DialogResult = false;
         Close();
