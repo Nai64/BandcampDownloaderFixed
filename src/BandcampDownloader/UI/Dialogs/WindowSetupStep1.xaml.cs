@@ -1,3 +1,7 @@
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
 using System.Windows;
 using BandcampDownloader.Settings;
 using LanguageEnum = BandcampDownloader.Settings.Language;
@@ -20,20 +24,41 @@ internal sealed partial class WindowSetupStep1
 
     private void PopulateLanguageComboBox()
     {
-        ComboBoxLanguage.ItemsSource = System.Enum.GetValues(typeof(LanguageEnum));
-        ComboBoxLanguage.SelectedItem = LanguageEnum.en;
+        ComboBoxLanguage.ItemsSource = GetEnumDescriptions<LanguageEnum>();
+        ComboBoxLanguage.SelectedItem = GetEnumDescription(LanguageEnum.en);
     }
 
     private void PopulateThemeComboBox()
     {
-        ComboBoxTheme.ItemsSource = System.Enum.GetValues(typeof(Skin));
-        ComboBoxTheme.SelectedItem = Skin.Light;
+        ComboBoxTheme.ItemsSource = GetEnumDescriptions<Skin>();
+        ComboBoxTheme.SelectedItem = GetEnumDescription(Skin.Light);
+    }
+
+    private static string GetEnumDescription<T>(T value)
+    {
+        FieldInfo field = value.GetType().GetField(value.ToString());
+        DescriptionAttribute attribute = field.GetCustomAttribute<DescriptionAttribute>();
+        return attribute?.Description ?? value.ToString();
+    }
+
+    private static List<string> GetEnumDescriptions<T>()
+    {
+        return System.Enum.GetValues(typeof(T))
+            .Cast<T>()
+            .Select(GetEnumDescription)
+            .ToList();
     }
 
     private void ButtonNext_Click(object sender, RoutedEventArgs e)
     {
-        SelectedLanguage = (LanguageEnum)ComboBoxLanguage.SelectedItem;
-        SelectedTheme = (Skin)ComboBoxTheme.SelectedItem;
+        var languageDescription = (string)ComboBoxLanguage.SelectedItem;
+        SelectedLanguage = System.Enum.GetValues<LanguageEnum>()
+            .First(l => GetEnumDescription(l) == languageDescription);
+
+        var themeDescription = (string)ComboBoxTheme.SelectedItem;
+        SelectedTheme = System.Enum.GetValues<Skin>()
+            .First(t => GetEnumDescription(t) == themeDescription);
+
         DialogResult = true;
         Close();
     }
