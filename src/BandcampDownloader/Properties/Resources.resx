@@ -653,4 +653,10 @@ Are you sure you want to enable this feature?</value>
   <data name="checkBoxEnableDiscographySelectionDialog_ToolTip" xml:space="preserve">
     <value>When downloading an artist discography, shows a dialog to select which releases to download. If disabled, all releases will be downloaded.</value>
   </data>
+  <data name="checkBoxRememberLastUrl" xml:space="preserve">
+    <value>Remember last URL</value>
+  </data>
+  <data name="checkBoxRememberLastUrl_ToolTip" xml:space="preserve">
+    <value>Saves the last used URL and restores it when the application starts.</value>
+  </data>
 </root>

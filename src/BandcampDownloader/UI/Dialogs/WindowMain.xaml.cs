@@ -65,22 +65,31 @@ internal sealed partial class WindowMain
 
         InitializeComponent();
 
+        // Load last URL if setting is enabled
+        if (_userSettings.RememberLastUrl && !string.IsNullOrEmpty(_userSettings.LastUrl))
+        {
+            TextBoxUrls.Text = _userSettings.LastUrl;
+        }
+
 #if DEBUG
-        TextBoxUrls.Text = ""
-                           //+ "https://projectmooncircle.bandcamp.com" /* Lots of albums (124) */ + Environment.NewLine
-                           //+ "https://goataholicskjald.bandcamp.com/album/dogma" /* #65 Downloaded size ≠ predicted */ + Environment.NewLine // TODO fix Could not retrieve data for https://goataholicskjald.bandcamp.com/track/europa"><span class="track-title
-                           //+ "https://mstrvlk.bandcamp.com/album/-" /* #64 Album with big cover */ + Environment.NewLine
-                           //+ "https://mstrvlk.bandcamp.com/track/-" /* #64 Track with big cover */ + Environment.NewLine
-                           //+ "https://weneverlearnedtolive.bandcamp.com/album/silently-i-threw-them-skyward" /* #42 Album with lyrics */ + Environment.NewLine
-                           //+ "https://weneverlearnedtolive.bandcamp.com/track/shadows-in-hibernation-2" /* #42 Track with lyrics */ + Environment.NewLine
-                           //+ "https://goataholicskjald.bandcamp.com/track/europa" + Environment.NewLine
-                           //+ "https://goataholicskjald.bandcamp.com/track/epilogue" + Environment.NewLine
-                           //+ "https://afterdarkrecordings.bandcamp.com/album/adr-unreleased-tracks" /* #69 Album without cover */ + Environment.NewLine
-                           //+ "https://liluglymane.bandcamp.com/album/study-of-the-hypothesized-removable-and-or-expandable-nature-of-human-capability-and-limitations-primarily-regarding-introductory-experiences-with-new-and-exciting-technologies-by-way-of-motivati-2" /* #54 Long path */ + Environment.NewLine
-                           //+ "https://brzoskamarciniakmarkiewicz.bandcamp.com/album/wp-aw" /* #82 Tracks with diacritics */ + Environment.NewLine
-                           //+ "https://empyrium.bandcamp.com/album/der-wie-ein-blitz-vom-himmel-fiel" /* #102 Album ending with '...' */ + Environment.NewLine
-                           //+ "https://tympanikaudio.bandcamp.com" /* #118 Different discography page */ + Environment.NewLine
-                           ;
+        if (string.IsNullOrEmpty(TextBoxUrls.Text))
+        {
+            TextBoxUrls.Text = ""
+                               //+ "https://projectmooncircle.bandcamp.com" /* Lots of albums (124) */ + Environment.NewLine
+                               //+ "https://goataholicskjald.bandcamp.com/album/dogma" /* #65 Downloaded size ≠ predicted */ + Environment.NewLine // TODO fix Could not retrieve data for https://goataholicskjald.bandcamp.com/track/europa"><span class="track-title
+                               //+ "https://mstrvlk.bandcamp.com/album/-" /* #64 Album with big cover */ + Environment.NewLine
+                               //+ "https://mstrvlk.bandcamp.com/track/-" /* #64 Track with big cover */ + Environment.NewLine
+                               //+ "https://weneverlearnedtolive.bandcamp.com/album/silently-i-threw-them-skyward" /* #42 Album with lyrics */ + Environment.NewLine
+                               //+ "https://weneverlearnedtolive.bandcamp.com/track/shadows-in-hibernation-2" /* #42 Track with lyrics */ + Environment.NewLine
+                               //+ "https://goataholicskjald.bandcamp.com/track/europa" + Environment.NewLine
+                               //+ "https://goataholicskjald.bandcamp.com/track/epilogue" + Environment.NewLine
+                               //+ "https://afterdarkrecordings.bandcamp.com/album/adr-unreleased-tracks" /* #69 Album without cover */ + Environment.NewLine
+                               //+ "https://liluglymane.bandcamp.com/album/study-of-the-hypothesized-removable-and-or-expandable-nature-of-human-capability-and-limitations-primarily-regarding-introductory-experiences-with-new-and-exciting-technologies-by-way-of-motivati-2" /* #54 Long path */ + Environment.NewLine
+                               //+ "https://brzoskamarciniakmarkiewicz.bandcamp.com/album/wp-aw" /* #82 Tracks with diacritics */ + Environment.NewLine
+                               //+ "https://empyrium.bandcamp.com/album/der-wie-ein-blitz-vom-himmel-fiel" /* #102 Album ending with '...' */ + Environment.NewLine
+                               //+ "https://tympanikaudio.bandcamp.com" /* #118 Different discography page */ + Environment.NewLine
+                               ;
+        }
 #endif
     }
 
@@ -109,6 +118,12 @@ internal sealed partial class WindowMain
     private async void ButtonStart_Click(object sender, RoutedEventArgs e)
     {
         var inputUrls = TextBoxUrls.Text;
+
+        // Save last URL if setting is enabled
+        if (_userSettings.RememberLastUrl)
+        {
+            _userSettings.LastUrl = inputUrls;
+        }
 
         await Task.Run(
             async () =>
