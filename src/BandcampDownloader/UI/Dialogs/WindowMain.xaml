@@ -28,13 +28,8 @@
     </Window.TaskbarItemInfo>
     <Grid x:Name="GridMain" Margin="10,10,10,10">
         <Grid x:Name="GridUrls" VerticalAlignment="Top">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
             <TextBox
                 Name="TextBoxUrls"
-                Grid.Column="0"
                 Height="111"
                 VerticalAlignment="Top"
                 AcceptsReturn="True"
@@ -42,17 +37,6 @@
                 TabIndex="0"
                 Text=""
                 VerticalScrollBarVisibility="Auto" />
-            <Button
-                Name="ButtonClearUrls"
-                Grid.Column="1"
-                Width="30"
-                Height="25"
-                Margin="5,0,0,0"
-                VerticalAlignment="Top"
-                Click="ButtonClearUrls_Click"
-                Content="X"
-                TabIndex="1"
-                ToolTip="Clear URLs" />
             <TextBlock
                 x:Name="TextBoxUrlsPlaceholder"
                 Margin="3,1,0,0"
@@ -77,41 +61,52 @@
             VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition />
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
+            <Button
+                Name="ButtonClearUrls"
+                Grid.Column="0"
+                Width="80"
+                Height="20"
+                Margin="0,0,5,0"
+                Click="ButtonClearUrls_Click"
+                Content="Clear URLs"
+                TabIndex="1"
+                ToolTip="Clear URLs" />
             <Label
                 Name="LabelDownloadsPath"
-                Grid.Column="0"
+                Grid.Column="1"
                 Margin="-4,-2,0,0"
                 Content="{lex:Loc}"
                 Target="{Binding ElementName=TextBoxDownloadsPath}" />
             <TextBox
                 Name="TextBoxDownloadsPath"
-                Grid.Column="1"
+                Grid.Column="2"
                 Height="20"
-                TabIndex="1"
+                TabIndex="2"
                 Text="{Binding DownloadsPath}"
                 ToolTip="{lex:Loc}"
                 ToolTipService.ShowDuration="60000" />
             <Button
                 Name="ButtonBrowse"
-                Grid.Column="2"
+                Grid.Column="3"
                 Width="27"
                 Margin="5,0,0,0"
                 Click="ButtonBrowse_Click"
                 Content="{lex:Loc}"
-                TabIndex="2"
+                TabIndex="3"
                 ToolTip="{lex:Loc}" />
             <Button
                 Name="ButtonOpenDownloadsFolder"
-                Grid.Column="3"
+                Grid.Column="4"
                 Width="27"
                 Margin="5,0,0,0"
                 Click="ButtonOpenDownloadsFolder_Click"
                 Content="📁"
-                TabIndex="3"
+                TabIndex="4"
                 ToolTip="Open downloads folder" />
         </Grid>
         <CheckBox
