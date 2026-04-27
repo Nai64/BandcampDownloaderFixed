@@ -64,7 +64,7 @@
             ItemsSource="{Binding}"
             SelectionMode="Single">
             <ListView.View>
-                <GridView>
+                <GridView AllowsColumnReorder="False">
                     <GridViewColumn Width="40">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
