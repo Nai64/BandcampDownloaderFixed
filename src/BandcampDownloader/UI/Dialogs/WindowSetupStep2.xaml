@@ -102,11 +102,11 @@
             HorizontalAlignment="Right"
             Orientation="Horizontal">
             <Button
-                Width="100"
+                Width="120"
                 Height="30"
                 Margin="0,0,10,0"
                 Click="ButtonBack_Click"
-                Content="Back" />
+                Content="Previous Step" />
             <Button
                 Width="100"
                 Height="30"
