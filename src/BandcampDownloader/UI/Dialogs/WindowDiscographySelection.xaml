@@ -91,11 +91,11 @@
                         Width="80"
                         DisplayMemberBinding="{Binding Type}"
                         Header="Type" />
-                    <GridViewColumn Width="90" Header="Actions">
+                    <GridViewColumn Width="160" Header="Actions">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Button
-                                    Width="70"
+                                    Width="140"
                                     Height="20"
                                     HorizontalAlignment="Center"
                                     Content="Open"
