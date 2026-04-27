@@ -124,6 +124,7 @@ internal sealed partial class WindowMain
 
                 // If discography checkbox is checked, show selection dialog
                 bool shouldDownload = true;
+                bool skipDiscographyRetrieval = false; // Flag to skip discography retrieval after selection
                 if (_userSettings.DownloadArtistDiscography)
                 {
                     // First retrieve album info on background thread
@@ -182,6 +183,8 @@ internal sealed partial class WindowMain
 
                                     inputUrls = string.Join(Environment.NewLine, selectedAlbums.Select(a => a.GetFullUrl(artistPage)));
                                     _logger.Info($"User selected {selectedAlbums.Count} albums for download");
+                                    _logger.Info($"Updated input URLs to selected albums only");
+                                    skipDiscographyRetrieval = true; // Skip discography retrieval since we already have specific URLs
                                     return true;
                                 }
                                 _logger.Info("No albums found to show in dialog");
@@ -195,13 +198,21 @@ internal sealed partial class WindowMain
                         }).ConfigureAwait(false);
 
                     shouldDownload = dialogResult;
-                    _logger.Info($"Dialog result: {dialogResult}, shouldDownload: {shouldDownload}");
+                    _logger.Info($"Dialog result: {dialogResult}, shouldDownload: {shouldDownload}, skipDiscographyRetrieval: {skipDiscographyRetrieval}");
                 }
 
                 if (!shouldDownload)
                 {
                     await LogAsync("Download cancelled", DownloadProgressChangedLevel.Info).ConfigureAwait(false);
                     return;
+                }
+
+                // Temporarily disable discography retrieval if we've already selected specific albums
+                bool originalDiscographySetting = _userSettings.DownloadArtistDiscography;
+                if (skipDiscographyRetrieval)
+                {
+                    _userSettings.DownloadArtistDiscography = false;
+                    _logger.Info("Temporarily disabling discography retrieval for selected albums");
                 }
 
                 // Set controls to "downloading..." state
@@ -218,6 +229,15 @@ internal sealed partial class WindowMain
                 catch (OperationCanceledException)
                 {
                     await LogAsync("Downloads cancelled by user", DownloadProgressChangedLevel.Info).ConfigureAwait(false);
+                }
+                finally
+                {
+                    // Restore original setting
+                    if (skipDiscographyRetrieval)
+                    {
+                        _userSettings.DownloadArtistDiscography = originalDiscographySetting;
+                        _logger.Info("Restored original discography setting");
+                    }
                 }
 
                 // Reset controls to "ready" state

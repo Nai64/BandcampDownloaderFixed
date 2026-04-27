@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using System.Text.RegularExpressions;
@@ -58,6 +59,27 @@ internal sealed class DiscographyService : IDiscographyService
 
     public IReadOnlyCollection<AlbumInfo> GetReferredAlbumsInfo(string musicPageHtmlContent)
     {
+        // Temporarily force regex method to get all releases
+        _logger.Info("Using regex method for album info extraction (temporarily forced)");
+        var urls = GetReferredAlbumsRelativeUrls(musicPageHtmlContent);
+        var regexResult = urls.Select(url => new AlbumInfo
+        {
+            Artist = "Unknown",
+            Title = ExtractTitleFromUrl(url),
+            RelativeUrl = url,
+            Type = url.Contains("/track/") ? "track" : "album"
+        }).ToList();
+
+        // Log first album for debugging
+        if (regexResult.Count > 0)
+        {
+            _logger.Info($"First album (regex): Artist='{regexResult[0].Artist}', Title='{regexResult[0].Title}', Type='{regexResult[0].Type}', URL='{regexResult[0].RelativeUrl}'");
+            _logger.Info($"Total albums found via regex: {regexResult.Count}");
+        }
+
+        return regexResult;
+
+        /*
         // Try to parse JSON data from data-client-items attribute
         var jsonDataRegex = new Regex("data-client-items=\"(?<data>[^\"]+)\"");
         var jsonDataMatch = jsonDataRegex.Match(musicPageHtmlContent);
@@ -69,17 +91,32 @@ internal sealed class DiscographyService : IDiscographyService
                 var jsonData = jsonDataMatch.Groups["data"].Value;
                 // Unescape HTML entities
                 jsonData = jsonData.Replace("&quot;", "\"");
+                _logger.Info($"Attempting to parse JSON data with length: {jsonData.Length}");
+                _logger.Info($"JSON data preview: {jsonData.Substring(0, Math.Min(200, jsonData.Length))}...");
                 var albumInfos = JsonSerializer.Deserialize<List<JsonAlbumData>>(jsonData);
 
                 if (albumInfos != null && albumInfos.Count > 0)
                 {
-                    return albumInfos.Select(data => new AlbumInfo
+                    _logger.Info($"Successfully parsed {albumInfos.Count} albums from JSON");
+                    var result = albumInfos.Select(data => new AlbumInfo
                     {
-                        Artist = data.Artist ?? "Unknown",
+                        Artist = "Unknown", // Artist name not in JSON, would need to fetch from page
                         Title = data.Title ?? "Unknown",
                         RelativeUrl = data.PageUrl ?? "",
                         Type = data.Type ?? "album"
                     }).ToList();
+
+                    // Log first album for debugging
+                    if (result.Count > 0)
+                    {
+                        _logger.Info($"First album: Artist='{result[0].Artist}', Title='{result[0].Title}', Type='{result[0].Type}', URL='{result[0].RelativeUrl}'");
+                    }
+
+                    return result;
+                }
+                else
+                {
+                    _logger.Warn("JSON deserialization returned null or empty list");
                 }
             }
             catch (JsonException ex)
@@ -87,17 +124,31 @@ internal sealed class DiscographyService : IDiscographyService
                 _logger.Warn(ex, "Failed to parse JSON data from music page, falling back to regex method");
             }
         }
+        else
+        {
+            _logger.Info("No JSON data-client-items attribute found, using regex fallback");
+        }
 
         // Fallback to regex method if JSON parsing fails
         _logger.Info("Using regex fallback method for album info extraction");
         var urls = GetReferredAlbumsRelativeUrls(musicPageHtmlContent);
-        return urls.Select(url => new AlbumInfo
+        var regexResult = urls.Select(url => new AlbumInfo
         {
             Artist = "Unknown",
             Title = ExtractTitleFromUrl(url),
             RelativeUrl = url,
             Type = url.Contains("/track/") ? "track" : "album"
         }).ToList();
+
+        // Log first album for debugging
+        if (regexResult.Count > 0)
+        {
+            _logger.Info($"First album (regex): Artist='{regexResult[0].Artist}', Title='{regexResult[0].Title}', Type='{regexResult[0].Type}', URL='{regexResult[0].RelativeUrl}'");
+            _logger.Info($"Total albums found via regex: {regexResult.Count}");
+        }
+
+        return regexResult;
+        */
     }
 
     private static string ExtractTitleFromUrl(string url)
@@ -114,10 +165,13 @@ internal sealed class DiscographyService : IDiscographyService
     // JSON data structure for deserialization
     private sealed class JsonAlbumData
     {
-        public string Artist { get; set; } = "";
-        public string Title { get; set; } = "";
+        public int ArtId { get; set; }
+        public int BandId { get; set; }
+        public int Id { get; set; }
         public string PageUrl { get; set; } = "";
+        public string Title { get; set; } = "";
         public string Type { get; set; } = "";
+        // Note: Artist name is not in the JSON, need to get it from page or use band name
     }
 
     private static bool IsSingleAlbumArtist(string musicPageHtmlContent)
