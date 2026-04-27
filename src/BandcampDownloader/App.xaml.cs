@@ -4,6 +4,7 @@ using BandcampDownloader.Core;
 using BandcampDownloader.Core.DependencyInjection;
 using BandcampDownloader.Core.Localization;
 using BandcampDownloader.Core.Logging;
+using BandcampDownloader.Core.Setup;
 using BandcampDownloader.Core.Themes;
 using BandcampDownloader.Settings;
 using BandcampDownloader.UI.Dialogs;
@@ -30,13 +31,16 @@ internal sealed partial class App
         // 3. Log the application properties
         LogAppProperties();
 
-        // 4. Initialize less critical services
+        // 4. Check if first-time user and show setup dialog
+        ShowSetupDialogIfNeeded(container);
+
+        // 5. Initialize less critical services
         InitializeCoreServices(container);
 
-        // 5. Log the user settings
+        // 6. Log the user settings
         LogUserSettings(container);
 
-        // 6. Open the main window
+        // 7. Open the main window
         var windowMain = container.GetService<WindowMain>();
         windowMain.Show();
     }
@@ -73,5 +77,28 @@ internal sealed partial class App
         var userSettingsJson = settingsService.GetUserSettingsInJson();
 
         _logger.Info($"Settings: {userSettingsJson}");
+    }
+
+    private static void ShowSetupDialogIfNeeded(IContainer container)
+    {
+        var settingsService = container.GetService<ISettingsService>();
+        var userSettings = settingsService.GetUserSettings();
+
+        if (!userSettings.HasCompletedSetup)
+        {
+            var setupService = container.GetService<ISetupService>();
+            var windowSetup = new WindowSetup
+            {
+                ShowInTaskbar = false,
+                WindowStartupLocation = WindowStartupLocation.CenterScreen
+            };
+
+            var result = windowSetup.ShowDialog();
+            if (result == true)
+            {
+                setupService.ApplySetupMode(windowSetup.SelectedMode, userSettings);
+                userSettings.HasCompletedSetup = true;
+            }
+        }
     }
 }

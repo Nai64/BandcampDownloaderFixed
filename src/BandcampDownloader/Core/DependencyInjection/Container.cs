@@ -3,6 +3,7 @@ using BandcampDownloader.Bandcamp.Download;
 using BandcampDownloader.Bandcamp.Extraction;
 using BandcampDownloader.Core.Localization;
 using BandcampDownloader.Core.Logging;
+using BandcampDownloader.Core.Setup;
 using BandcampDownloader.Core.Themes;
 using BandcampDownloader.Core.Updates;
 using BandcampDownloader.Helpers;
@@ -56,6 +57,7 @@ internal sealed class Container : IContainer
         serviceCollection.AddSingleton<IPlaylistCreator, PlaylistCreator>();
         serviceCollection.AddSingleton<IResilienceService, ResilienceService>();
         serviceCollection.AddSingleton<ISettingsService, SettingsService>();
+        serviceCollection.AddSingleton<ISetupService, SetupService>();
         serviceCollection.AddSingleton<ITagService, TagService>();
         serviceCollection.AddSingleton<IAudioConverterService, AudioConverterService>();
         serviceCollection.AddSingleton<IThemeService, ThemeService>();

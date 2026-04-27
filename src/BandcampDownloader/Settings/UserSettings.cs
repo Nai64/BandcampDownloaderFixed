@@ -341,4 +341,7 @@ public interface IUserSettings
 
     [Option(DefaultValue = "")]
     string LastUrl { get; set; }
+
+    [Option(DefaultValue = false)]
+    bool HasCompletedSetup { get; set; }
 }

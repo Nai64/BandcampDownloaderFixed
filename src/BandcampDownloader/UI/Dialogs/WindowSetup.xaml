@@ -1,0 +1,117 @@
+<Window
+    x:Class="BandcampDownloader.UI.Dialogs.WindowSetup"
+    x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Setup"
+    Width="500"
+    Height="450"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <TextBlock
+            Grid.Row="0"
+            Margin="0,0,0,20"
+            FontSize="20"
+            FontWeight="Bold"
+            Text="Welcome to Bandcamp Downloader"
+            TextAlignment="Center" />
+
+        <TextBlock
+            Grid.Row="1"
+            Margin="0,0,0,20"
+            Text="Choose your experience level:"
+            TextAlignment="Center"
+            TextWrapping="Wrap" />
+
+        <!-- Mode Selection -->
+        <StackPanel
+            Grid.Row="2"
+            Margin="0,0,0,20">
+            <RadioButton
+                x:Name="RadioButtonSimple"
+                Margin="0,0,0,15"
+                GroupName="Mode"
+                IsChecked="True">
+                <StackPanel>
+                    <TextBlock FontWeight="Bold" Text="Simple" />
+                    <TextBlock
+                        FontSize="12"
+                        Foreground="Gray"
+                        Text="Basic functionality only. Minimal settings."
+                        TextWrapping="Wrap" />
+                </StackPanel>
+            </RadioButton>
+
+            <RadioButton
+                x:Name="RadioButtonModerate"
+                Margin="0,0,0,15"
+                GroupName="Mode">
+                <StackPanel>
+                    <TextBlock FontWeight="Bold" Text="Moderate" />
+                    <TextBlock
+                        FontSize="12"
+                        Foreground="Gray"
+                        Text="Recommended settings for most users."
+                        TextWrapping="Wrap" />
+                </StackPanel>
+            </RadioButton>
+
+            <RadioButton
+                x:Name="RadioButtonFull"
+                Margin="0,0,0,15"
+                GroupName="Mode">
+                <StackPanel>
+                    <TextBlock FontWeight="Bold" Text="Full" />
+                    <TextBlock
+                        FontSize="12"
+                        Foreground="Gray"
+                        Text="All features enabled. Maximum functionality."
+                        TextWrapping="Wrap" />
+                </StackPanel>
+            </RadioButton>
+
+            <RadioButton
+                x:Name="RadioButtonCustom"
+                GroupName="Mode">
+                <StackPanel>
+                    <TextBlock FontWeight="Bold" Text="Custom" />
+                    <TextBlock
+                        FontSize="12"
+                        Foreground="Gray"
+                        Text="I'll customize settings later in the Settings menu."
+                        TextWrapping="Wrap" />
+                </StackPanel>
+            </RadioButton>
+        </StackPanel>
+
+        <!-- Buttons -->
+        <StackPanel
+            Grid.Row="3"
+            HorizontalAlignment="Right"
+            Orientation="Horizontal">
+            <Button
+                Width="100"
+                Height="30"
+                Margin="0,0,10,0"
+                Click="ButtonCancel_Click"
+                Content="Cancel" />
+            <Button
+                Width="100"
+                Height="30"
+                Click="ButtonContinue_Click"
+                Content="Continue" />
+        </StackPanel>
+    </Grid>
+</Window>
