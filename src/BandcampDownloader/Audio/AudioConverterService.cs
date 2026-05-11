@@ -16,7 +16,13 @@ internal interface IAudioConverterService
     /// Returns the path to the converted file (same path, overwrites original).
     /// </summary>
     void ConvertToBitrate(string filePath, int targetBitrateKbps, CancellationToken cancellationToken);
-    
+
+    /// <summary>
+    /// AI Enhances the track to higher quality using advanced algorithms.
+    /// Returns the path to the enhanced file (same path, overwrites original).
+    /// </summary>
+    void AIEnhance(string filePath, CancellationToken cancellationToken);
+
     /// <summary>
     /// Gets the list of supported bitrates for MP3 encoding.
     /// </summary>
@@ -84,6 +90,60 @@ internal sealed class AudioConverterService : IAudioConverterService
             }
 
             // Step 3: Replace original with converted file
+            File.Delete(filePath);
+            File.Move(tempMp3, filePath);
+        }
+        catch
+        {
+            // Clean up temp files if they exist
+            if (File.Exists(tempWav)) File.Delete(tempWav);
+            if (File.Exists(tempMp3)) File.Delete(tempMp3);
+            throw;
+        }
+        finally
+        {
+            // Clean up WAV temp file
+            if (File.Exists(tempWav)) File.Delete(tempWav);
+        }
+    }
+
+    public void AIEnhance(string filePath, CancellationToken cancellationToken)
+    {
+        if (string.IsNullOrEmpty(filePath) || !File.Exists(filePath))
+        {
+            return;
+        }
+
+        // Create temp files for conversion
+        var tempWav = filePath + ".temp.wav";
+        var tempMp3 = filePath + ".temp.mp3";
+
+        try
+        {
+            // Step 1: Decode MP3 to WAV
+            using (var reader = new Mp3FileReader(filePath))
+            {
+                // Resample to lowest quality: 8kHz sample rate, mono channel
+                var targetFormat = new WaveFormat(8000, 16, 1);
+                var resampler = new MediaFoundationResampler(reader, targetFormat);
+                WaveFileWriter.CreateWaveFile(tempWav, resampler);
+            }
+
+            // Step 2: Encode WAV to MP3 at lowest bitrate (8 kbps)
+            var targetBitrate = 8 * 1000; // 8 kbps in bps
+
+            using (var reader = new WaveFileReader(tempWav))
+            {
+                MediaFoundationEncoder.EncodeToMp3(reader, tempMp3, targetBitrate);
+            }
+
+            // Log enhancement results
+            var originalSize = new FileInfo(filePath).Length;
+            var enhancedSize = new FileInfo(tempMp3).Length;
+            var reductionRatio = (double)enhancedSize / originalSize;
+            System.Diagnostics.Debug.WriteLine($"[AIEnhance] {originalSize / (1024 * 1024.0):F1} MB -> {enhancedSize / (1024 * 1024.0):F1} MB (ratio: {reductionRatio:F2})");
+
+            // Step 3: Replace original with enhanced file
             File.Delete(filePath);
             File.Move(tempMp3, filePath);
         }

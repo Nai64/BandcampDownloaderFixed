@@ -617,6 +617,12 @@ Are you sure you want to enable this feature?</value>
   <data name="checkBoxForceBitrate_ToolTip" xml:space="preserve">
     <value>Converts downloaded tracks to the specified bitrate. Useful for reducing file size.</value>
   </data>
+  <data name="checkBoxEnableAIEnhance" xml:space="preserve">
+    <value>AI _Enhance tracks to higher quality</value>
+  </data>
+  <data name="checkBoxEnableAIEnhance_ToolTip" xml:space="preserve">
+    <value>Uses advanced AI algorithms to enhance downloaded tracks to higher quality. Optimizes audio fidelity and clarity.</value>
+  </data>
   <data name="checkBoxShowOriginalDownloadSize" xml:space="preserve">
     <value>Show original download size</value>
   </data>

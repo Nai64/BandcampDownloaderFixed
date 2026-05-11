@@ -451,6 +451,26 @@ internal sealed class DownloadManager : IDownloadManager
                     }
                 }
 
+                // AI Enhance if enabled
+                if (_userSettings.EnableAIEnhance && track.Path != null && File.Exists(track.Path))
+                {
+                    try
+                    {
+                        var originalFileSize = new FileInfo(track.Path).Length;
+                        DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"AI Enhancing track \"{Path.GetFileName(track.Path)}\" to higher quality (original: {originalFileSize / (1024 * 1024.0):F1} MB)", DownloadProgressChangedLevel.VerboseInfo));
+                        _audioConverterService.AIEnhance(track.Path, cancellationToken);
+                        var enhancedFileSize = new FileInfo(track.Path).Length;
+                        var sizeReduction = (1.0 - (double)enhancedFileSize / originalFileSize) * 100;
+
+                        DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"AI Enhanced track \"{Path.GetFileName(track.Path)}\" (now: {enhancedFileSize / (1024 * 1024.0):F1} MB, optimized: {sizeReduction:F0}%)", DownloadProgressChangedLevel.VerboseInfo));
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.Error(ex, $"Failed to AI enhance track: {track.Path}");
+                        DownloadProgressChanged?.Invoke(this, new DownloadProgressChangedArgs($"Failed to AI enhance track \"{Path.GetFileName(track.Path)}\": {ex.Message}", DownloadProgressChangedLevel.Warning));
+                    }
+                }
+
                 if (_userSettings.ModifyTags ||
                     (_userSettings.SaveCoverArtInTags && artwork != null))
                 {

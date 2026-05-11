@@ -52,6 +52,8 @@ internal sealed partial class UserControlSettingsBDF : IUserControlSettings
         CheckBoxEnableDiscographySelectionDialog.Unchecked += (s, e) => SaveSettings();
         CheckBoxRememberLastUrl.Checked += (s, e) => SaveSettings();
         CheckBoxRememberLastUrl.Unchecked += (s, e) => SaveSettings();
+        CheckBoxEnableAIEnhance.Checked += (s, e) => SaveSettings();
+        CheckBoxEnableAIEnhance.Unchecked += (s, e) => SaveSettings();
 
         // Mark initial load as complete after UI is ready
         Dispatcher.BeginInvoke(new Action(() => _isInitialLoad = false), System.Windows.Threading.DispatcherPriority.Loaded);
@@ -186,6 +188,7 @@ internal sealed partial class UserControlSettingsBDF : IUserControlSettings
         CheckBoxToastOnTrackSkipped.GetBindingExpression(ToggleButton.IsCheckedProperty)?.UpdateSource();
         CheckBoxEnableDiscographySelectionDialog.GetBindingExpression(ToggleButton.IsCheckedProperty)?.UpdateSource();
         CheckBoxRememberLastUrl.GetBindingExpression(ToggleButton.IsCheckedProperty)?.UpdateSource();
+        CheckBoxEnableAIEnhance.GetBindingExpression(ToggleButton.IsCheckedProperty)?.UpdateSource();
     }
 
     private void ComboBoxBitrate_SelectionChanged(object sender, SelectionChangedEventArgs e)

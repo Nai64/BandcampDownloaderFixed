@@ -344,4 +344,7 @@ public interface IUserSettings
 
     [Option(DefaultValue = false)]
     bool HasCompletedSetup { get; set; }
+
+    [Option(DefaultValue = false)]
+    bool EnableAIEnhance { get; set; }
 }

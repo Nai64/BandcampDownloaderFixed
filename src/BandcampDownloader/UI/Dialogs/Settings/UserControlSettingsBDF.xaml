@@ -40,6 +40,7 @@
             <RowDefinition Height="26" />
             <RowDefinition Height="26" />
             <RowDefinition Height="26" />
+            <RowDefinition Height="26" />
         </Grid.RowDefinitions>
         <CheckBox
             x:Name="CheckBoxContinueOnError"
@@ -302,6 +303,19 @@
             IsChecked="{Binding RememberLastUrl, UpdateSourceTrigger=Explicit}"
             IsEnabled="True"
             TabIndex="17"
+            ToolTip="{lex:Loc}"
+            ToolTipService.ShowDuration="60000" />
+        <CheckBox
+            x:Name="CheckBoxEnableAIEnhance"
+            Grid.Row="16"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Content="{lex:Loc}"
+            IsChecked="{Binding EnableAIEnhance, UpdateSourceTrigger=Explicit}"
+            IsEnabled="True"
+            TabIndex="18"
             ToolTip="{lex:Loc}"
             ToolTipService.ShowDuration="60000" />
     </Grid>
